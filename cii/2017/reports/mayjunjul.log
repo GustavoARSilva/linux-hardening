@@ -1,0 +1,3387 @@
+commit a4400dfdbd789398455cf1c84ee1d7e20f649357
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Thu Jul 20 09:17:58 2017 -0500
+
+    staging: bcm2835-audio: constify snd_pcm_ops structures
+    
+    Check for snd_pcm_ops structures that are only stored in the ops field of
+    a snd_soc_platform_driver structure or passed as the third argument to
+    snd_pcm_set_ops. The corresponding field or parameter is declared const,
+    so snd_pcm_ops structures that have this property can be declared as
+    const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct snd_pcm_ops i@p = { ... };
+    
+    @ok1@
+    identifier r.i;
+    struct snd_soc_platform_driver e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @ok2@
+    identifier r.i;
+    expression e1, e2; position p;
+    @@
+    snd_pcm_set_ops(e1, e2, &i@p)
+    
+    @bad@
+    position p != {r.p,ok1.p,ok2.p};
+    identifier r.i;
+    struct snd_pcm_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct snd_pcm_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit 039937308e55fba152a40e5d729a43731f56acab
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue Jul 4 13:34:05 2017 -0500
+
+    xen: selfballoon: remove unnecessary static in frontswap_selfshrink()
+    
+    Remove unnecessary static on local variables last_frontswap_pages and
+    tgt_frontswap_pages. Such variables are initialized before being used,
+    on every execution path throughout the function. The statics have no
+    benefit and, removing them reduce the code size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    You can see a significant difference in the code size after executing
+    the size command, before and after the code change:
+    
+    before:
+       text	   data	    bss	    dec	    hex	filename
+       5633	   3452	    384	   9469	   24fd	drivers/xen/xen-selfballoon.o
+    
+    after:
+       text	   data	    bss	    dec	    hex	filename
+       5576	   3308	    256	   9140	   23b4	drivers/xen/xen-selfballoon.o
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Juergen Gross <jgross@suse.com>
+    Signed-off-by: Juergen Gross <jgross@suse.com>
+
+commit 281643a2ad7a82ee6588f5f95b6153bb38e6640c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jul 5 14:07:29 2017 -0400
+
+    media: s5k5baf: remove unnecessary static in s5k5baf_get_selection()
+    
+    Remove unnecessary static on local variable rtype. Such variable
+    is initialized before being used, on every execution path throughout
+    the function. The static has no benefit and, removing it reduces
+    the code size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see the difference in the code size. Also,
+    there is a significant difference in the bss segment. This log is the
+    output of the size command, before and after the code change:
+    
+    before:
+       text    data     bss     dec     hex filename
+      27765    5656     320   33741    83cd drivers/media/i2c/s5k5baf.o
+    
+    after:
+       text    data     bss     dec     hex filename
+      27733    5600     256   33589    8335 drivers/media/i2c/s5k5baf.o
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
+    Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit f201777a5382e0a4152342365e928c1de99815ad
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jun 7 15:42:02 2017 -0500
+
+    IB/qib: remove duplicate code
+    
+    Remove duplicate code.
+    
+    Addresses-Coverity-ID: 1226951
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Leon Romanovsky <leonro@mellanox.com>
+    Reviewed-by: Dennis Dalessandro <dennis.dalessandro@intel.com>
+    Signed-off-by: Doug Ledford <dledford@redhat.com>
+
+commit 488e27ad81f76a2664fb33c06b6da846605adad2
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon Jun 26 19:50:16 2017 -0400
+
+    media: dvb-frontends: mb86a16: remove useless variables in signal_det()
+    
+    Remove useless variables wait_t and wait_sym and code related.
+    
+    Also, fix some coding style issues.
+    
+    Addresses-Coverity-ID: 1226947
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 62055056da6a722ab770d45bad63ed41dfb4f283
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:12:37 2017 -0400
+
+    media: ngene: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit e46ab9dc4a2bffad9f49123136b22f6eec88a82c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:10:00 2017 -0400
+
+    media: mantis: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 3c13978ead17b7421b0d6dc76d2db9dc12fc1844
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:19:36 2017 -0400
+
+    media: dm1105: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 618e8aac3d7ccbf49b170181a6f3a418ba6e5419
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:15:36 2017 -0400
+
+    media: ddbridge: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 6ac8b81ec996228e41a8bb1f14450adf8b697913
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:06:51 2017 -0400
+
+    media: cx24123: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit c51df136e5d12dc50954ed454f90b5df718f299d
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:03:52 2017 -0400
+
+    media: zd1301_demod: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 28e83542cd8cac67ebea9b29a3b18941739aa178
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:00:33 2017 -0400
+
+    media: dib8000: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 053aa4a8339c4f271f9f667e637b8c7f015cb95b
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 20:57:06 2017 -0400
+
+    media: s5h1420: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit a76f094a47aca13ea1666297f138c2e66c605d5b
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 18:18:15 2017 -0400
+
+    media: dib7000p: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 8e10fd851cb3e9723786703e3db45a2320b33a0e
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 18:14:38 2017 -0400
+
+    media: marvell-ccic: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit ea925e4db10467fd9dceaac66817c8582c1f2c66
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 18:09:16 2017 -0400
+
+    media: saa7146: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 19779f40520104423ec34581623f032affa08579
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 18:24:19 2017 -0400
+
+    media: dib9000: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 830a45a2f44852fb7e1b49f95c7c5703816d9d94
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 18:04:24 2017 -0400
+
+    media: usbvision: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 8d08a4c1aae8857c46079d329023753611218518
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 17:41:08 2017 -0400
+
+    media: dvb-ttusb-budget: constify i2c_algorithm structure
+    
+    Check for i2c_algorithm structures that are only stored in
+    the algo field of an i2c_adapter structure. This field is
+    declared const, so i2c_algorithm structures that have this
+    property can be declared as const also.
+    
+    This issue was identified using Coccinelle and the following
+    semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct i2c_algorithm i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct i2c_adapter e;
+    position p;
+    @@
+    e.algo = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    @@
+    i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+     struct i2c_algorithm i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 929b60a85b731d803f2b7829149496479eba0b20
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 00:12:13 2017 -0500
+
+    HID: hid-logitech-hidpp: add NULL check on devm_kmemdup() return value
+    
+    Check return value from call to devm_kmemdup() in order to prevent a NULL
+    pointer dereference.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Benjamin Tissoires <benjamin.tissoires@redhat.com>
+    Signed-off-by: Jiri Kosina <jkosina@suse.cz>
+
+commit 1d609dd32cd209f4643c7fd450f19d114cec0de7
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Wed Jul 19 17:49:31 2017 -0500
+
+    Bluetooth: btwilink: remove unnecessary static in bt_ti_probe()
+    
+    Remove unnecessary static on local variable hst.
+    Such variable is initialized before being used,
+    on every execution path throughout the function.
+    The static has no benefit and, removing it reduces
+    the object file size.
+    
+    This issue was detected using Coccinelle and the
+    following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see the difference in the object file size.
+    This log is the output of the size command, before and after the code
+    change:
+    
+    before:
+       text    data     bss     dec     hex filename
+       4029    2528     128    6685    1a1d drivers/bluetooth/btwilink.o
+    
+    after:
+       text    data     bss     dec     hex filename
+       4007    2472      64    6543    198f drivers/bluetooth/btwilink.o
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: Marcel Holtmann <marcel@holtmann.org>
+
+commit eb2b98742641ae544fd16311055789ab7cac62aa
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:53:48 2017 -0500
+
+    liquidio: lio_main: remove unnecessary static in setup_io_queues()
+    
+    Remove unnecessary static on local variables cpu_id_modulus and cpu_id.
+    Such variables are initialized before being used, on every execution
+    path throughout the function. The static has no benefit and, removing
+    it reduces the object file size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see a significant difference in the object
+    file size. Also, there is a significant difference in the bss segment.
+    This log is the output of the size command, before and after the code
+    change:
+    
+    before:
+       text    data     bss     dec     hex filename
+      78689   15272   27808  121769   1dba9 drivers/net/ethernet/cavium/liquidio/lio_main.o
+    
+    after:
+       text    data     bss     dec     hex filename
+      78667   15128   27680  121475   1da83 drivers/net/ethernet/cavium/liquidio/lio_main.o
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Acked-by: Felix Manlunas <felix.manlunas@cavium.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 93fe07e52ea1218a78f3886d23479958e14a0eea
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:50:15 2017 -0500
+
+    liquidio: lio_vf_main: remove unnecessary static in setup_io_queues()
+    
+    Remove unnecessary static on local variables cpu_id_modulus and cpu_id.
+    Such variables are initialized before being used, on every execution
+    path throughout the function. The static has no benefit and, removing
+    it reduces the object file size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see a significant difference in the object
+    file size. Also, there is a significant difference in the bss segment.
+    This log is the output of the size command, before and after the code
+    change:
+    
+    before:
+       text    data     bss     dec     hex filename
+      55656   10680     576   66912   10560 drivers/net/ethernet/cavium/liquidio/lio_vf_main.o
+    
+    after:
+       text    data     bss     dec     hex filename
+      55796   10536     448   66780   104dc drivers/net/ethernet/cavium/liquidio/lio_vf_main.o
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit f03b06f3bae893d0f4fbe7c41adc1d45016bb974
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:48:06 2017 -0500
+
+    net: ethernet: mediatek: remove useless code in mtk_poll_tx()
+    
+    Remove useless local variable _condition_ and the code related.
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Acked-by: Sean Wang <sean.wang@mediatek.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 048578a1954f6c473ba12c9b4519e8dce4a4549b
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:45:29 2017 -0500
+
+    qlcnic: remove unnecessary static in qlcnic_dump_fw()
+    
+    Remove unnecessary static on local variable fw_dump_ops.
+    Such variable is initialized before being used, on every
+    execution path throughout the function. The static has no
+    benefit and, removing it reduces the object file size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see a difference in the object file size.
+    This log is the output of the size command, before and after the code
+    change:
+    
+    before:
+       text    data     bss     dec     hex filename
+      19032    2136      64   21232    52f0 drivers/net/ethernet/qlogic/qlcnic/qlcnic_minidump.o
+    
+    after:
+       text    data     bss     dec     hex filename
+      19020    2048       0   21068    524c drivers/net/ethernet/qlogic/qlcnic/qlcnic_minidump.o
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 648e8b86d0ae01bd5a61df2d776b70ed8b96e2b8
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:43:33 2017 -0500
+
+    net: tulip: remove useless code in tulip_init_one()
+    
+    Remove useless local variable multiport_cnt and the code related.
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit f55dda4bded9d2042d296b9215bf6453f7411a0d
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:41:06 2017 -0500
+
+    rtlwifi: remove useless code
+    
+    Remove useless local variables last_read_point and last_txw_point and
+    the code related.
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Acked-by: Larry Finger <Larry.Finger@lwfinger.net>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 06548fbb609d54fd8c03dd4cdad1059ddb44378c
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Tue Jul 18 15:37:11 2017 -0500
+
+    wireless: airo: remove unnecessary static in writerids()
+    
+    Remove unnecessary static on local function pointer _writer_.
+    Such pointer is initialized before being used, on every
+    execution path throughout the function. The static has no
+    benefit and, removing it reduces the object file size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see a significant difference in the object
+    file size. This log is the output of the size command, before and after
+    the code change:
+    
+    before:
+       text    data     bss     dec     hex filename
+     113797   19152    1216  134165   20c15 drivers/net/wireless/cisco/airo.o
+    
+    after:
+       text	   data	    bss	    dec	    hex	filename
+     113881	  19096	   1152	 134129	  20bf1	drivers/net/wireless/cisco/airo.o
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit fda7e347239343349fcce30be723ebf1290f34c9
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:51:27 2017 -0400
+
+    media: mediatek: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 94e8f761d3ba4012fa75a6d66fe3d9cf76d08628
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:46:00 2017 -0400
+
+    media: mtk-mdp: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit f5d7232977ae8ec9576049f07f1a50c276216295
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:39:21 2017 -0400
+
+    media: davinci: vpif_capture: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit b0a4ceddfc3f49226ada4b17394e900c056bb790
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:35:53 2017 -0400
+
+    media: davinci: vpif_display: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 62c11a541a50b0c53e80f1382e06c1f8b9379304
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:30:16 2017 -0400
+
+    media: atmel-isc: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 0169daec966598859fb5cd76f11a7a720e721f89
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:25:32 2017 -0400
+
+    media: rcar_fdp1: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 7e645125a88b4fd5611fc09a2800e71b34963580
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:20:00 2017 -0400
+
+    media: pxa_camera: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 9c91e706050fd22edde98ea1794d326cb9ceaf71
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:14:23 2017 -0400
+
+    media: st-delta: constify vb2_ops structures
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Hugues Fruchet <hugues.fruchet@st.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit f3ab729c14ab8f0a542107a3aea4d60fd944bc1e
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:05:17 2017 -0400
+
+    media: stm32-dcmi: constify vb2_ops structure
+    
+    Check for vb2_ops structures that are only stored in the ops field of a
+    vb2_queue structure. That field is declared const, so vb2_ops structures
+    that have this property can be declared as const also.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @r disable optional_qualifier@
+    identifier i;
+    position p;
+    @@
+    static struct vb2_ops i@p = { ... };
+    
+    @ok@
+    identifier r.i;
+    struct vb2_queue e;
+    position p;
+    @@
+    e.ops = &i@p;
+    
+    @bad@
+    position p != {r.p,ok.p};
+    identifier r.i;
+    struct vb2_ops e;
+    @@
+    e@i@p
+    
+    @depends on !bad disable optional_qualifier@
+    identifier r.i;
+    @@
+    static
+    +const
+    struct vb2_ops i = { ... };
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Hugues Fruchet <hugues.fruchet@st.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 6ad33dec835693e38c1994cedbd3c404782e84fb
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jul 5 14:23:55 2017 -0400
+
+    media: tuners: remove unnecessary static in simple_dvb_configure()
+    
+    Remove unnecessary static on local variable t_params.
+    Such variable is initialized before being used,
+    on every execution path throughout the function.
+    The static has no benefit and, removing it reduces
+    the code size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see the difference in the code size. Also,
+    there is a significant difference in the bss segment. This log is the
+    output of the size command, before and after the code change:
+    
+    before:
+       text    data     bss     dec     hex filename
+      23314    3640     832   27786    6c8a drivers/media/tuners/tuner-simple.o
+    
+    after:
+       text    data     bss     dec     hex filename
+      23257    3552     768   27577    6bb9 drivers/media/tuners/tuner-simple.o
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 734c58aefcc48f888e74fd082a0a2eca167e8816
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:08:20 2017 -0500
+
+    usb: chipidea: udc: compress return logic into line
+    
+    Simplify return logic to avoid unnecessary variable assignment.
+    
+    This issue was detected using Coccinelle and the following
+    semantic patch:
+    
+    @@
+    local idexpression ret;
+    expression e;
+    @@
+    
+    -ret =
+    +return
+         e;
+    -return ret;
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Peter Chen <peter.chen@nxp.com>
+
+commit c6090480b27ac7148bf4087f2112ed9c05f34c2b
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 01:33:33 2017 -0500
+
+    crypto: brcm - add NULL check on of_match_device() return value
+    
+    Check return value from call to of_match_device()
+    in order to prevent a NULL pointer dereference.
+    
+    In case of NULL print error message and return -ENODEV
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit 3822c331c5be580d8f9f65bdd6c0c187e0c5b503
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 02:07:04 2017 -0500
+
+    crypto: omap-des - fix error return code in omap_des_probe()
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit 62c58f8d6883e06e113d4a8f22c37143931e8857
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 02:00:54 2017 -0500
+
+    crypto: omap-aes - fix error return code in omap_aes_probe()
+    
+    Propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit 353ef083970812168dc0990e356e93e203b2cb92
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 01:54:16 2017 -0500
+
+    crypto: mxs-dcp - print error message on platform_get_irq failure
+    
+    Print error message on platform_get_irq failure before return.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit 5a19dc5bde0819886093c9d42b0424405a343516
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 01:42:12 2017 -0500
+
+    crypto: mxc-scc - fix error code in mxc_scc_probe()
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit 0a7d710de12a2a9bad195edc318729e0ebdcc512
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 01:24:54 2017 -0500
+
+    crypto: mediatek - fix error return code in mtk_crypto_probe()
+    
+    Propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit 28a2cc671989264844f989e09a7bb83398fd0dd4
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 00:59:52 2017 -0500
+
+    crypto: ccp - print error message on platform_get_irq failure
+    
+    Print error message on platform_get_irq failure before return.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+
+commit c8108cf2c0c8fd1c1f0bef34b4a31d567488e171
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue Jul 4 17:36:50 2017 -0500
+
+    clk: moxart: remove unnecessary statics
+    
+    Remove unnecessary static on local variable _base_ in both functions
+    moxart_of_pll_clk_init() and moxart_of_apb_clk_init(). Such variables
+    are initialized before being used, on every execution path throughout
+    the mentioned functions. The statics have no benefit and, removing
+    them reduce the code size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see the difference in the code size. Also,
+    notice that the bss segment is reduced down to zero. This log is the
+    output of the size command, before and after the code change:
+    
+    before:
+       text    data     bss     dec     hex filename
+       1724     384     128    2236     8bc drivers/clk/clk-moxart.o
+    
+    after:
+       text    data     bss     dec     hex filename
+       1697     240       0    1937     791 drivers/clk/clk-moxart.o
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Stephen Boyd <sboyd@codeaurora.org>
+
+commit 32e1b60d8f91be932c4a624d4153224895b65ec7
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Mon Jul 17 10:30:20 2017 -0500
+
+    ASoC: rsnd: remove unnecessary static in rsnd_ssiu_probe()
+    
+    Remove unnecessary static on local variable ops.
+    Such variable is initialized before being used,
+    on every execution path throughout the function.
+    The static has no benefit and, removing it reduces
+    the code size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see the difference in the code size. Also,
+    there is a significant difference in the bss segment. This log is the
+    output of the size command, before and after the code change:
+    
+    before:
+       text    data     bss     dec     hex filename
+       3211     680      64    3955     f73 sound/soc/sh/rcar/ssiu.o
+    
+    after:
+       text    data     bss     dec     hex filename
+       3207     592       0    3799     ed7 sound/soc/sh/rcar/ssiu.o
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 86464ef83af934b7e489c4e100d0136319794010
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:38:47 2017 -0500
+
+    ASoC: tas5720: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 73a995ca90544914a97ed33a4f7baef44ad110d0
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:38:43 2017 -0500
+
+    ASoC: dwc: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 61b3b3cc68c4161ba202f401a6572250360ff18c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:38:38 2017 -0500
+
+    ASoC: hdac_hdmi: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit fcf005a645e6855d68f98b9455f6b47ac2ed161c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:38:32 2017 -0500
+
+    ASoC: rk3036: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit df9401b47c346480e1c1068f12c1cd32e45809f1
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:38:26 2017 -0500
+
+    ASoC: max9867: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit a9689bb890ce633c3015ed51e4e2c6ee320fe4dc
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:38:14 2017 -0500
+
+    ASoC: codecs: msm8916-wcd-digital: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 9894dbafb6f864207f9e6aeaca2c8de949955651
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:37:59 2017 -0500
+
+    ASoC: rt5514: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Also, make rt5514_aif_dai_ops static, as it is not used outside this
+    module.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit dfcfd4b68a551b7038e046040dac2a467f5efd10
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:37:54 2017 -0500
+
+    ASoC: max98926: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit af2f010e0f12fdeb26fce502adf4b353daeb302c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:37:48 2017 -0500
+
+    ASoC: msm8916-wcd-analog: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit f1d68ea36f4fe97ed1de8d40eaa43758b8386c29
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:37:43 2017 -0500
+
+    ASoC: rt5616: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 6ccf3a6d031c47d6319cb56ee35dd4b546905e91
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:37:36 2017 -0500
+
+    ASoC: rt5663: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 72a63c6e78887f5c2063ce147b57fdfecf366e0e
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 15:37:26 2017 -0500
+
+    ASoC: cs42l42: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 28b5b3a23ba67970f4f534b15c4e4d687136605a
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu May 4 20:38:20 2017 -0500
+
+    RDMA/core: Document confusing code
+    
+    While looking into Coverity ID 1351047 I ran into the following
+    piece of code at
+    drivers/infiniband/core/verbs.c:496:
+    
+    ret = rdma_addr_find_l2_eth_by_grh(&dgid, &sgid,
+                                       ah_attr->dmac,
+                                       wc->wc_flags & IB_WC_WITH_VLAN ?
+                                       NULL : &vlan_id,
+                                       &if_index, &hoplimit);
+    
+    The issue here is that the position of arguments in the call to
+    rdma_addr_find_l2_eth_by_grh() function do not match the order of
+    the parameters:
+    
+    &dgid is passed to sgid
+    &sgid is passed to dgid
+    
+    This is the function prototype:
+    
+    int rdma_addr_find_l2_eth_by_grh(const union ib_gid *sgid,
+     				 const union ib_gid *dgid,
+     				 u8 *dmac, u16 *vlan_id, int *if_index,
+     				 int *hoplimit)
+    
+    My question here is if this is intentional?
+    
+    Answer:
+    Yes. ib_init_ah_from_wc() creates ah from the incoming packet.
+    Incoming packet has dgid of the receiver node on which this code is
+    getting executed and sgid contains the GID of the sender.
+    
+    When resolving mac address of destination, you use arrived dgid as
+    sgid and use sgid as dgid because sgid contains destinations GID whom to
+    respond to.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Doug Ledford <dledford@redhat.com>
+
+commit 4d2c7e09a5c8ea3b20748c2942b6a686dced34ab
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 00:37:55 2017 -0500
+
+    ASoC: zte: spdif: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 171dd51655b11331928dd39ff0e51a516e41424d
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 00:30:52 2017 -0500
+
+    ASoC: zx-tdm: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 45d059a33aa48cb19a5ff589f71abcc4de4a8fbf
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 00:22:09 2017 -0500
+
+    ASoC: zx-i2s: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit cb7534437956650ab0dcebf7a7b4795eb904d22a
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 01:05:08 2017 -0500
+
+    ASoC: mmp-sspa: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 549acff975c9245ea8d469c0defa50e52489227c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 01:10:19 2017 -0500
+
+    ASoC: mediatek: mt2701: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 94372fceb2fb5d3d05d6db61c9658865d5e27ee4
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 02:08:53 2017 -0500
+
+    ASoC: hisilicon: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 29a22ebfa4c44bf96b3d00d90b5e3b8128d8a162
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 02:23:51 2017 -0500
+
+    ASoC: fsl_asrc: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 5d29e95eec1451d35ef6ce5b851fbc8b04f82d39
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 02:19:25 2017 -0500
+
+    ASoC: fsl_esai: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 06305d72796076b09495daa4398a43ddb68a6caa
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 02:14:21 2017 -0500
+
+    ASoC: fsl_spdif: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit fe49cd980fc15cbb7eeb8d1a4ef45a14b807b55d
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 00:52:23 2017 -0500
+
+    ASoC: sun8i-codec: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Maxime Ripard <maxime.ripard@free-electrons.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 583ac685986963737997d0f6df569a3daab9c097
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 00:47:35 2017 -0500
+
+    ASoC: tegra: constify snd_soc_dai_ops structure
+    
+    This structure is only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Jon Hunter <jonathanh@nvidia.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit c89876dda01841a6a485cb29b9d1843db34958a3
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 17:44:02 2017 -0500
+
+    w1: omap-hdq: fix error return code in omap_hdq_probe()
+    
+    platform_get_irq() returns an error code, but the omap_hdq
+    driver ignores it and always returns -ENXIO. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    Notice that platform_get_irq() no longer returns 0 on error.
+    
+    Print error message and propagate the return value of
+    platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Evgeniy Polyakov <zbr@ioremap.net>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit c115a3178b1dfacd57b643934bb6bbbd1a9557f0
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 01:26:06 2017 -0500
+
+    ASoC: Intel: Atom: constify snd_soc_dai_ops structures
+    
+    These structures are only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 82e2b1e081906d3d86c4597250ab2939b209079f
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 13 01:16:46 2017 -0500
+
+    ASoC: Intel: Skylake: constify snd_soc_dai_ops structures
+    
+    These structures are only stored in the ops field of a snd_soc_dai_driver
+    structure. That field is declared const, so snd_soc_dai_ops structures
+    that have this property can be declared as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 90982dcdda4f0163bc5e53f49301e155c2cd8547
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Sun Jul 16 21:12:49 2017 -0500
+
+    ASoC: au1x: psc-i2s: constify dev_pm_ops structure
+    
+    This dev_pm_ops structure is only stored in the pm field of a
+    device_driver structure. This field is declared const, so
+    dev_pm_ops structures that have this property can be declared
+    as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit da61a11823395c87db0471d8d54055fa5a961688
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Sun Jul 16 21:12:39 2017 -0500
+
+    ASoC: psc-ac97: constify dev_pm_ops structure
+    
+    This dev_pm_ops structure is only stored in the pm field of a
+    device_driver structure. This field is declared const, so
+    dev_pm_ops structures that have this property can be declared
+    as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 4b2983da22d30c53d778b2e5035dc347dc4b0037
+Author: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Date:   Sun Jul 16 21:12:21 2017 -0500
+
+    ASoC: fsi: constify dev_pm_ops structure
+    
+    This dev_pm_ops structure is only stored in the pm field of a
+    device_driver structure. This field is declared const, so
+    dev_pm_ops structures that have this property can be declared
+    as const also.
+    
+    Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 020e03b78312ab0df1fd3c4ea62e675724cd18cf
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 22:22:46 2017 -0500
+
+    usb: misc: ftdi-elan: compress return logic into one line
+    
+    Simplify return logic to avoid unnecessary variable declaration
+    and assignment.
+    
+    This issue was detected using Coccinelle and the following
+    semantic patch:
+    
+    @@
+    local idexpression ret;
+    expression e;
+    @@
+    
+    -ret =
+    +return
+         e;
+    -return ret;
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit e6f9e13b62bad739a9fc095e061dc9fc8cf4168c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 22:31:31 2017 -0500
+
+    usb: misc: sisusbvga: compress return logic into one line
+    
+    Simplify return logic to avoid unnecessary variable declaration
+    and assignment.
+    
+    These issues were detected using Coccinelle and the following
+    semantic patch:
+    
+    @@
+    local idexpression ret;
+    expression e;
+    @@
+    
+    -ret =
+    +return
+         e;
+    -return ret;
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit 992510f3b60d84ce098e6cfb00a70266bdfbc4c0
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 21:00:07 2017 -0500
+
+    usb: isp1760: compress return logic into one line
+    
+    Simplify return logic to avoid unnecessary variable assignment.
+    
+    This issue was detected using Coccinelle and the following
+    semantic patch:
+    
+    @@
+    local idexpression ret;
+    expression e;
+    @@
+    
+    -ret =
+    +return
+         e;
+    -return ret;
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit cfe267da9de756d15eab095358b0b122c57816a6
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 17:26:48 2017 -0500
+
+    ASoC: twl6040: fix error return code in twl6040_probe()
+    
+    platform_get_irq() returns an error code, but the twl6040
+    driver ignores it and always returns -EINVAL. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    Notice that platform_get_irq() no longer returns 0 on error.
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 27d30400c448264c1ac9434cb836de0c230af213
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 15:43:50 2017 -0500
+
+    ASoC: spear: fix error return code in spdif_in_probe()
+    
+    platform_get_irq() returns an error code, but the spdif_in driver
+    ignores it and always returns -EINVAL. This is not correct, and
+    prevents -EPROBE_DEFER from being propagated properly.
+    
+    Notice that platform_get_irq() no longer returns 0 on error:
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e330b9a6bb35dc7097a4f02cb1ae7b6f96df92af
+    
+    Print error message and propagate the return value of platform_get_irq
+    on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit e7b2e30a3f88b02b13a9bde05044142b38456004
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 16:46:33 2017 -0500
+
+    ASoC: kirkwood-i2s: fix error return code in kirkwood_i2s_dev_probe()
+    
+    platform_get_irq() returns an error code, but the kirkwood-i2s
+    driver ignores it and always returns -ENXIO. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    Notice that platform_get_irq() no longer returns 0 on error.
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 1999fd0610a8d680f8164a2ad02843b9d9d2dc7e
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 00:59:28 2017 -0500
+
+    mmc: mxcmmc: fix error return code in mxcmci_probe()
+    
+    platform_get_irq() returns an error code, but the mxcmmc driver
+    ignores it and always returns -EINVAL. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    
+    Print error message and propagate the return value of
+    platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+
+commit 6f2b9bdf1bab385bc88d05230f8a2a8bd40d8d48
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jun 28 08:55:15 2017 -0500
+
+    mmc: android-goldfish: remove logically dead code in goldfish_mmc_irq()
+    
+    Local variable transfer_error is assigned to a constant value and
+    it is never updated again.
+    
+    Remove this variable and the dead code it guards.
+    
+    Addresses-Coverity-ID: 1222110
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+
+commit 4a73bb48ded88adfc7180cb5a00a0b89dd41c7fb
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 00:45:59 2017 -0500
+
+    staging: ccree: use sizeof(*var) in kmalloc
+    
+    Fix the following checkpatch warning:
+    
+    CHECK: Prefer kmalloc(sizeof(*buff_mgr_handle)...)
+    over kmalloc(sizeof(struct buff_mgr_handle)...)
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Gilad Ben-Yossef <gilad@benyossef.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit 60ba7c7c26b8df3688a952cf4bcfbc8dcdafdb9b
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Sun Jul 9 00:43:37 2017 -0500
+
+    staging: ccree: remove unnecessary cast on kmalloc
+    
+    The assignment operator implicitly converts a void pointer to the type of the
+    pointer it is assigned to.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @@
+    expression * e;
+    expression arg1, arg2;
+    type T;
+    @@
+    
+    - e=(T*)
+    + e=
+    kmalloc(arg1, arg2);
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Gilad Ben-Yossef <gilad@benyossef.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit c95a05f9f359c895dc6bd63862923ceba059ef22
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue Jul 4 22:09:21 2017 -0500
+
+    cpufreq: speedstep: remove unnecessary static in speedstep_detect_chipset()
+    
+    Remove unnecessary static on local variable hostbridge.
+    Such variable is initialized before being used,
+    on every execution path throughout the function.
+    The static has no benefit and, removing it reduces
+    the code size.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @bad exists@
+    position p;
+    identifier x;
+    type T;
+    @@
+    
+    static T x@p;
+    ...
+    x = <+...x...+>
+    
+    @@
+    identifier x;
+    expression e;
+    type T;
+    position p != bad.p;
+    @@
+    
+    -static
+     T x@p;
+     ... when != x
+         when strict
+    ?x = e;
+    
+    In the following log you can see the difference in the code size. Also,
+    there is a significant difference in the bss segment. This log is the
+    output of the size command, before and after the code change:
+    
+    before:
+       text    data     bss     dec     hex filename
+       5084    3392     256    8732    221c drivers/cpufreq/speedstep-ich.o
+    
+    after:
+       text    data     bss     dec     hex filename
+       5062    3304     192    8558    216e drivers/cpufreq/speedstep-ich.o
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+    Acked-by: Dominik Brodowski <linux@dominikbrodowski.net>
+    Signed-off-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
+
+commit dbac61a3f2afac562efa51b0a196ed71b6b8d109
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon Jul 10 15:47:23 2017 -0700
+
+    mm/memory_hotplug.c: add NULL check to avoid potential NULL pointer dereference
+    
+    The NULL check at line 1226: if (!pgdat), implies that pointer pgdat
+    might be NULL.
+    
+    rollback_node_hotadd() dereferences this pointer.  Add NULL check to
+    avoid a potential NULL pointer dereference.
+    
+    Addresses-Coverity-ID: 1369133
+    Link: http://lkml.kernel.org/r/20170530212436.GA6195@embeddedgus
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+    Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
+
+commit 6f6e0b217a93011f8e11b9a2d5521a08fcf36990
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:58:33 2017 -0500
+
+    drm/rockchip: fix NULL check on devm_kzalloc() return value
+    
+    The right variable to check here is port, not dp.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @@
+    expression x;
+    identifier fld;
+    @@
+    
+    * x = devm_kzalloc(...);
+      ... when != x == NULL
+      x->fld
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Mark Yao <mark.yao@rock-chips.com>
+    Signed-off-by: Sean Paul <seanpaul@chromium.org>
+    Link: http://patchwork.freedesktop.org/patch/msgid/20170706215833.GA25411@embeddedgus
+
+commit 36d311bc1663f004529d2f870c1fc939d00c49f0
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 01:51:31 2017 -0500
+
+    iio: adc: rockchip_saradc: add NULL check on of_match_device() return value
+    
+    Check return value from call to of_match_device()
+    in order to prevent a NULL pointer dereference.
+    
+    In case of NULL print error message and return -ENODEV
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+
+commit 2f9aeeed92a2911e8f1ec89cf7f5c16b8d054fe5
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 01:46:30 2017 -0500
+
+    iio: adc: meson-saradc: add NULL check on of_match_device() return value
+    
+    Check return value from call to of_match_device()
+    in order to prevent a NULL pointer dereference.
+    
+    In case of NULL print error message and return -ENODEV
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+    Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+
+commit e8df760307830ca26cf380a9a4b36468a0352fa5
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 15:23:34 2017 -0500
+
+    net: ethernet: mediatek: remove useless code in mtk_probe()
+    
+    Remove useless local variables _match_, _soc_ and the code related.
+    
+    Notice that
+    
+    const struct of_device_id of_mtk_match[] = {
+            { .compatible = "mediatek,mt2701-eth" },
+            {},
+    };
+    
+    So match->data is NULL.
+    
+    Suggested-by: Andrew Lunn <andrew@lunn.ch>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit b77a5372076984d33731a8da0fd52fc718f62a23
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 17:19:02 2017 -0500
+
+    platform/x86: fujitsu-laptop: add NULL check on devm_kzalloc() return value
+    
+    Check return value from call to devm_kzalloc()
+    in order to prevent a NULL pointer dereference.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @@
+    expression x;
+    identifier fld;
+    @@
+    
+    * x = devm_kzalloc(...);
+      ... when != x == NULL
+      x->fld
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Jonathan Woithe <jwoithe@just42.net>
+    Signed-off-by: Darren Hart (VMware) <dvhart@infradead.org>
+
+commit ae1fbdff6dbcdfee9daee69fa1e7d26d1f31d1c7
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 17:17:35 2017 -0500
+
+    ASoC: imx-ssi: add check on platform_get_irq return value
+    
+    Check return value from call to platform_get_irq(),
+    so in case of failure print error message and propagate
+    the return value.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Nicolin Chen <nicoleotsuka@gmail.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit da2629684822091bf15c6c14d8e33b75dfce8637
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jul 6 16:49:18 2017 -0500
+
+    regulator: axp20x: add NULL check on devm_kzalloc() return value
+    
+    Check return value from call to devm_kzalloc()
+    in order to prevent a NULL pointer dereference.
+    
+    This issue was detected using Coccinelle and the following semantic patch:
+    
+    @@
+    expression x;
+    identifier fld;
+    @@
+    
+    * x = devm_kzalloc(...);
+      ... when != x == NULL
+      x->fld
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit e3b53b8a465133ce57f9722aab5617b8e0f9657f
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 00:36:10 2017 -0500
+
+    regulator: qcom_smd: add NULL check on of_match_device() return value
+    
+    Check return value from call to of_match_device()
+    in order to prevent a NULL pointer dereference.
+    
+    In case of NULL print error message and return.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 2f2472baa66ef9a6aa25124cb07679bbe613ceff
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jul 7 00:29:58 2017 -0500
+
+    regulator: qcom_rpm-regulator: add NULL check on of_match_device() return value
+    
+    Check return value from call to of_match_device()
+    in order to prevent a NULL pointer dereference.
+    
+    In case of NULL print error message and return.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mark Brown <broonie@kernel.org>
+
+commit 7b55033fbed07bad695ba744db3070c1cc351dc4
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed May 24 04:18:52 2017 -0500
+
+    mfd: wm831x-spi: Add NULL check before pointer dereference
+    
+    Add NULL check before dereferencing pointer of_id in order to avoid
+    a potential NULL pointer dereference.
+    
+    Addresses-Coverity-ID: 1408830
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Lee Jones <lee.jones@linaro.org>
+
+commit 800e54558b0f1444e480ad4eb8d4a774899875d8
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed May 24 04:26:23 2017 -0500
+
+    mfd: wm831x-i2c: Add NULL check before pointer dereference
+    
+    Add NULL check before dereferencing pointer of_id in order to avoid
+    a potential NULL pointer dereference.
+    
+    Addresses-Coverity-ID: 1408829
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Lee Jones <lee.jones@linaro.org>
+
+commit 9e578b37505018622dfafc40eed7cd78ff2af221
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon Jul 3 07:47:38 2017 -0500
+
+    PM / devfreq: tegra: fix error return code in tegra_devfreq_probe()
+    
+    platform_get_irq() returns an error code, but the tegra-devfreq
+    driver ignores it and always returns -ENODEV. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    
+    Notice that platform_get_irq() no longer returns 0 on error:
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e330b9a6bb35dc7097a4f02cb1ae7b6f96df92af
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: MyungJoo Ham <myungjoo.ham@samsung.com>
+
+commit da55b1ad4b29b6ab44d5dc8ea8306260246d2699
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon Jul 3 07:59:26 2017 -0500
+
+    PM / devfreq: rk3399_dmc: fix error return code in rk3399_dmcfreq_probe()
+    
+    platform_get_irq() returns an error code, but the rk3399_dmc
+    driver ignores it and always returns -EINVAL. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    
+    Notice that platform_get_irq() no longer returns 0 on error:
+    https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e330b9a6bb35dc7097a4f02cb1ae7b6f96df92af
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: MyungJoo Ham <myungjoo.ham@samsung.com>
+
+commit dd7d958ae9126b2d4a96e41340579049afebd2bf
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue Jul 4 17:47:23 2017 +0200
+
+    video: fbdev: aty: remove useless variable assignments in aty_var_to_crtc()
+    
+    Value assigned to variable vdisplay at line 990 is overwritten
+    at line 1039 before it can be used. Also, variable assignment
+    at line 987 is the same as at line 1039. This makes such
+    variable assignments useless.
+    
+    Remove these variable assignments and the code related.
+    
+    Addresses-Covertity-ID: 1226900
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+
+commit bf1b9ddf181d29ec91f87d9c52bcb551ccf04157
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 23 17:01:20 2017 -0500
+
+    x86: xen: remove unnecessary variable in xen_foreach_remap_area()
+    
+    Remove unnecessary variable mfn in function xen_foreach_remap_area() and,
+    refactor the code.
+    
+    Variable mfn at line 518:mfn = xen_remap_buf.mfns[i];
+    is only being used to store a value to be passed as
+    an argument to the xen_update_mem_tables() function.
+    This value can be passed directly, which makes variable
+    mfn unnecessary. Also, value assigned to variable mfn
+    at line 534:mfn = xen_remap_mfn; is never used.
+    
+    Addresses-Coverity-ID: 1260110
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Juergen Gross <jgross@suse.com>
+    Signed-off-by: Juergen Gross <jgross@suse.com>
+
+commit 7720113516eacd7b91272c2298b1b392ae1ae436
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 17:34:23 2017 -0500
+
+    ALSA: atmel: ac97c: fix error return code in atmel_ac97c_probe()
+    
+    platform_get_irq() returns an error code, but the ac97c
+    driver ignores it and always returns -ENXIO. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly.
+    Notice that platform_get_irq() no longer returns 0 on error.
+    
+    Print and propagate the return value of platform_get_irq on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Takashi Iwai <tiwai@suse.de>
+
+commit 1967158fff819b38f4e46763ca8df067b4b69f59
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 30 15:18:41 2017 -0500
+
+    ALSA: x86: fix error return code in hdmi_lpe_audio_probe()
+    
+    platform_get_irq() returns an error code, but the intel_hdmi_audio
+    driver ignores it and always returns -ENODEV. This is not correct,
+    and prevents -EPROBE_DEFER from being propagated properly. Also,
+    notice that platform_get_irq() no longer returns 0 on error.
+    
+    Print error message and propagate the return value of platform_get_irq
+    on failure.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Takashi Iwai <tiwai@suse.de>
+
+commit 72298e5c92c50edd8cb7cfda4519483ce65fa166
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 29 13:41:28 2017 -0500
+
+    sched/cputime: Refactor the cputime_adjust() code
+    
+    Address a Coverity false positive, which is caused by overly
+    convoluted code:
+    
+    Value assigned to variable 'utime' at line 619:utime = rtime;
+    is overwritten at line 642:utime = rtime - stime; before it
+    can be used. This makes such variable assignment useless.
+    
+    Remove this variable assignment and refactor the code related.
+    
+    Addresses-Coverity-ID: 1371643
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Cc: Frans Klaver <fransklaver@gmail.com>
+    Cc: Frederic Weisbecker <fweisbec@gmail.com>
+    Cc: Linus Torvalds <torvalds@linux-foundation.org>
+    Cc: Peter Zijlstra <peterz@infradead.org>
+    Cc: Rik van Riel <riel@redhat.com>
+    Cc: Stanislaw Gruszka <sgruszka@redhat.com>
+    Cc: Thomas Gleixner <tglx@linutronix.de>
+    Cc: Wanpeng Li <wanpeng.li@hotmail.com>
+    Link: http://lkml.kernel.org/r/20170629184128.GA5271@embeddedgus
+    Signed-off-by: Ingo Molnar <mingo@kernel.org>
+
+commit 059c98599b1ab1e2e479e1f4617948d4c2a32b84
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon Jun 26 18:06:19 2017 -0500
+
+    wl18xx: add checks on wl18xx_top_reg_write() return value
+    
+    Check return value from call to wl18xx_top_reg_write(),
+    so in case of error jump to goto label out and return.
+    
+    Also, remove unnecessary value check before goto label out.
+    
+    Addresses-Coverity-ID: 1226938
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+
+commit 6788a3832c706c541d8a8227076eddde47446c8a
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon Jun 26 18:26:58 2017 -0500
+
+    ath9k: remove useless variable assignment in ath_mci_intr()
+    
+    Value assigned to variable offset at line 551 is overwritten at line 562,
+    before it can be used. This makes such variable assignment useless.
+    
+    Addresses-Coverity-ID: 1226941
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Kalle Valo <kvalo@qca.qualcomm.com>
+
+commit c68bb0ef177bbcaba505ed492101095c613dafa6
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jun 21 09:22:15 2017 -0500
+
+    usb: musb: compress return logic into one line
+    
+    Simplify return logic to avoid unnecessary variable assignment.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Bin Liu <b-liu@ti.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit b3d930aaf74f8b248edd7cfe7f35caefeff785bd
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 23 19:37:00 2017 -0300
+
+    media: i2c: tvp5150: remove useless variable assignment in tvp5150_set_vbi()
+    
+    Value assigned to variable _type_ at line 678 is overwritten at line 688
+    before it can be used. This makes such variable assignment useless.
+    
+    Remove this variable assignment and fix some coding style issues.
+    
+    Addresses-Coverity-ID: 1226968
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit d83bc7b644004131185aaa875e52bdcc3cd5f031
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 22 01:22:47 2017 -0300
+
+    media: dvb-usb-v2: lmedm04: remove unnecessary variable in lme2510_stream_restart()
+    
+    Remove unnecessary variable _ret_ and refactor the code.
+    
+    Addresses-Coverity-ID: 1226934
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit dbe885a5dd86abc4bbcc72d17a6be4e92308c87f
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 22 00:20:59 2017 -0300
+
+    media: tuners: mxl5005s: remove useless variable assignments
+    
+    Values assigned to variables Fmax and Fmin at lines 2740 and 2741 are
+    overwritten at lines 2754 and 2755 before they can be used. This makes
+    such variable assignments useless.
+    
+    Addresses-Coverity-ID: 1226952
+    Addresses-Coverity-ID: 1226953
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 13c2bede49f996ca34a368dfe05be53d6b2ccc22
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 22 01:01:22 2017 -0300
+
+    media: radio: wl1273: add check on core->write() return value
+    
+    Check return value from call to core->write(), so in case of
+    error print error message, jump to goto label fail and eventually
+    return.
+    
+    Addresses-Coverity-ID: 1226943
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hansverk@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit ee514c7a2379385fcec363f2f5f8db4eb56bc48c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 22 17:05:35 2017 -0500
+
+    EDAC, pnd2: Return proper error value from apl_rd_reg()
+    
+    Add code comment to make it clear that the fall-through is intentional
+    and, OR ret with its previous value to avoid overwriting it so that
+    callers can check the correct return value.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Cc: Qiuxu Zhuo <qiuxu.zhuo@intel.com>
+    Cc: Tony Luck <tony.luck@intel.com>
+    Cc: linux-edac <linux-edac@vger.kernel.org>
+    Link: http://lkml.kernel.org/r/20170622220535.GA4896@embeddedgus
+    [ Massage a bit. ]
+    Signed-off-by: Borislav Petkov <bp@suse.de>
+
+commit 6f874bafacf053b87887f4149fc117e2b1096138
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 30 15:43:07 2017 -0500
+
+    NFC: add NULL checks to avoid potential NULL pointer dereference
+    
+    NULL checks at line 457: if (!link0 || !link1) {, implies that both
+    pointers link0 and link1 might be NULL.
+    Function nfcsim_link_free() dereference pointers link0 and link1.
+    Add NULL checks before calling nfcsim_link_free() to avoid a
+    potential NULL pointer dereference.
+    
+    Addresses-Coverity-ID: 1364857
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Samuel Ortiz <sameo@linux.intel.com>
+
+commit 03036184e9d4a5b2b42a70b66db9455808dd5da9
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue Jun 13 11:37:18 2017 -0500
+
+    nfc: nci: remove unnecessary null check
+    
+    Remove unnecessary NULL check for pointer conn_info.
+    conn_info is set in list_for_each_entry() using container_of(),
+    which is never NULL.
+    
+    Addresses-Coverity-ID: 1362349
+    Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Samuel Ortiz <sameo@linux.intel.com>
+
+commit 88c0530f65e622a96a431b63e3feb707303bc9fc
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 15 17:42:44 2017 -0300
+
+    [media] af9013: add check on af9013_wr_regs() return value
+    
+    Check return value from call to af9013_wr_regs(), so in case of
+    error print debug message and return.
+    
+    Addresses-Coverity-ID: 1227035
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Antti Palosaari <crope@iki.fi>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit c21e8b594c92eda3b04a31556277a9d72ca441b7
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 15 13:49:14 2017 -0300
+
+    [media] i2c: tc358743: remove useless variable assignment in tc358743_isr
+    
+    Remove useless variable assignment in function tc358743_isr().
+    
+    The value stored in variable _intstatus_ at line 1299 is
+    overwritten at line 1302, just before it can be used.
+    
+    Addresses-Coverity-ID: 1397678
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hansverk@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit c00a231ba053a9b0be8d512957b99395b92bc620
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu May 25 12:04:55 2017 -0500
+
+    mmc: bcm2835: fix potential null pointer dereferences
+    
+    Null check at line 1165: if (mrq->cmd), implies that mrq->cmd might
+    be NULL.
+    Add null checks before dereferencing pointer mrq->cmd in order to avoid
+    any potential NULL pointer dereference.
+    
+    Addresses-Coverity-ID: 1408740
+    Tested-by: Stefan Wahren <stefan.wahren@i2se.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+
+commit e4b0852798bc15ed1a3ed6768ef2c4d2a1cb7599
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue Jun 13 14:55:42 2017 -0500
+
+    tpm/tpm_atmel: remove unnecessary NULL check
+    
+    Remove unnecessary NULL check.
+    Pointer _chip_ cannot be NULL in this instance.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Jarkko Sakkinen <jarkko.sakkine@linux.intel.com>
+    Tested-by: Jarkko Sakkinen <jarkko.sakkine@linux.intel.com> (compilation)
+    Signed-off-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+
+commit 1492a3a7b27e78a51efda143f84ff9674acc8491
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 15 14:56:21 2017 -0500
+
+    atm: solos-pci: remove useless variable assignments
+    
+    Value assigned to variable _data32_ at lines 1254 and 1257 is
+    overwritten at line 1260 before it can be used. This makes
+    such variable assignments useless.
+    
+    Addresses-Coverity-ID: 1227049
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 9d7cdedd0fe514c294dbae8016cbee09d1d6231f
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jun 14 21:58:17 2017 -0500
+
+    net: s2io: remove useless variable in fill_rx_buffers
+    
+    Remove useless variable rxd_index and code related.
+    
+    Addresses-Coverity-ID: 1397691
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit acec3630155763c170c7ae6508cf973355464508
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri Jun 2 00:43:41 2017 -0300
+
+    [media] s3c-camif: fix arguments position in a function call
+    
+    Fix the position of arguments so camif->colorfx_cb, camif->colorfx_cr
+    are passed in proper order to the camif_hw_set_effect() function.
+    
+    Addresses-Coverity-ID: 1248800
+    Addresses-Coverity-ID: 1269141
+    
+    [s.nawrocki@samsung.com: edited commit message ]
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+    
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit c48c281e7236fc8769dd62e6b13ba090a546027d
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu Jun 8 22:24:30 2017 -0500
+
+    wlcore: spi: remove unnecessary variable
+    
+    Remove unnecessary variable and refactor the code.
+    
+    Addresses-Coverity-ID: 1365000
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+
+commit eb045e046d5b2aab7710f82c2e5fb1403c69332b
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon May 22 13:00:29 2017 -0500
+
+    scsi: hisi_sas: add null check before indirect pointer dereference
+    
+    Add null check before indirectly dereferencing pointer task->lldd_task
+    in statement u32 tag = slot->idx;
+    
+    Addresses-Coverity-ID: 1373843
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: John Garry <john.garry@huawei.com>
+    Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+
+commit fb418240ecbd721a1237da592c075993c1709955
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 9 16:46:04 2017 -0500
+
+    target: remove dead code
+    
+    Local variable _ret_ is assigned to a constant value and it is never
+    updated again. Remove this variable and the dead code it guards.
+    
+    Addresses-Coverity-ID: 140761
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Tyrel Datwyler <tyreld@linux.vnet.ibm.com>
+    Signed-off-by: Nicholas Bellinger <nab@linux-iscsi.org>
+
+commit 02417f47875c2a22d2a8c140c5b945c741005938
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed Jun 7 15:15:01 2017 -0500
+
+    mISDN: remove unnecessary variable assignments
+    
+    Remove unnecessary variable assignments.
+    
+    Addresses-Coverity-ID: 1226917
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit e1082d28721081858a51f6c0148a3c7603d9e65e
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed May 3 21:13:18 2017 -0300
+
+    [media] media: i2c: initialize scalar variables
+    
+    Initialize scalar variables _pid_ and _ver_ to avoid a possible misbehavior.
+    
+    Addresses-Coverity-ID: 1324239
+    Addresses-Coverity-ID: 1324240
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 2eeb329619a514b2d77a8ebd72f578dbe78bf52d
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed May 17 18:19:00 2017 -0300
+
+    [media] media: platform: coda: remove variable self assignment
+    
+    Remove variable self assignment.
+    
+    Addresses-Coverity-ID: 1408817
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com>
+    Signed-off-by: Mauro Carvalho Chehab <mchehab@s-opensource.com>
+
+commit 86276921a17ee3090749c9f38f57dcfb73733bd4
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon May 22 14:12:37 2017 -0500
+
+    drm/nouveau/kms/nv50: add null check before pointer dereference
+    
+    Add null check before dereferencing pointer asyc
+    
+    Addresses-Coverity-ID: 1397932
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Ben Skeggs <bskeggs@redhat.com>
+
+commit d38d7fdafaf89d1756f27e9b4054dd19a1d2f545
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon May 22 13:30:15 2017 -0500
+
+    RDMA/qedr: add null check before pointer dereference
+    
+    Add null check before dereferencing pointer sgid_attr.ndev
+    inside function rdma_vlan_dev_vlan_id().
+    
+    Addresses-Coverity-ID: 1373979
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Ram Amrani <Ram.Amrani@cavium.com>
+    Signed-off-by: Doug Ledford <dledford@redhat.com>
+
+commit e80bd98d1ff011beec872a8ebbb73930507d6a13
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu May 18 13:11:17 2017 -0500
+
+    RDMA/i40iw: fix duplicated code for different branches
+    
+    Refactor code to avoid identical code for different branches.
+    
+    Addresses-Coverity-ID: 1357356
+    Reviewed-by: Yuval Shaia <yuval.shaia@oracle.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Shiraz Saleem <shiraz.saleem@intel.com>
+    Signed-off-by: Doug Ledford <dledford@redhat.com>
+
+commit e6ef6a77f51e403a1400241b9d029ecaba45a834
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 23 10:09:28 2017 -0500
+
+    scsi: lpfc: prevent potential null pointer dereference
+    
+    Null check at line 966: if (ndlp) {, implies that ndlp might be NULL.
+    Functions lpfc_nlp_set_state() and lpfc_issue_els_prli() dereference
+    pointer ndlp. Include these function calls inside the IF block that
+    tests pointer ndlp.
+    
+    Addresses-Coverity-ID: 1401856
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: James Smart <james.smart@broadcom.com>
+    Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+
+commit 06d2d6431bc8d41ef5ffd8bd4b52cea9f72aed22
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 30 17:38:43 2017 -0500
+
+    net: freescale: fix potential null pointer dereference
+    
+    Add NULL check before dereferencing pointer _id_ in order to avoid
+    a potential NULL pointer dereference.
+    
+    Addresses-Coverity-ID: 1397995
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 65d786c21bf8140dac83563306f46fe0b13a9aaa
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 23 18:18:37 2017 -0500
+
+    net: fix potential null pointer dereference
+    
+    Add null check to avoid a potential null pointer dereference.
+    
+    Addresses-Coverity-ID: 1408831
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Pablo Neira Ayuso <pablo@netfilter.org>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 7f7c3cde613d15bbd6179dc56a96c2de5d0b51c8
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri May 19 03:22:41 2017 -0500
+
+    uwb: i1480: add missing goto
+    
+    Add missing goto.
+    
+    Addresses-Coverity-ID: 1226913
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit 7dab5467647be42736dcabcd5d035c7b571f4653
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 23 13:11:47 2017 -0500
+
+    net: ieee802154: fix potential null pointer dereference
+    
+    Null check at line 918: if (!spi) {, implies spi might be NULL.
+    Function spi_get_drvdata() dereference pointer spi.
+    Move pointer priv assignment after the null check.
+    
+    Addresses-Coverity-ID: 1408888
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Marcel Holtmann <marcel@holtmann.org>
+
+commit 8c1f20815231edf1ed2b7133ea07ea94ca31db05
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Fri May 19 11:54:00 2017 +0300
+
+    ath10k: remove unnecessary code
+    
+    The array fields in struct wmi_start_scan_arg that are checked here are
+    fixed size arrays so they can never be NULL.
+    
+    Addresses-Coverity-ID: 1260031
+    Cc: Arend Van Spriel <arend.vanspriel@broadcom.com>
+    Cc: Kalle Valo <kvalo@qca.qualcomm.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Kalle Valo <kvalo@qca.qualcomm.com>
+
+commit 641c1f4ab7f62278a3a08c0861725ba21a53e5d5
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 9 08:04:30 2017 -0500
+
+    ath9k: remove unnecessary code
+    
+    The array field eeprom_data in struct th9k_platform_data
+    is a fixed size array so it can never be NULL.
+    
+    Addresses-Coverity-ID: 1364903
+    Cc: Arend Van Spriel <arend.vanspriel@broadcom.com>
+    Cc: Kalle Valo <kvalo@qca.qualcomm.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Kalle Valo <kvalo@qca.qualcomm.com>
+
+commit 53e720f332d546dee5a98a55f6e532355727bc4d
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 2 11:37:22 2017 -0500
+
+    usb: gadget: udc: add null check before pointer dereference
+    
+    Add null check before dereferencing dev->regs pointer inside
+    net2280_led_shutdown() function.
+    
+    Addresses-Coverity-ID: 101783
+    Acked-by: Alan Stern <stern@rowland.harvard.edu>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Felipe Balbi <felipe.balbi@linux.intel.com>
+
+commit 2aa3add0cc8f4b937062f33332297486c95ae966
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 2 11:09:11 2017 -0500
+
+    usb: host: remove unnecessary null check
+    
+    Remove unnecessary null check. udev->tt cannot ever be NULL when this
+    section of code runs.
+    
+    Addresses-Coverity-ID: 100828
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Alan Stern <stern@rowland.harvard.edu>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit dd6e1f71b785a6ac2511e2ddb86315f292873e59
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu May 11 17:24:44 2017 -0500
+
+    scsi: libfc: fix incorrect variable assignment
+    
+    Previous assignment was causing the use of the uninitialized variable
+    _explan_ inside fc_seq_ls_rjt() function, which in this particular case
+    is being called by fc_seq_els_rsp_send().
+    
+    [mkp: fixed typo]
+    
+    Addresses-Coverity-ID: 1398125
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Reviewed-by: Ewan D. Milne <emilne@redhat.com>
+    Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+
+commit efd38b68c7472728e18861b2cfd02432a60fc39f
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon May 15 17:00:28 2017 -0500
+
+    gpu: drm: i915: compress logic into one line
+    
+    Simplify logic to avoid unnecessary variable declaration and assignment.
+    
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+    Link: http://patchwork.freedesktop.org/patch/msgid/20170515220028.GA15149@embeddedgus
+
+commit cbaa331504d16489c8b207da960351e7b0afb3e2
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Mon May 15 16:56:05 2017 -0500
+
+    gpu: drm: i915: remove dead code
+    
+    Local variable has_reduced_clock is assigned to a constant value and it is
+    never updated again. Remove this variable and the dead code it guards.
+    
+    Addresses-Coverity-ID: 1362230
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+    Link: http://patchwork.freedesktop.org/patch/msgid/20170515215605.GA14963@embeddedgus
+
+commit 2d4456c73a487abe53863e10641c2f73537edf5c
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu May 11 10:27:35 2017 -0500
+
+    block: xen-blkback: add null check to avoid null pointer dereference
+    
+    Add null check before calling xen_blkif_put() to avoid potential
+    null pointer dereference.
+    
+    Addresses-Coverity-ID: 1350942
+    Cc: Juergen Gross <jgross@suse.com>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+
+commit 3f514c35c04754337fc519e2ac10e518d9a0dcdd
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed May 10 23:27:40 2017 -0500
+
+    staging: lustre: ptlrpc: remove unnecessary code
+    
+    offset is an unsigned variable and, greater-than-or-equal-to-zero
+    comparison of an unsigned variable is always true.
+    
+    Addresses-Coverity-ID: 1373919
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+commit 9fc3e4dc67fde953fd26adb3cea8f92597810b64
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Thu May 11 22:11:29 2017 -0500
+
+    net: dsa: mv88e6xxx: add default case to switch
+    
+    Add default case to switch in order to avoid any chance of using an
+    uninitialized variable _low_, in case s->type does not match any of
+    the listed case values.
+    
+    Addresses-Coverity-ID: 1398130
+    Suggested-by: Andrew Lunn <andrew@lunn.ch>
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: David S. Miller <davem@davemloft.net>
+
+commit 94d7fb4982d2145c5784e33fa973ffb9ebb086ac
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Tue May 9 10:22:21 2017 -0500
+
+    gpu: drm: gma500: remove dead code
+    
+    Local variable use_gct is assigned to a constant value and it is never
+    updated again. Remove this variable and the dead code it guards.
+    
+    Addresses-Coverity-ID: 145690
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Signed-off-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+    Link: http://patchwork.freedesktop.org/patch/msgid/20170509152221.GA7618@embeddedgus
+
+commit 87ea6bdd8da88842a8247921f58ca495b4da79ef
+Author: Gustavo A. R. Silva <garsilva@embeddedor.com>
+Date:   Wed May 3 14:17:55 2017 -0500
+
+    scsi: qedf: properly update arguments position in function call
+    
+    Properly update the position of the arguments in function call.
+    
+    Addresses-Coverity-ID: 1402010
+    Signed-off-by: Gustavo A. R. Silva <garsilva@embeddedor.com>
+    Acked-by: Chad Dupuis <chad.dupuis@cavium.com>
+    Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>

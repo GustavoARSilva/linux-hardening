@@ -1,0 +1,213 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ NULL pointer dereferences ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1350942 Dereference after null check            Block                   Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2d4456c73a487abe53863e10641c2f73537edf5c
+100828  Dereference after null check            Drivers-USB             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2aa3add0cc8f4b937062f33332297486c95ae966
+101783  Dereference after null check            Drivers-USB             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=53e720f332d546dee5a98a55f6e532355727bc4d
+1408888 Dereference before null check           Drivers-Net             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7dab5467647be42736dcabcd5d035c7b571f4653
+1408831 Dereference null return value           Drivers-Net             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=65d786c21bf8140dac83563306f46fe0b13a9aaa
+1397995 Dereference null return value           Drivers-Ethernet        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=06d2d6431bc8d41ef5ffd8bd4b52cea9f72aed22
+1401856 Dereference null return value           SCSI-lpfc               Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e6ef6a77f51e403a1400241b9d029ecaba45a834
+1408740 Dereference after null check            Drivers-MMC             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c00a231ba053a9b0be8d512957b99395b92bc620
+1362349 Dereference before null check           Net-NFC                 Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=03036184e9d4a5b2b42a70b66db9455808dd5da9
+1364857 Dereference after null check            Drivers-NFC             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6f874bafacf053b87887f4149fc117e2b1096138
+1373979 Dereference before null check           Drivers-Infiniband      Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d38d7fdafaf89d1756f27e9b4054dd19a1d2f545
+1397932 Explicit null dereference               GPU-Nouveau             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=86276921a17ee3090749c9f38f57dcfb73733bd4
+1373843 Dereference after null check            Drivers-SCSI            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eb045e046d5b2aab7710f82c2e5fb1403c69332b
+1397646 Dereference before null check           Drivers-char            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e4b0852798bc15ed1a3ed6768ef2c4d2a1cb7599
+1408829 Dereference null return value           Drivers-MFD             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=800e54558b0f1444e480ad4eb8d4a774899875d8
+1408830 Dereference null return value           Drivers-MFD             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7b55033fbed07bad695ba744db3070c1cc351dc4
+1369133 Various                                 MM                      Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dbac61a3f2afac562efa51b0a196ed71b6b8d109
+NA      Missing NULL check on return value      Drivers-platform-x86    Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b77a5372076984d33731a8da0fd52fc718f62a23
+NA      Missing NULL check on return value      GPU-DRM                 Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6f6e0b217a93011f8e11b9a2d5521a08fcf36990
+NA      Missing NULL check on return value      Drivers-HID             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=929b60a85b731d803f2b7829149496479eba0b20
+NA      Missing NULL check on return value      Drivers-Crypto          Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c6090480b27ac7148bf4087f2112ed9c05f34c2b
+NA      Missing NULL check on return value      Drivers-IIO             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2f9aeeed92a2911e8f1ec89cf7f5c16b8d054fe5
+NA      Missing NULL check on return value      Drivers-IIO             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=36d311bc1663f004529d2f870c1fc939d00c49f0
+NA      Missing NULL check on return value      Drivers-Regulator       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2f2472baa66ef9a6aa25124cb07679bbe613ceff
+NA      Missing NULL check on return value      Drivers-Regulator       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e3b53b8a465133ce57f9722aab5617b8e0f9657f
+NA      Missing NULL check on return value      Drivers-Regulator       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=da2629684822091bf15c6c14d8e33b75dfce8637
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ API usage errors ///////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	-----------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1402010	Arguments in wrong order		Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=87ea6bdd8da88842a8247921f58ca495b4da79ef
+1248800	Arguments in wrong order		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=acec3630155763c170c7ae6508cf973355464508
+1269141	Arguments in wrong order		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=acec3630155763c170c7ae6508cf973355464508
+1351047	Arguments in wrong order		Drivers-Infiniband	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=28b5b3a23ba67970f4f534b15c4e4d687136605a
+NA	Ignored error return code		Sound-x86		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1967158fff819b38f4e46763ca8df067b4b69f59
+NA	Ignored error return code		Sound-Atmel		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7720113516eacd7b91272c2298b1b392ae1ae436
+NA	Ignored error return code		Drivers-Devfreq		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=da55b1ad4b29b6ab44d5dc8ea8306260246d2699
+NA	Ignored error return code		Drivers-Devfreq		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9e578b37505018622dfafc40eed7cd78ff2af221	
+NA	Ignored error return code		Drivers-W1		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c89876dda01841a6a485cb29b9d1843db34958a3
+NA	Ignored error return code		Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0a7d710de12a2a9bad195edc318729e0ebdcc512
+NA	Ignored error return code		Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5a19dc5bde0819886093c9d42b0424405a343516
+NA	Ignored error return code		Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=62c58f8d6883e06e113d4a8f22c37143931e8857
+NA	Ignored error return code		Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=3822c331c5be580d8f9f65bdd6c0c187e0c5b503
+NA	Ignored error return code		Drivers-MMC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1999fd0610a8d680f8164a2ad02843b9d9d2dc7e
+NA      Ignored error return code		ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e7b2e30a3f88b02b13a9bde05044142b38456004
+NA      Ignored error return code		ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=27d30400c448264c1ac9434cb836de0c230af213
+NA      Ignored error return code		ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=cfe267da9de756d15eab095358b0b122c57816a6
+NA	Ignored error return code		ALSA-Soc		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ae1fbdff6dbcdfee9daee69fa1e7d26d1f31d1c7
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Code maintainability issues ////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1226913 Unused value                            Drivers-UWB             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7f7c3cde613d15bbd6179dc56a96c2de5d0b51c8
+1397678 Unused value                            Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c21e8b594c92eda3b04a31556277a9d72ca441b7
+1227035 Unused value                            Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=88c0530f65e622a96a431b63e3feb707303bc9fc
+1226941 Unused value                            WIFI-Atheros            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6788a3832c706c541d8a8227076eddde47446c8a
+1226938 Unused value                            WIFI-TI                 Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=059c98599b1ab1e2e479e1f4617948d4c2a32b84
+1371643 Unused value                            Kernel                  Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=72298e5c92c50edd8cb7cfda4519483ce65fa166
+1226917 Unused value                            Drivers-ISDN            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=02417f47875c2a22d2a8c140c5b945c741005938
+1365000 Unused value                            WIFI-TI                 Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c48c281e7236fc8769dd62e6b13ba090a546027d
+1397691 Unused value                            Ethernet-Neterion       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9d7cdedd0fe514c294dbae8016cbee09d1d6231f
+1227049 Unused value                            Drivers-ATM             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1492a3a7b27e78a51efda143f84ff9674acc8491
+1403730 Unused value                            Drivers-EDAC            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ee514c7a2379385fcec363f2f5f8db4eb56bc48c
+1260110 Unused value                            Arch-x86                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=bf1b9ddf181d29ec91f87d9c52bcb551ccf04157
+1226900 Unused value                            Drivers-Framebuffer     Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dd7d958ae9126b2d4a96e41340579049afebd2bf
+NA      Unused code                             Ethernet-Mediatek       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e8df760307830ca26cf380a9a4b36468a0352fa5
+NA      Unnecessary static on local variable    Drivers-Xen             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=039937308e55fba152a40e5d729a43731f56acab
+NA      Unnecessary static on local variable    Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6ad33dec835693e38c1994cedbd3c404782e84fb
+NA      Unnecessary static on local variable    WIFI-Cisco              Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=06548fbb609d54fd8c03dd4cdad1059ddb44378c
+NA      Unused code                             WIFI-Realtek            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f55dda4bded9d2042d296b9215bf6453f7411a0d
+NA      Unused code                             Ethernet-Dec            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=648e8b86d0ae01bd5a61df2d776b70ed8b96e2b8
+NA      Unnecessary static on local variable    Ethernet-Qlogic         Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=048578a1954f6c473ba12c9b4519e8dce4a4549b
+NA      Unused code                             Ethernet-Mediatek       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f03b06f3bae893d0f4fbe7c41adc1d45016bb974
+NA      Unnecessary static on local variable    Ethernet-Cavium         Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=93fe07e52ea1218a78f3886d23479958e14a0eea
+NA      Unnecessary static on local variable    Ethernet-Cavium         Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=eb2b98742641ae544fd16311055789ab7cac62aa
+NA      Unnecessary static on local variable    Drivers-Bluetooth       Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1d609dd32cd209f4643c7fd450f19d114cec0de7
+NA      Unused code                             Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=488e27ad81f76a2664fb33c06b6da846605adad2
+1226951 Unused value                            Drivers-Infiniband      Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f201777a5382e0a4152342365e928c1de99815ad
+NA      Unnecessary static on local variable    Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=281643a2ad7a82ee6588f5f95b6153bb38e6640c
+NA      Unnecessary static on local variable    ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=32e1b60d8f91be932c4a624d4153224895b65ec7
+NA      Unnecessary static on local variable    Drivers-Clk             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c8108cf2c0c8fd1c1f0bef34b4a31d567488e171
+NA      Unnecessary static on local variable    Drivers-CPUfreq         Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c95a05f9f359c895dc6bd63862923ceba059ef22
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Constification ////////////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f3ab729c14ab8f0a542107a3aea4d60fd944bc1e
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9c91e706050fd22edde98ea1794d326cb9ceaf71
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=7e645125a88b4fd5611fc09a2800e71b34963580
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0169daec966598859fb5cd76f11a7a720e721f89
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=62c11a541a50b0c53e80f1382e06c1f8b9379304
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b0a4ceddfc3f49226ada4b17394e900c056bb790
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f5d7232977ae8ec9576049f07f1a50c276216295
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=94e8f761d3ba4012fa75a6d66fe3d9cf76d08628
+NA      constify vb2_ops structure              Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fda7e347239343349fcce30be723ebf1290f34c9
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8d08a4c1aae8857c46079d329023753611218518
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=830a45a2f44852fb7e1b49f95c7c5703816d9d94
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=19779f40520104423ec34581623f032affa08579
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ea925e4db10467fd9dceaac66817c8582c1f2c66
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8e10fd851cb3e9723786703e3db45a2320b33a0e
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a76f094a47aca13ea1666297f138c2e66c605d5b
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=053aa4a8339c4f271f9f667e637b8c7f015cb95b
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=28e83542cd8cac67ebea9b29a3b18941739aa178
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c51df136e5d12dc50954ed454f90b5df718f299d
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6ac8b81ec996228e41a8bb1f14450adf8b697913
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=618e8aac3d7ccbf49b170181a6f3a418ba6e5419
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=3c13978ead17b7421b0d6dc76d2db9dc12fc1844
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e46ab9dc4a2bffad9f49123136b22f6eec88a82c
+NA      constify i2c_algorithm structure        Drivers-Media           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=62055056da6a722ab770d45bad63ed41dfb4f283
+NA      constify snd_pcm_ops structure          Drivers-Staging         Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a4400dfdbd789398455cf1c84ee1d7e20f649357
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=583ac685986963737997d0f6df569a3daab9c097
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fe49cd980fc15cbb7eeb8d1a4ef45a14b807b55d
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=06305d72796076b09495daa4398a43ddb68a6caa
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5d29e95eec1451d35ef6ce5b851fbc8b04f82d39
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=29a22ebfa4c44bf96b3d00d90b5e3b8128d8a162
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=94372fceb2fb5d3d05d6db61c9658865d5e27ee4
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=549acff975c9245ea8d469c0defa50e52489227c
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=cb7534437956650ab0dcebf7a7b4795eb904d22a
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=45d059a33aa48cb19a5ff589f71abcc4de4a8fbf
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=171dd51655b11331928dd39ff0e51a516e41424d
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4d2c7e09a5c8ea3b20748c2942b6a686dced34ab
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=72a63c6e78887f5c2063ce147b57fdfecf366e0e
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6ccf3a6d031c47d6319cb56ee35dd4b546905e91
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f1d68ea36f4fe97ed1de8d40eaa43758b8386c29
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=af2f010e0f12fdeb26fce502adf4b353daeb302c
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=dfcfd4b68a551b7038e046040dac2a467f5efd10
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9894dbafb6f864207f9e6aeaca2c8de949955651
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a9689bb890ce633c3015ed51e4e2c6ee320fe4dc
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=df9401b47c346480e1c1068f12c1cd32e45809f1
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fcf005a645e6855d68f98b9455f6b47ac2ed161c
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=61b3b3cc68c4161ba202f401a6572250360ff18c
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=73a995ca90544914a97ed33a4f7baef44ad110d0
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=86464ef83af934b7e489c4e100d0136319794010
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=82e2b1e081906d3d86c4597250ab2939b209079f
+NA      constify snd_soc_dai_ops structure      ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c115a3178b1dfacd57b643934bb6bbbd1a9557f0
+NA      constify dev_pm_ops structure           ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4b2983da22d30c53d778b2e5035dc347dc4b0037
+NA      constify dev_pm_ops structure           ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=da61a11823395c87db0471d8d54055fa5a961688
+NA      constify dev_pm_ops structure           ALSA-SoC                Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=90982dcdda4f0163bc5e53f49301e155c2cd8547
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Control flow issues /////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+145690	'Constant' variable guards dead code	GPU-GMA500		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=94d7fb4982d2145c5784e33fa973ffb9ebb086ac
+1362230	'Constant' variable guards dead code	GPU-i915		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=cbaa331504d16489c8b207da960351e7b0afb3e2
+140761	'Constant' variable guards dead code	Drivers-target		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fb418240ecbd721a1237da592c075993c1709955
+1403728	Missing break in switch			Drivers-EDAC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ee514c7a2379385fcec363f2f5f8db4eb56bc48c
+1222110	'Constant' variable guards dead code	Drivers-MMC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6f2b9bdf1bab385bc88d05230f8a2a8bd40d8d48
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Uninitialized variables /////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1398130	Uninitialized scalar variable		Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9fc3e4dc67fde953fd26adb3cea8f92597810b64
+1398125	Uninitialized scalar variable		Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dd6e1f71b785a6ac2511e2ddb86315f292873e59	
+1324239	Uninitialized scalar variable		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e1082d28721081858a51f6c0148a3c7603d9e65e
+1324240	Uninitialized scalar variable		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e1082d28721081858a51f6c0148a3c7603d9e65e
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Incorrect expression ///////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1364903	Array compared against 0		WIFI-Atheros		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=641c1f4ab7f62278a3a08c0861725ba21a53e5d5
+1260031	Array compared against 0		WIFI-Atheros		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8c1f20815231edf1ed2b7133ea07ea94ca31db05
+1357356	Identical code for different branches	Drivers-Infiniband	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e80bd98d1ff011beec872a8ebbb73930507d6a13
+1408817	Self assignment				Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2eeb329619a514b2d77a8ebd72f578dbe78bf52d
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Integer handling issues //////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1373919 Macro compares unsigned to 0            Staging-lustre          Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3f514c35c04754337fc519e2ac10e518d9a0dcdd
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Miscellaneous ////////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Code refactoring			GPU-i915		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=efd38b68c7472728e18861b2cfd02432a60fc39f
+NA	Code refactoring			Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c68bb0ef177bbcaba505ed492101095c613dafa6
+NA	Print error message on failure		Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=353ef083970812168dc0990e356e93e203b2cb92
+NA	Code refactoring			Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=734c58aefcc48f888e74fd082a0a2eca167e8816
+NA	Print error message on failure		Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=28a2cc671989264844f989e09a7bb83398fd0dd4
+NA	Code refactoring			Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=992510f3b60d84ce098e6cfb00a70266bdfbc4c0
+NA	Code refactoring			Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e6f9e13b62bad739a9fc095e061dc9fc8cf4168c
+NA	Code refactoring			Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=020e03b78312ab0df1fd3c4ea62e675724cd18cf
+NA	Unnecessary cast on kmalloc		Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=60ba7c7c26b8df3688a952cf4bcfbc8dcdafdb9b	
+NA	Use sizeof(*var) in kmalloc		Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4a73bb48ded88adfc7180cb5a00a0b89dd41c7fb
+
+
+

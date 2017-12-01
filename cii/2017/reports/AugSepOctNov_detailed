@@ -1,0 +1,350 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ NULL pointer dereferences ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA      Missing NULL check on return value      Drivers-FPGA            Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=26ffca5ec406213da347cd3c5858d1414943caea
+NA      Missing NULL check on return value      Drivers-MTD	        Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=90cc62f3431b558ea10b0248e3ba85f656bf61f5
+NA      Missing NULL check on return value      Drivers-IIO	        Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=dd92d5ea20ef8a42be7aeda08c669c586c730451
+NA	Dereference before null check           GPU-DRM		        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3c2c42eb47f2e2272e0cc244751cd312e18d5142
+1461561	Dereference before null check           Net-Openvswitch	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b74912a2fdae9aadd20da502644aa8848c861954
+1461562	Dereference null return value           Net-Openvswitch	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b74912a2fdae9aadd20da502644aa8848c861954
+1462020	Dereference before null check           Drivers-Net	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=61c59355e0154a938b28710dfa6c1d8be2ddcefa
+NA	Dereference before null check           Drivers-SCSI	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=727535903bea924c4f73abb202c4b3e85fff0ca4
+NA	Dereference before null check           Drivers-DMA	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=62a277d43d47e74972de44d33bd3763e31992414
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ API usage errors ///////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	-----------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Ignored error return code		Drivers-SPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9a6b94796ae6feaf275ec6200e9b2964db208182
+NA	Ignored error return code		Drivers-SPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=ba8afe94723e9ba665aee9cca649fb2c80f7304c
+NA	Ignored error return code		Drivers-SPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=378da4a65f3a0390837b38145bb5d8c2d20c2cf7
+NA	Ignored error return code		Drivers-SPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=345fef75d7c55e63f7a109f7a26ff35718c5f028
+NA	Ignored error return code		Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=8e374f0add2dc153d270757a71de45a0ba7d7004
+NA	Ignored error return code		Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0ae99ecba7928c7bc66cf14d8a88f0b6ec9fc78e
+NA	Ignored error return code		Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=99dbff202e28ad1dadf55b058bcae7908678e963
+NA	Ignored error return code		Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=46edf52d08342b3dc1f9a61c5200ab8b1c0f5a37
+NA	Ignored error return code		Drivers-Clock		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5c23a558a65406cac472df07fd26a2688a42cad2
+NA	Ignored error return code		Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b24d10976e3c0a1217c956b45dfc6d6aa914ec8a
+NA	Ignored error return code		Drivers-platform-x86	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fe4e8d0910540db28e457ce792ae2b29ee66ab8a
+NA	Ignored error return code		Drivers-GPIO		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=ca1f3ae3154ad6d08caa740c99be0d86644a4e44
+NA	Ignored error return code		GPU-Host1x		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=7b2c63de20080c18d0de35b292ad61fc9bc8328e
+NA	Ignored error return code		Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a8e95f8a341097f64c5bc4a82af46050012fe43c
+NA	Ignored error return code		Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=7588f1ecc5f0c914e669d8afb6525f47cd1c4355
+NA	Ignored error return code		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2e6424ab852a24cac6d918f3ee002e57febe02c3
+NA	Ignored error return code		Drivers-PCI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a0d21ba120d2c7daae847633bb59a3c3375cc1d7
+NA	Ignored error return code		Drivers-MTD		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2192a8ddc11ad7f243bed44eef4add8e37a658fe
+NA	Ignored error return code		Drivers-MTD		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=238709b22097a16839078530e0a10812dde86f16
+NA	Ignored error return code		Drivers-TTY		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=ec085c5a51b768947ca481f90b66653e36b3c566
+NA	Ignored error return code		Drivers-MMC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f216c124dc769dfee14b445aec9e1c0b8852d7a2
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Code maintainability issues ////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA      Unnecessary static on local variable    Drivers-Crypto		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0588d8500b6e7a94242c442d24ad9a55d8ad8f34
+NA      Unnecessary static on local variable    Drivers-Crypto		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=22d96f04bb7498549ae7c130f03d7ea327744c5a
+NA      Unnecessary static on local variable    Drivers-Crypto		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=47f1241ec320302edb77d117302b1990178b449b
+NA      Unnecessary static on local variable    Drivers-Crypto		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=1ce5b2f348c0e016d6195ffb974f7fb98785c90a
+NA      Unnecessary static on local variable    Drivers-SoC		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=db86ab06161a1678bacd1e8daad03ae8b6b684bd
+NA      Unnecessary static on local variable    Drivers-Media		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6efa09436939ec10f966577f0f7fd706a8420693
+1226935 Unused value                            Drivers-SCSI            Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=44ed33e6c5d58342a9bc86172ad121c0687bb890
+1462262 Unused value                            Net-rxrpc		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=282ef4729195c8503f7101d574acfb5e7c8a8209
+1462263 Unused value                            Net-rxrpc		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=282ef4729195c8503f7101d574acfb5e7c8a8209
+1462264 Unused value                            Net-rxrpc		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=282ef4729195c8503f7101d574acfb5e7c8a8209
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Constification ////////////////////////////////////////
+
+CID     Type					Component               Status          Link
+------- ------------------------------------	--------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA      constify fb_fix_screeninfo structures   Drivers-Video           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=1ccca3feff42765d60d68cf36af096a37056bc3b
+NA      constify fb_var_screeninfo structures   Drivers-Video           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2d9e4e2bb58b59f80531dd6aca0999e5d3968822
+NA      constify fb_fix_screeninfo structures   Drivers-Video           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=40445365a43fff55b1c4d00b3ce2dbfdf77a34a7
+NA      constify fb_fix_screeninfo structures   Drivers-Video           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c9742729b3843a40640d07cdcdc336d0366b4343
+NA      constify dev_pm_ops structures		Drivers-Video           Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2ac17ef72c3b0b84a4ff952e9cac7284b3b77ecb
+NA      constify internal structures		Drivers-I2C		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=8dc0f8c73c54c9d1a7fe8188ef3e70123a960eaf
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fa39210d41dfb96f7612d912e52e308dd74c04c4
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3d9c25634a24926bd5551881fa4485c1c1dcf86e
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d3761023e7a45977491f99658e767afbfff4dac3
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=115fa3fa2792ef4b13110f4459b6041d04542cfd
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=75db1ba1593c6683922ad2af575c2bf079c19aeb
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=12cb90ba892ed62c469ec7c3e9c9547008946d05
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fe4f86affd43076b2b28da6eaf9341428ae94787
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=531bcf73083ac9ba01b2c2443429de6cd7e0ed69
+NA      constify gpio_chip structure		Drivers-Pinctrl		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=8939aa5f5164b51b7ebd269a0443c8cd222214c4
+NA      constify gpio_chip structure		Drivers-GPIO		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=1a20c3f8e8c28357b63829ae4b16a212a4a7ef31
+NA      constify watchdog_ops structure		Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5870ac753bce54ad0550851c65ebba1d7da890ef		
+NA      constify watchdog_ops structure		Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2211a8dce791f49a783959e8e81503e6ad67c70a
+NA      constify watchdog_ops structure		Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d7b16e75d40e579a58e31f751ac5bb44d2dfbeed
+NA      constify watchdog_ops structure		Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9215fc79521a05debba3ba67668caeb65d204cc7
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Control flow issues /////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1222110	'Constant' variable guards dead code	Drivers-MMC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0f77934ab8db9368e29f1cb050af25c244710471
+1357377	Missing break in switch			Drivers-IIO		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4e57562b4846e42cd1c2e556f0ece18c1154e116
+NA	Missing break in switch			Drivers-EDAC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a8e9b186f153a44690ad0363a56716e7077ad28c
+NA	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=1a2ace56cea2d752b212e198c5e70ff0c0f39b59
+NA	Mark expected switch fall-throughs	Drivers-CPUfreq		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9bc70e6919f8cab80d5b240493007e4cce85559c
+NA	Mark expected switch fall-throughs	Drivers-Bluetooth	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fac72b243cc789bb209e6eca824919b42d98cfe2
+NA	Mark expected switch fall-throughs	Drivers-ATM		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=ec0d0987f084cdaf7b7ff8bd8f9f946e29fb8d94
+NA	Mark expected switch fall-throughs	Net			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=bc28df6e8543d41abfb48d4a4c6d445638d6768c
+NA	Mark expected switch fall-throughs	Net-Decnet		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=86e58cce939cefd806105922e4a0840e9a04a88f
+115108	Mark expected switch fall-throughs	Net-IPv4		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fcfd6dfab97006d44c7db5d6c908eac383af6649
+NA	Mark expected switch fall-throughs	Net-IPv6		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=275757e6bae15a8621130907a78096afd1e15d2c
+NA	Mark expected switch fall-throughs	Net-IPX			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d4f4da3e13ae7a405fa1da11ff4070588e700445
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=96aff92b31e37a02d0679e5f1043a145bc148597
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=503764ec2643212f60a0029fb90e3373e1bd0c1e
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=7a6d76a9b4a50a7927f7ce61cee3cfbdfbfc3d47
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f85dff843ceee459ff9d0b99887a45555020ce3a
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=207f6b61bf2db1f77c8d4c9b08c36347c5c069a3
+1271166	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6efc6b8a608a1936dd57e9f54e59d684aae1c282
+1271167	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6efc6b8a608a1936dd57e9f54e59d684aae1c282
+1271168	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6efc6b8a608a1936dd57e9f54e59d684aae1c282
+1271169	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6efc6b8a608a1936dd57e9f54e59d684aae1c282
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=be7a34f4eda0fd542db5a242a0a197e0db8f5779
+1077598	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e2c32387691cc2a28d5a483c9cdd3cdb41c6928d
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d227bd400c8649a5bcc47568abbd039bd7b141b2
+1077604	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c8454682c71ad66f7307fad547d5f7c57d6d3bf0
+1077605	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c8454682c71ad66f7307fad547d5f7c57d6d3bf0
+1373894	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=40f0745bb38ef7964fca6591f744419a66f51966
+1077613	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fd5b9b83d8226a2e50ba7c01818ca4ee3dd7aa6b
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f67ffd615805166927e84b2b3438bde42bd57b62
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0cb7e343dec26a896d954419022c5ff1510d5aea
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=640019bba41942b7ee99385abe068e0f7c3e736d
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=7d2e2a881c2c96e82229faa69d3df2c622f01420
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=76ec4e8ed4040ce2d471211ac463bd73a3b92aa2
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=95f539b653f2be4e97c11f6acda1f99f819ce19f
+1364489	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=583d6a93a5d5fd81a61d8f077c166825f857d48f
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a14731129a1f5cb5f28494d5080a751d2ebd9511
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=ddb35ab8d9481f24e41e19439fe33b4daaf8012d
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a784e3ebddd3e7b8a6e651270a926638e362b101
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=116d8eea59b7c061a054af5d25b2ce79185f2773
+NA	Mark expected switch fall-throughs	Drivers-Staging		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=69ccc6240d635abedf0f099abf613d7f939c9fae
+NA	Mark expected switch fall-throughs	Net			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=48acc9e847ef335f7d3b62926825397c6bf4eab2
+NA	Mark expected switch fall-throughs	Net			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=be070c77ca805a4f06f135599415195078f0ed68
+NA	Mark expected switch fall-throughs	Drivers-GPIO		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e80df7b823bc3e59eaf93ec05bb701bbc7b6c586
+NA	Mark expected switch fall-throughs	Net			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e28101a37c3e6b74aeebe4a340636b1782deb830
+NA	Mark expected switch fall-throughs	Net-Openvswitch		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=279badc2a85be83e0187b8c566e3b476b76a87a2
+NA	Mark expected switch fall-throughs	Net-Rose		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a05b8c43ac3cc156600a60bf6dcd30109bd42a73
+NA	Mark expected switch fall-throughs	Net-Scheduler		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f3ae608edb3be2e9a3f668d47aced3553eaf6c14
+NA	Mark expected switch fall-throughs	Net			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=110af3acb8cfd79dcb5676a01e07cb2b6afa4c04
+NA	Mark expected switch fall-throughs	Net-x25			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0cea8e28df721f929ee3e1fa32489c012100f5a1
+NA	Mark expected switch fall-throughs	Drivers-ATA		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=05b83605992b3d6cd53f8d339842a3b4530ab6e8
+NA	Mark expected switch fall-throughs	Net-rxrpc		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e3cf39706b89001fd7f3eba0aa70aa40379eef30
+NA	Mark expected switch fall-throughs	Net-SMC			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=7f6b437e9b82a6d702a7f8f75c83ffdec6e03c54
+145713	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=457b16d4b6bb7705269306e43e25d88ffa52f8cb
+703128	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d4acce95ffd337eab84746762196d0599992792a
+1222118	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=58a636ec0362d99f4edaaad4f3c682bf124e799e
+1350962	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fdb5e4fa1aedb91d900cd7719a0bfb92b4122c53
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e4c6594dabe6de98754b2833c5591279b6820b2e
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3a851c0312964997cd1afc760e179e7ff0e189b3
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c2300cd67c9583c8084767dd4dac19287afc5498
+1397608	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0c63636440504f0f14cc3da5fb208eeb1598a840
+115014	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fe1f68a08fbffd8c84bf8e7f72d2d531a3fe8f50
+NA	Mark expected switch fall-throughs	Net-Netrom		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=31f74f0f4e8dfe5b30ff59d9a38a370fbb725f38
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=06211656233f76643e5b82c343b726457689bec1
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9c4c41bb4fd5d1365dfc94bf59400c619c23dc49
+115004	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0f8838a8a0738d74afecf6d198c083e259ee389e
+115005	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0f8838a8a0738d74afecf6d198c083e259ee389e
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=624916a95029d1aa44167cba1b4c28ef8d45740d
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f93de0c27e87ad3d28ddd094a46bbf294183a71e
+115006	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3ef598377d7653aaf53af31ec392c9e3122a9f3e
+115007	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3ef598377d7653aaf53af31ec392c9e3122a9f3e
+115016	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=685b2df48e8f3f01b646f5951188804dbed58298
+1162594	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4f4ee7d87989df17aaca80a2e2d62b15d3f3cacc
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f10f4715bd6e383ebe3f20ac060cb8beecca47dc
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c3a831aedb8d985c0424b47fb2b5b7dc7d5116e4
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=7d864999814e777fe083c2fd156112ccf9058882
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=1356cedd99aab15a60c4c4ade79e52c4b5200fdf
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f5a3908e88704397e213d46b352feccef36eb92c
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6ecbf2e9158586e9dde1286e6f5e03d7980d0ac3
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=8787971ec7d0632abc83082a4abd3518a79eac78
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=ff504f572cf8667414a44e88c06ea0d421b42566
+NA	Mark expected switch fall-throughs	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=098a006927b8843a335503aee2569c3f2b030cb6
+NA	Missing break in switch			Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=dc586a60a11d0260308db1bebe788ad8973e2729
+143119	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=21dce3f4643eb541c7058e37b89a44a573ac95f6
+143120	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=21dce3f4643eb541c7058e37b89a44a573ac95f6
+143121	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=21dce3f4643eb541c7058e37b89a44a573ac95f6
+143122	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=21dce3f4643eb541c7058e37b89a44a573ac95f6
+143123	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=21dce3f4643eb541c7058e37b89a44a573ac95f6
+143124	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=21dce3f4643eb541c7058e37b89a44a573ac95f6
+1260018	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d34ded7ece57782e75bf31bb145836b9f280750f
+1260019	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d34ded7ece57782e75bf31bb145836b9f280750f
+1260022	Mark expected switch fall-throughs	GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d34ded7ece57782e75bf31bb145836b9f280750f
+114780	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114781	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114782	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114783	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114784	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114785	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114786	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114787	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114788	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114789	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114790	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114791	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114792	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114793	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114794	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+114795	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+200521	Mark expected switch fall-throughs	Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5212dfa3ea591df2dc1520675622856ac0bb63e4
+NA	Mark expected switch fall-throughs	Crypto			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=59517226a35a4041e41d114d085846ac94ebfbf2
+NA	Mark expected switch fall-throughs	Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e3d062a6a27762f860b74f7723fa335115ccc880
+146562	Mark expected switch fall-throughs	Drivers-Xen		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5fa916f7ace1d4dd246ac3b5ebbe2800f7e1ac04
+146563	Mark expected switch fall-throughs	Drivers-Xen		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5fa916f7ace1d4dd246ac3b5ebbe2800f7e1ac04
+NA	Mark expected switch fall-throughs	Drivers-Xen		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3d8765d4f52a0050343bfa99a1a2aa5ef7d841e5
+114893	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114894	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114895	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114896	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114897	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114898	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114899	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114900	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114901	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114902	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114903	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114904	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+114905	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9525d69a36672f9505006b461fb5f7e8f580dfdd
+1397957	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=dc10622bb32f08383cf5a9942a91042d8f38bf3d
+146566	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a47043ec35d4198b3858cb1eb4c38d712154ae99
+1195220	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=09fc38c1af4cb888255e9ecf267bf9757c12885d
+115164	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=402954f8e573e4b610da6858b8431d4edfd754c8
+146568	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b0e92b515e2cbcad923ee1211f59c4b62e94ee37
+146569	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b0e92b515e2cbcad923ee1211f59c4b62e94ee37
+115168	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=cdf45e49adb2ba39e6e270717b86fe844e4c59c8
+402005	Mark expected switch fall-throughs	ALSA-SoC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9d94305a7df4ce6af5070baa92cc784786b748b9
+NA	Mark expected switch fall-throughs	Drivers-ACPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=1be9c3a0a03330c8e61db30d442b31522092c291
+NA	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f5ed28d318ac4b4a835892f69135701757e5aeab
+NA	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0101f48ae50d700becafbbba2c57005174c54658
+NA	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=8c152208685ad1b01efdf540ac4a1c155de3451d
+115025	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=826bb728796249d30b0e054c14b929c37afcb517
+115026	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=826bb728796249d30b0e054c14b929c37afcb517
+115027	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=826bb728796249d30b0e054c14b929c37afcb517
+115028	Mark expected switch fall-throughs	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=826bb728796249d30b0e054c14b929c37afcb517
+1398384	Structurally dead code			Wireless-RSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4775ae7afec62e6ae1bc1f99ab57db2a36b8807e
+114761	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c1b433e04ef9c0a1c4d65bfe918472ffa334dff4
+114762	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c1b433e04ef9c0a1c4d65bfe918472ffa334dff4
+114763	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=56c78bb32b2b1504a18f34e913fe0ccbf074ec21
+114764	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=56c78bb32b2b1504a18f34e913fe0ccbf074ec21
+114765	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=56c78bb32b2b1504a18f34e913fe0ccbf074ec21
+114766	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=56c78bb32b2b1504a18f34e913fe0ccbf074ec21
+114767	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=005161c864e1d0aedbbdac13ce75696b954d4e44
+114768	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=005161c864e1d0aedbbdac13ce75696b954d4e44
+114769	Mark expected switch fall-throughs	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=005161c864e1d0aedbbdac13ce75696b954d4e44
+1397972	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d9b9c0e027c93160c94dae07b6d29acc5cdd6d54
+1397960	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e4ec1384132ead18e972f1180e958aa0b69abd11
+114891	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=75d28f461ed700fe527312cc0a8b5de86d1c09c1
+114888	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0aa3b413f68dfe4c883c8164d152a1a03ce789bf
+114928	Mark expected switch fall-throughs	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a3e2ecbae0198e4cb9a63db5ac3131cbd58ec2b2
+115106	Mark expected switch fall-throughs	Net-DECNET		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2d919149686e2da001e58e8a2ed49a0200c9db78
+NA	Mark expected switch fall-throughs	Net-Ceph		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=18370b36b28a6c1b059392e9b8f9a80332e51e7c
+NA	Mark expected switch fall-throughs	MM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=c8402871d54a8e00016e040c1b8f5d31e96fcd94
+NA	Mark expected switch fall-throughs	MM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5b568acc3c2328f7d8da3cb03b4ef343f93545c6
+NA	Mark expected switch fall-throughs	Net-Sunrpc		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=e9d476393504ff0f9ab38d88d7857ec6a2c81ff6
+703509	Mark expected switch fall-throughs	FS-NFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fd53dde83978ba5f7db3183ce56b3a1c39f448b0
+703510	Mark expected switch fall-throughs	FS-NFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fd53dde83978ba5f7db3183ce56b3a1c39f448b0
+703511	Mark expected switch fall-throughs	FS-NFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fd53dde83978ba5f7db3183ce56b3a1c39f448b0
+703512	Mark expected switch fall-throughs	FS-NFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fd53dde83978ba5f7db3183ce56b3a1c39f448b0
+703513	Mark expected switch fall-throughs	FS-NFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=fd53dde83978ba5f7db3183ce56b3a1c39f448b0
+1462033	Mark expected switch fall-throughs	FS-AFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=6832795164d42413fd9ef991f9ef9b30a7248377
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=82b00ff843ff5a3fcf36e7c1340c3f6138f63e89
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=10ec46474fa4108e917a0c26fb8020096c965255
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=ac02a57dc29b58d386ddb68c471ce2ba63a52d41
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=76c77e8b7ef3362333efdff151cffc77bbc249f0
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=3c1ebc4f63ef1d250482bce1a88ce32253ae9a5e
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=e9061e79139cf447f3ed35faa1aecd572d63c2d4
+NA	Mark expected switch fall-throughs	Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=62e98fc5b01c10c9e5cd342557e6d0f313533d7a
+NA	Mark expected switch fall-throughs	Net-Netfilter		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=04ace5c078419ee581a079da280d18abc930ca00
+114988	Mark expected switch fall-throughs	Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=fed7ec571439a3c1322ceb7aa05aa1fddbf8f120
+114989	Mark expected switch fall-throughs	Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=fed7ec571439a3c1322ceb7aa05aa1fddbf8f120
+114990	Mark expected switch fall-throughs	Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=fed7ec571439a3c1322ceb7aa05aa1fddbf8f120
+114991	Mark expected switch fall-throughs	Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=fed7ec571439a3c1322ceb7aa05aa1fddbf8f120
+1397916	Logically dead code			Drivers-FPGA		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=5f76c6f313bffbf372c0722582e7bd509f0d3510
+1397912	Logically dead code			Drivers-FPGA		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=397f33cb0a7d60b3d061e70b66baee36a690351a
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Incorrect expression ///////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Identical code for different branches	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b5e7dc47425860172eec6e1116ace7759d13b999
+NA	Identical code for different branches	Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4db93fb8aca3e9e56987c0e873166bdf4b6576ce
+NA	Identical code for different branches	Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=db269932b97e8e7d2bc974dc6a63cb795ddd7e54
+NA	Identical code for different branches	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d527d1ea5d12aafbd0373b5e6547464c370ea18c
+1415177	Identical code for different branches	Drivers-Wireless	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=14cc696c0a4aac823e41b9c29d04d1936cbf969c
+1415317	Identical code for different branches	Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0de0ef6c3f2dd7e9965270683445917e10384ab0
+1226795	Identical code for different branches	Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=87c014867181c3ec6e20bf3e71db37939d1782c7
+1226762	Identical code for different branches	Drivers-Misc		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=234b7f8d3bf2738024b155b87303ed1218e620fa
+1248728	Identical code for different branches	Drivers-Wireles		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a9a65a6b2b69e51f453fe26eeba1e45a720bbb05
+1226761	Identical code for different branches	Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=d3e329b3156699bd85d1aa7a5f792cd38d6a5fd3
+1268783	Identical code for different branches	Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b4b138a9d31924cb9ab535138deb150d6ec418a5
+1268780	Identical code for different branches	Drivers-infiniband	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=f4e96c1a717176dc52843a41b549aaa9128279c2
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Program hangs ////////////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA	 Missing unlock				Staging-Media		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=9793e1d214dc62a2685fa33dd0dc59b7f5e838b6
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Memory - illegal accesses ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1415336	Use after free				Drivers-Thunderbolt	Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=a2e373438f72391493a4425efc1b82030b6b4fd5
+1417789	Read from pointer after free		Drivers-Net		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=39a4b86f0de4ce5024985a56fc39b16194b04313
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Integer handling issues //////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1462223 Operands don't affect result            Net-Openvswitch		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=2734166e89639c973c6e125ac8bcfc2d9db72b70
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Miscellaneous ////////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Remove unnecessary code			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b14bec89042ee6f9a43b437f8133cfcbea140f20
+NA	Code refactoring			Net-Core		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=058c8d59124193f46db4efa5abcd9d6d0f04c88e
+NA	Code refactoring			Net-IPv4		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=152854025528b30c5ca5113a443ead98c3f1e7a5
+NA	Code refactoring			Net-IPv4		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=49ca1943a7adb429b11b8e05d81bc821694b76c7
+NA	Code refactoring			Net-xfrm		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2fc5f83b92ba93f8f7119461d998bcdb1ac519ac
+NA	Code refactoring			Net-IPv6		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=eee12df5a0bd5769af5efb72fa95dd1f633a266c
+NA	Code refactoring			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4fa112f6b5fb055478e76f2b446673565d2ea35f
+NA	Code refactoring			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5bca178eed601cd4584c38c5290f7abbcacf3fb3
+NA	Use swap macro	 			Net-IPv6		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=74b6551b9f4106a3e69ab46e60b52a8947dcf60c
+NA	Use swap macro	 			Drivers-Media		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3fa013be95bb046490d3b11d546bf06d73c7e0e3
+NA	Use swap macro	 			Net-DECNET		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=68ad08c4f8ee6254ab814d15b9765f7f82ed0ae7
+NA	Use swap macro	 			Net-DECNET		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3a7943ba5b7763488753305fddb0a50e911e0617
+NA	Use swap macro	 			Net-DCCP		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=54df7ef51193641010a934c231c5aba117aea46d
+NA	Fix incorrect mask			Arch-MIPS		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=77238e76b9156d28d86c1e31c00ed2960df0e4de
+NA	Code refactoring			Net-Netrom		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4c31606920bab227de10d2c9bf9b4dd8d4327638
+NA	Use swap macro	 			Drivers-ISDN		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=28e8c1914a20d020893978b67a6d2c618756bc3f
+NA	Use swap macro	 			Drivers-Crypto		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=abfa2b377f752a13e6caaa8c6c4add6ab9b71ba8
+NA	Fix incorrect mask			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0be7fc7e08e7c6a5ec3837960d420e377380d1a8
+NA	Use swap macro	 			Drivers-SCSI		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=630378738f04a4a3112f98c49505e344ec8bd074
+NA	Use swap macro	 			Staging-Speakup		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=d69b9c3884bf9dceab7d971eaab7a89887b60378
+NA	Use swap macro	 			Drivers-MTD		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=b13a9735ae74d4fa9e4d53b4dcfdd779997c8e0e
+
+

@@ -1,0 +1,59 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ NULL pointer dereferences ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA	Dereference before null check           GPU-DRM		        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=89f3f35620c7f244880485de11079cb4d98ed604
+NA      Missing null check on return value      Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5a18c2434f8bfc8bc2fb0f8af3e44f7408d63e4f
+NA	Dereference before null check           Drivers-Media	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=baed3c4bc4c13de93e0dba0a26d601411ebcb389
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Control flow issues /////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1397962 Missing break in switch			Drivers-IIO		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9d793c1a7f25d75d5947022368dfcfa9f75d4412
+114988	Missing break in switch			Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2c7982364e05abaa709c0b69dd94c8b389f8ae13
+114989	Missing break in switch			Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2c7982364e05abaa709c0b69dd94c8b389f8ae13
+114990	Missing break in switch			Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2c7982364e05abaa709c0b69dd94c8b389f8ae13
+114991	Missing break in switch			Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2c7982364e05abaa709c0b69dd94c8b389f8ae13
+NA	Missing break in switch			NET-mac80211		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=02049ce27ef9d5ec0d74023a1487eb5c9bb38143
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=083ccebb564245d75e956eaa934bcfd0f0a21dea
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a9868bcc4f7c4eea9e1cf3431d46f29999227b35
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fd846b57a6b0b551cf7a31c301bd9705759ce825
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3d002ea611ad964c28d9a97ab500a0272deec776
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4d379727afd07fb901003e52673c3d705aa342f6
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e2af3092d05a814d670a045df983fcefb18e7c14
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=57b6d481f7a59c091b53a18c843d8631fa04f7eb
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=82c8b5c9774e64f8e1b9abec876fcfa8d8e3d791
+NA	Missing break in switch			Drivers-Watchdog	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=13983959e804691b09322c2c8d71cd94f365655f
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Memory - illegal accesses ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1462495	Negative array index read		GPU-i915		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=461bd6227ede277138bf33c2156b6ebd1fba04c2
+1462502	Out-of-bounds read			GPU-i915		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=461bd6227ede277138bf33c2156b6ebd1fba04c2
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Integer handling issues //////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1056806 Unintentional integer overflow Operands	Drivers-Media		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3ee6229f1a16ad80ac83f02614f46b70b7ecf666
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Code refactoring and Miscellaneous ////////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Use swap macro	 			Drivers-ath9k		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=626ab6707abe6cccc0cb26454d13b0efd72b8a6c
+NA	Use swap macro	 			Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f35cb48ef8d18afbd262db800508b8512f6c09ad
+NA	Use swap macro	 			GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=99676f20dc913672166ab3b22fe29c20a2c27a82
+NA	Use swap macro	 			GPU-DRM			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8aa111e34deedded58cd8576755f31659ba676f5
+NA	Fix inconsistent IS_ERR and PTR_ERR	Staging-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=13109fbc78018f0bdfd52b111d7c1443da650b78
+

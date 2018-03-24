@@ -1,0 +1,65 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ NULL pointer dereferences ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1401988	Dereference before null check           Drivers-devfreq	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=63f1e05f7fe9ca509c60154d6a833abf96eecdc9
+1463794	Dereference null return value           Drivers-GPU	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2e3dca53654ddc51bada4cee4ca32d0d266fc9dd
+1463772	Dereference null return value           Drivers-GPU	        Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2e3dca53654ddc51bada4cee4ca32d0d266fc9dd
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ API usage errors ///////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	-----------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Return booleans instead of integers	Net-Netfilter		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d384e65f1e752f2b52a8ef300aeb86b1d7a342a9
+NA	Return booleans instead of integers	Net-Bridge		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=03aaa9e2677ee25bb31fb9f54ea72b4dacbe0df8
+NA	Return booleans instead of integers	Net-SMC			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=a8fbf8e7ecda38d70a7983246fbadf04063f3843
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Control flow issues /////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Missing break in switch			Net-netfilter		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e8542dcec002b31339f7771441fd5dffb42223ae
+NA	Missing break in switch			Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=032cf9aa25a9fdb427a42f294223f31f340e8adb
+1463447	Missing break in switch			Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=46cd75036415d94e9cf451e6606a099945d54cc6
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Incorrect expression ///////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1427080	Useless call				Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=55448d85ae2f7f2b6c43d66946146ec89b4eb088
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Integer handling issues //////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1357588 Unintentional integer overflow		Net-ipv4		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e4823fbd229bfbba368b40cdadb8f4eeb20604cc
+1461563 Unintentional integer overflow		Net-Openvswitch		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5b7789e8fa8f353ad8f2c44de2385cb161b22d32
+1463959 Logical vs. bitwise operator		Drivers-SOC		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2a7157b137f6f4804fbd60e8734574373212105b
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Miscellaneous ////////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Use swap macro	 			Net-netfilter		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c0453377518d8dd30dcc07b5bdd9e29512ca9aca
+NA	Compress return logic into one line	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0cb5818a3b250de64e02592f4584f7c21d9566b8
+NA	Use true and false for boolean values	Net-XFRM		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=545d8ae7affff7fb4f8bfd327c7c7790056535c4
+NA	Use true and false for boolean values	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=32366fc9fe5a91c947e71616fb2b931442888fdd
+NA	Use true and false for boolean values	Drivers-Android		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=197410ad884eb18b31d48e9d8e64cb5a9e326f2f
+NA	Use true and false for boolean values	Drivers-Char		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9ff6576e124b1227c27c1da43fe5f8ee908263e0
+NA	Use true and false for boolean values	Drivers-i2c		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4be49b5d652e8b81ba8d019727ebd8cafd7ab4ac
+NA	Use true and false for boolean values	Drivers-Macintosh	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=516c32f64f144721ca05b881737e4425932827c5
+NA	Use true and false for boolean values	Drivers-GPU		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=c2925bde829a748265a69aef128f0a88d82cb689
+NA	Use ARRAY_SIZE macro			Drivers-GPU		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=3f866f5f04d3645970662409d2bdff3dca58b1a3
+NA	Code refactoring			Drivers-Macintosh	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4f256d561447c6e1bf8b70e19daae08da4279f1c
+
+

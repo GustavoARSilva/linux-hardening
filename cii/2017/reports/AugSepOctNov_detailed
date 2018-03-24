@@ -325,26 +325,26 @@ CID     Type                                    Component               Status  
 
 CID	Type					Component		Status		Link
 -------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
-NA	Remove unnecessary code			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b14bec89042ee6f9a43b437f8133cfcbea140f20
-NA	Code refactoring			Net-Core		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=058c8d59124193f46db4efa5abcd9d6d0f04c88e
-NA	Code refactoring			Net-IPv4		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=152854025528b30c5ca5113a443ead98c3f1e7a5
-NA	Code refactoring			Net-IPv4		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=49ca1943a7adb429b11b8e05d81bc821694b76c7
-NA	Code refactoring			Net-xfrm		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2fc5f83b92ba93f8f7119461d998bcdb1ac519ac
-NA	Code refactoring			Net-IPv6		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=eee12df5a0bd5769af5efb72fa95dd1f633a266c
-NA	Code refactoring			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4fa112f6b5fb055478e76f2b446673565d2ea35f
-NA	Code refactoring			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5bca178eed601cd4584c38c5290f7abbcacf3fb3
-NA	Use swap macro	 			Net-IPv6		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=74b6551b9f4106a3e69ab46e60b52a8947dcf60c
-NA	Use swap macro	 			Drivers-Media		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3fa013be95bb046490d3b11d546bf06d73c7e0e3
-NA	Use swap macro	 			Net-DECNET		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=68ad08c4f8ee6254ab814d15b9765f7f82ed0ae7
-NA	Use swap macro	 			Net-DECNET		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3a7943ba5b7763488753305fddb0a50e911e0617
-NA	Use swap macro	 			Net-DCCP		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=54df7ef51193641010a934c231c5aba117aea46d
-NA	Fix incorrect mask			Arch-MIPS		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=77238e76b9156d28d86c1e31c00ed2960df0e4de
-NA	Code refactoring			Net-Netrom		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4c31606920bab227de10d2c9bf9b4dd8d4327638
-NA	Use swap macro	 			Drivers-ISDN		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=28e8c1914a20d020893978b67a6d2c618756bc3f
-NA	Use swap macro	 			Drivers-Crypto		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=abfa2b377f752a13e6caaa8c6c4add6ab9b71ba8
-NA	Fix incorrect mask			Drivers-Net		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0be7fc7e08e7c6a5ec3837960d420e377380d1a8
-NA	Use swap macro	 			Drivers-SCSI		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=630378738f04a4a3112f98c49505e344ec8bd074
-NA	Use swap macro	 			Staging-Speakup		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=d69b9c3884bf9dceab7d971eaab7a89887b60378
-NA	Use swap macro	 			Drivers-MTD		Upstrean	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=b13a9735ae74d4fa9e4d53b4dcfdd779997c8e0e
+NA	Remove unnecessary code			Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=b14bec89042ee6f9a43b437f8133cfcbea140f20
+NA	Code refactoring			Net-Core		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=058c8d59124193f46db4efa5abcd9d6d0f04c88e
+NA	Code refactoring			Net-IPv4		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=152854025528b30c5ca5113a443ead98c3f1e7a5
+NA	Code refactoring			Net-IPv4		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=49ca1943a7adb429b11b8e05d81bc821694b76c7
+NA	Code refactoring			Net-xfrm		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=2fc5f83b92ba93f8f7119461d998bcdb1ac519ac
+NA	Code refactoring			Net-IPv6		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=eee12df5a0bd5769af5efb72fa95dd1f633a266c
+NA	Code refactoring			Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4fa112f6b5fb055478e76f2b446673565d2ea35f
+NA	Code refactoring			Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=5bca178eed601cd4584c38c5290f7abbcacf3fb3
+NA	Use swap macro	 			Net-IPv6		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=74b6551b9f4106a3e69ab46e60b52a8947dcf60c
+NA	Use swap macro	 			Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3fa013be95bb046490d3b11d546bf06d73c7e0e3
+NA	Use swap macro	 			Net-DECNET		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=68ad08c4f8ee6254ab814d15b9765f7f82ed0ae7
+NA	Use swap macro	 			Net-DECNET		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=3a7943ba5b7763488753305fddb0a50e911e0617
+NA	Use swap macro	 			Net-DCCP		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=54df7ef51193641010a934c231c5aba117aea46d
+NA	Fix incorrect mask			Arch-MIPS		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=77238e76b9156d28d86c1e31c00ed2960df0e4de
+NA	Code refactoring			Net-Netrom		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=4c31606920bab227de10d2c9bf9b4dd8d4327638
+NA	Use swap macro	 			Drivers-ISDN		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=28e8c1914a20d020893978b67a6d2c618756bc3f
+NA	Use swap macro	 			Drivers-Crypto		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=abfa2b377f752a13e6caaa8c6c4add6ab9b71ba8
+NA	Fix incorrect mask			Drivers-Net		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=v4.15-rc1&id=0be7fc7e08e7c6a5ec3837960d420e377380d1a8
+NA	Use swap macro	 			Drivers-SCSI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=630378738f04a4a3112f98c49505e344ec8bd074
+NA	Use swap macro	 			Staging-Speakup		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=d69b9c3884bf9dceab7d971eaab7a89887b60378
+NA	Use swap macro	 			Drivers-MTD		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20171201&id=b13a9735ae74d4fa9e4d53b4dcfdd779997c8e0e
 
 

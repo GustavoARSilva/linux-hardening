@@ -1,0 +1,79 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\ Variable-Length Array (VLA) removal //////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- -----------------------------------     --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA      Remove VLA usage			Drivers-Ethernet	Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c33b3b9fcfa4fe5350b5d13bdb87dab061351d77
+NA      Remove VLA usage			Net-Core		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=35951393bbffa1ce351438bee264b48347c8cbb7
+NA      Remove VLA usage			Drivers-Input		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1c4bfce1c6045a7c5191949f6bd74662fb9bf02d
+NA      Remove VLA usage			Drivers-Power		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fc5a7f0339d0641c0df14a9ed8af49c9992f9bef
+NA      Remove VLA usage			Drivers-Video		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2c81ee0a28c085582a84f3822e8a22e028a909d0
+NA      Remove VLA usage			Drivers-USB		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=225b3dc92da1a3198cf687b13435fef952757a8f
+NA      Remove VLA usage			Drivers-GPU		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0126b23c552c2bf9aa62a6cabce8c10e983ef436
+NA      Remove VLA usage			Drivers-EDAC		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6fd052665274b4e7570491ba272f2dbb09cbbcd5
+NA      Remove VLA usage			Drivers-RTC		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fed9b18611f75110d5b26d650819665d528038da
+NA      Remove VLA usage			Drivers-RTC		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=756d5282bf04db868b1c0b93f41981dabe2af57f
+NA      Remove VLA usage			Net-Netfilter		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8039ab43eeac029a9c47c0411918ea82c9ce87cd
+NA      Remove VLA usage			Net-Netfilter		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1446385904add0e89f990ee0518434365e50ce86
+NA      Remove VLA usage			Net-Netfilter		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5b4c6e3860daaf089c28e0161dffef7b5ad8000f
+NA      Remove VLA usage			Net-Bluetooth		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=243fc8da65187a2f176b6e228dbbe0d608a3e548
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ NULL pointer dereferences ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA	Dereference before null check           Drivers-GPU             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5abc7dd7b5a0f51a6c7d9cb3ce72b910ba3cef7b
+NA	Dereference before null check           Drivers-GPU             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=52749d601a6055da3352842575408fcba6f1da46
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ API usage errors ///////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	-----------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Return booleans instead of integers	Net-Netfilter		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2db3fec507bd822ed81c031221b97701238949dc
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Incorrect expression ///////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1465358 Copy-paste error			FS-CIFS			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=10ae8008f6813e4737cc30fb6e5132cfb95e6651
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Resource leaks /////////////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+NA	Resource leak				Drivers-Net             Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=29d1df72ce2ac187d457990fe445a16212dcfa19
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Integer handling issues //////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+200655	Unintentional integer overflow		Drivers-Video		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=df7a84a8baf1caf01ded61356b68d5d978b37789
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Code refactoring and Miscellaneous ///////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Use true and false for boolean values	Drivers-HID		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=04230f46025536896b15af22d8fae7fa519f9740
+NA	Use true and false for boolean values	Drivers-HID		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=001fab49dd4fcf64b1b8ccecb8656baa3f3f1a9a
+NA	Use true and false for boolean values	Drivers-HID		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2172a33279bc2162656f473f5a1256618169b249
+NA	Use true and false for boolean values	Drivers-Infiniband	Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=63231585a6167840172cf7e9045b43ced8a0b6c2
+NA	Use true and false for boolean values	Net-XFRM		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=415a13296a1a49639cabf9d2fe92267810caa47a
+NA	Use true and false for boolean values	Net-TIPC		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c9efb15a9981400c797665dc4844ab562ed3c424
+NA	Use true and false for boolean values	Net-ipv6		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9a21ac943240d0353b726495d08e377a257ace52
+NA	Use true and false for boolean values	Drivers-USB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c1d5df69f55b997b327e68c24be43cf6686304bb
+NA	Use true and false for boolean values	Net-Netfilter		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a55efe1d416c345a73bef38848e1ac7109560e12
+NA	Use true and false for boolean values	Drivers-Input		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=7085123333e2ee2686086fc49bc3117bacd86105
+NA      Move enum from rtc.h to rtc-s5m.c 	Drivers-RTC		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4a681243cc2d2cea98c6b5e57224f3bcb08bce6c
+
+

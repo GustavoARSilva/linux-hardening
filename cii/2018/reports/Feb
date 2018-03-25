@@ -1,0 +1,75 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ API usage errors ///////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	-----------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Return booleans instead of integers	Drivers-SSB		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=bd42cd022e44c68254cedf5e04cbcc781dcceed8
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Code maintainability issues ////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1464280 Unused value				Drivers-GPU		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=93bab704c1513f824d0e19fd02f8b57b107feceb
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Control flow issues /////////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1465362	Missing break in switch			Net-RSD			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=f905311356ecb9c88aceeb4fa63ee0a244fc2d72
+1465255	Missing break in switch			Drivers-Char		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=aaf1bbe90a36a6d11dbedc4a99b24096963280c8
+1465078	Missing break in switch			Drivers-ACPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5a9e59e8d9dd9586d78c244b9d96fb18156daad3
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Incorrect expression ///////////////////////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+1465148 Copy-paste error			Block			Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0979962f5490abe75b3e2befb07a564fa0cf631b
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Memory - illegal accesses ///////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1465287 Negative array index			Drivers-Net		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=e21fed5864e408732653e0aa067b6669b7d88cda
+1465291 Negative array index			Drivers-Net		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=e21fed5864e408732653e0aa067b6669b7d88cda
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Integer handling issues //////////////////////////////////
+
+CID     Type                                    Component               Status          Link
+------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
+1324146 Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=36e49ffb978ef7284ae235b915a7bd6713aa20de
+1271223 Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=1ae207fa7b70e7bd3bc0f3e5e3704edf55e45b68
+200604	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=91e0c0c1b05230d703395965d4bf298705819641
+1446589	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=a2603d1748fddaa44b70b027737ba077145f261c
+1392628	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=07837433ca4d7cf1bfd27d4776956cc7a7bf921d	
+1392630	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=07837433ca4d7cf1bfd27d4776956cc7a7bf921d
+1458347	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=8328ad0f8274d7e432124d84622c06a286b81177
+1056807	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=eb64311ffc693e6e7b646a9b53631194f79b77c3
+1056808	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=eb64311ffc693e6e7b646a9b53631194f79b77c3
+1454996	Unintentional integer overflow		Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=fc49d3d7dc26a43f8d3b1874c7ddb975a49e8a8c
+1462501	Unintentional integer overflow		Drivers-PCI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=f51af8a63c5f633b572d00319ecdfa31f266b8fb
+1382602	Unintentional integer overflow		Drivers-PCI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b52f451105020677cad61a13b3b67af3fdedb91f
+201058	Unintentional integer overflow		Drivers-ATM		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=583133b35ecaea84590e92e2732d1a472747ca7d
+1464429	Unintentional integer overflow		Arch-x86		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24dbc6000f4b9b0ef5a9daecb161f1907733765a
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Code refactoring and Miscellaneous ///////////////////
+
+CID	Type					Component		Status		Link
+-------	------------------------------------	--------------		--------	----------------------------------------------------------------------------------------------------------------------
+NA	Use true and false for boolean values	Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=f4b32c292aa66788ba7d4db54a76b4a08f60784a
+NA	Use true and false for boolean values	Drivers-Media		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=ee9568aa5830f607edc4c21b80b82b0e0fd1be77
+NA	Use true and false for boolean values	Drivers-PCI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=db89ed14a2f2fcaa157a57fe3dd32cdb48459e2b
+NA	Use true and false for boolean values	Drivers-ACPI		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=97e45dd6e82a556e64a81824bb87c2b9bf98ddd3
+NA      Fix inconsistent IS_ERR and PTR_ERR     Staging-Media           Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=b605687cf517ee2b900f63f7bd99b67555531b10
+NA      Fix inconsistent IS_ERR and PTR_ERR     Drivers-GPU		Upstream	https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?h=next-20180323&id=6e8c06d291f339d6586777e4c6184fb1102c2d97
+

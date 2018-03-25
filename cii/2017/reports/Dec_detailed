@@ -43,7 +43,7 @@ CID     Type                                    Component               Status  
 
 CID     Type                                    Component               Status          Link
 ------- ------------------------------------    --------------          --------        ----------------------------------------------------------------------------------------------------------------------
-1056806 Unintentional integer overflow Operands	Drivers-Media		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3ee6229f1a16ad80ac83f02614f46b70b7ecf666
+1056806 Unintentional integer overflow		Drivers-Media		Upstream        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=3ee6229f1a16ad80ac83f02614f46b70b7ecf666
 
 
 

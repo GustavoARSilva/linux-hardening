@@ -1,5 +1,5 @@
 Last update: Thu, April 5, 2018
-# Linux Kernel Contributions (1 May, 2017 - Present)
+# Linux Kernel Contributions
 
 `git log --shortstat --author="Gustavo A. R. Silva" --author="Gustavo A R Silva" | grep "Author" | wc -l`
 
@@ -11,7 +11,7 @@ Last update: Thu, April 5, 2018
 
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |
-| 555 | 1420 | 1111 |
+| 586 | 1549 | 1261 |
 
 ## Contributions to stable trees
 `git log --shortstat --author="Gustavo A. R. Silva" --author="Gustavo A R Silva" --since="1 May, 2017" <vx.y.z> | grep "Author" | wc -l`

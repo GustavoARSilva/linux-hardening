@@ -7,7 +7,7 @@ Last update: Thu, April 5, 2018
 | :----------------: | :---------:| :-----: | :-----: | :------: | :----: |
 | 550 | 502 | 11 | 38 | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [linux-next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
 
-`git log --shortstat --author="Gustavo A. R. Silva" --author="Gustavo A R Silva" --since="1 May, 2017" | grep -E "fil(e|es) changed" | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed: ", files, "lines inserted: ", inserted, "lines deleted: ", deleted }'`
+`git log --shortstat --author="Gustavo A. R. Silva" --author="Gustavo A R Silva" | grep -E "fil(e|es) changed" | awk '{files+=$1; inserted+=$4; deleted+=$6} END {print "files changed: ", files, "lines inserted: ", inserted, "lines deleted: ", deleted }'`
 
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |

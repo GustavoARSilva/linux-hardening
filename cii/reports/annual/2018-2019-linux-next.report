@@ -1,0 +1,603 @@
+commit 930729f56e501d9272f08dc7e160ccec88281ec0,ipc/sem.c: replace kvmalloc/memset with kvzalloc and use struct_size
+commit 9cd5e146a0cb9362d3fe2972bc49a417bde87e67,kernel/gcov/gcc_3_4.c: use struct_size() in kzalloc()
+commit 809ca6c8b5820e018e4958418e9db1d8a94db489,rapidio/mport_cdev: mark expected switch fall-through
+commit 3f3c6789bab5ab99fd3956c714b684a7745929e2,lib/assoc_array.c: mark expected switch fall-through
+commit 2ad4142c4b53d960727aff9f160e4e30ac25a233,mm/swapfile.c: use struct_size() in kvzalloc()
+commit e16a5ab715a36adb2655f9aba1de050cb988f67c,mm/memcontrol.c: use struct_size() in kmalloc()
+commit 2a440b061b8d0f7592e79ae0adee57865e17ac5b,ocfs2: Use zero-sized array and struct_size() in kzalloc()
+commit 2648624cfe7f34ad494280b83749956527689c9f,adfs: mark expected switch fall-throughs
+commit 98a629f44ac347789d8ba9e52ae83cfa99fcf81c,scsi: st: mark expected switch fall-throughs
+commit d83ca8bef5aeed4452af38811d8c55dc760d38db,scsi: qla4xxx: ql4_os: mark expected switch fall-through
+commit 750e900dde93cbfe9b3c673cafb317a7323df5a2,scsi: esas2r: esas2r_init: mark expected switch fall-throughs
+commit f0ed2270e0bcdd6b89b6ed8b2d029cb6129d50b9,scsi: bfa: bfa_ioc: Mark expected switch fall-throughs
+commit e14bcc5df78878e2ee6787901c0608124fe491e9,scsi: bfa: bfa_fcs_rport: Mark expected switch fall-throughs
+commit dd12f6f1c237af675e72b61c2596476e69bb73f0,scsi: bfa: bfa_fcs_lport: Mark expected switch fall-throughs
+commit f3be8626ce6fac2c7b20c6ee569a95e9afef3c78,scsi: aic7xxx: aic79xx: mark expected switch fall-through
+commit d2832376b69e1e02cae0de660ab7c03223f09341,dm switch: use struct_size() in kzalloc()
+commit 6b41d4d9cb8f48363e50990e00c64c3fde355d11,libceph: use struct_size() for kmalloc() in crush_decode()
+commit 1f7ae812f87e656f535146fcd33af6b151c3607a,x86/syscalls: Mark expected switch fall-throughs
+commit 5ac767a3c40244ec65f77edfe926651a391df235,ASN.1: mark expected switch fall-through
+commit 42559d0ee6f55d9d9af6aafa97aed9cccee73369,lib/cmdline.c: mark expected switch fall-throughs
+commit 8effe37d2f58096be7bf463a65f1e88386943bd8,lib: zstd: Mark expected switch fall-throughs
+commit 9ba343caeebc3610913bfdd2d3aa31cd200689d5,scsi: sym53c8xx_2: sym_nvram: Mark expected switch fall-through
+commit 2758cbd62233dc36aedb8eab09926afffb9ddcae,scsi: sym53c8xx_2: sym_hipd: mark expected switch fall-throughs
+commit a571e5dc51a184941c045a1a7638359e63d3152d,scsi: ppa: mark expected switch fall-through
+commit 087f3e62d4881f0bc3f0d7d6cb6ec127158ea939,scsi: osst: mark expected switch fall-throughs
+commit b4a94194b0bfa1a59d68d391da88f13083fd6192,scsi: lpfc: lpfc_scsi: Mark expected switch fall-throughs
+commit 79c1d97e905aac352f5bbaf445d1bfe82d608331,scsi: lpfc: lpfc_nvme: Mark expected switch fall-through
+commit 5a41df13acbb9aff69c6b7a8cf5d1d053d1e5277,scsi: lpfc: lpfc_nportdisc: Mark expected switch fall-through
+commit c88a7a0445f812a4cc002b9b50151048bdcf7508,scsi: lpfc: lpfc_hbadisc: Mark expected switch fall-throughs
+commit 18946aa551cf4f8bf099cd822fa34b8a13889275,scsi: lpfc: lpfc_els: Mark expected switch fall-throughs
+commit 220dadf8cd23f27b0bc511c87fe90e1606198545,scsi: lpfc: lpfc_ct: Mark expected switch fall-throughs
+commit 2d5025260c825cf261fb85df85348b6666a8f5fb,scsi: imm: mark expected switch fall-throughs
+commit 6a1409b9f261a329b0cb19c87d7ac9de2116402f,scsi: csiostor: csio_wr: mark expected switch fall-through
+commit 0c75d9ae143a5954d003a6cbaff2046b39b3e033,scsi: bfa: bfa_fcpim: Mark expected switch fall-throughs
+commit e1890f8095370f5a2bf48851943ed9e233a972b3,scsi: be2iscsi: be_main: Mark expected switch fall-through
+commit 618d118f1e21360a09c1a666fce6c4e53b2bf3d4,scsi: be2iscsi: be_iscsi: Mark expected switch fall-through
+commit 491d3a37392bbf53e7947d0f13f9c6c453b68b58,scsi: aic7xxx: mark expected switch fall-throughs
+commit 282dd6ace5e0d502884b547bc2005ec05dfe5ffe,fs: mark expected switch fall-throughs
+commit 102cefc8e879b707be0024fdc7bce1deeb359a5f,ASoC: ab8500: Mark expected switch fall-through
+commit 458c8961c194f2d2cb6ffed3dd9b6692d74ad65e,watchdog: w83877f_wdt: Mark expected switch fall-through
+commit e70d3547fc44892d12543b039c40dbadc0ffaaee,watchdog: sc520_wdt: Mark expected switch fall-through
+commit 3612b87d181beffe2ad7ff21c46f5a5bb2c58c65,watchdog: sbc60xxwdt: Mark expected switch fall-through
+commit 4a1b1161561ed573a324d7a708b66df5e0f30114,watchdog: smsc37b787_wdt: Mark expected switch fall-through
+commit 51c802f57a0c4ce17f472d8fb718ecd94e23c5d3,watchdog: sc1200: Mark expected switch fall-through
+commit 8baee57218f6dcd976bb5cb13d8262fbbd153282,watchdog: pc87413: Mark expected switch fall-through
+commit 988bb4a1937bd083267444dda21b901dc6a959b3,i3c: master: dw-i3c-master: mark expected switch fall-through
+commit 91e14842f8ea8dc35669bad3c3dcd72d4614e4d1,crypto: af_alg - use struct_size() in sock_kfree_s()
+commit d89ea4acfc039f6968f8b5a1dfae5d3cbf611444,net: hns: use struct_size() in devm_kzalloc()
+commit 9d49fff91b85d6ac601054d4ab45758e5f5186c0,virt: vbox: Mark expected switch fall-through
+commit b304da7025d7934528a1c7c626bf2f0ff1dfa54c,misc: mic/scif: mark expected switch fall-through
+commit 7850b51b6c21812be96d0200b74cff1f40587d98,scsi: mpt3sas: Add missing breaks in switch statements
+commit 5e420fe635813e5746b296cfc8fff4853ae205a2,scsi: aacraid: Fix missing break in switch statement
+commit 401c9bd10beef4b030eb9e34d16b5341dc6c683b,hpet: Use struct_size() in kzalloc()
+commit 97b047e72bd6e63f2b6021b765b2afdf6b23c50c,regulator: da9062: Use struct_size() in devm_kzalloc()
+commit d56f00fd5380a77c2cd56231bb02fe54b96a7766,tty: hvc_xen: Mark expected switch fall-through
+commit 3e913eebdfbb563720d39ea762555f1370f309ed,tty: n_gsm: Mark expected switch fall-throughs
+commit 4a67e5d4adbf3b419f17924322f468ac5cb8c14f,Bluetooth: mgmt: Use struct_size() helper
+commit 78844068a7b9c995c3d03fd595639ebb920ed831,mlxsw: spectrum: acl: Use struct_size() in kzalloc()
+commit e9d6a371cff3bb9bef8ad96fe576d62346c7e104,mmc: sdhci-xenon: Fixup already marked switch fall-through
+commit 6d20faecc5949a305946559a38c89578e7d68264,isdn_common: Mark expected switch fall-throughs
+commit 09186e503486da4a17f16f2f7c679e6e3e2a32f4,security: mark expected switch fall-throughs and add a missing break
+commit ac227fb5bc950cf97b0d50ab7ee2c8aa7cd65441,regulator: da9063: Use struct_size() in devm_kzalloc()
+commit b5be853181a8d4a6e20f2073ccd273d6280cad88,crypto: ccree - fix missing break in switch statement
+commit 0612fe604d862631da7f94224dd6ea633b722914,clk: samsung: s3c2443: Mark expected switch fall-through
+commit 7264235ee74f51d26fbdf97bf98c6102a460484f,IB/hfi1: Add missing break in switch statement
+commit 8d86f6b4306f4be38b39d420456edf61a7b7119e,intel_th: Mark expected switch fall-throughs
+commit 90952cd388595317170ad22a6bcee3cb8cde4942,kvm: Use struct_size() in kmalloc()
+commit 6b367c9f88b0813f6a557e688b665324499a159e,iwlwifi: nvm-parse: use struct_size() in kzalloc()
+commit 9178aa7c465440bae84a0de002d919ad7034a08a,iwlwifi: eeprom-parse: use struct_size() in kzalloc()
+commit 9b6872a123862cecd19a958f08eb9848b6a4240d,HID: roccat: Mark expected switch fall-through
+commit 966b2217d2b94ef44c55184f99a40d48f9ad593b,drm/nouveau: mark expected switch fall-through
+commit bcb35dad1d3181e3cb4e5ac067bfc4aed53c592c,drm/amd/powerplay/smu10_hwmgr: use struct_size() in kzalloc()
+commit 7f5725f9802502651644e874bb9a59e66215839d,drm/amd/powerplay/smu8_hwmgr: use struct_size() in kzalloc()
+commit cc5034a5d293dd620484d1d836aa16c6764a1c8c,drm/radeon/evergreen_cs: fix missing break in switch statement
+commit 01bdf01c7ba8cfdbe205c664f0fd6f9b6f586195,usb: wusbcore: wa-xfer: use struct_size() helper
+commit 5ebf5c890324ffa5eaca579dac6913f3e29a28e3,usb: core: config: Use struct_size() in kzalloc()
+commit eeca7606dd6e2445f505903f235e908eb7b78dfc,usb: dwc2: use struct_size() in kzalloc()
+commit 3623d4defff057a1129aa565969af879ce4e5edf,staging: vt6656: key: Mark expected switch fall-throughs
+commit 2f54a0412f31c1312a105d6c02adba9b2ae41c64,drm/amdgpu/si_dpm: Mark expected switch fall-throughs
+commit ecdadace81f2140f1de469c0d0b74a34ebbd896e,drm/radeon/ci_dpm: Mark expected switch fall-throughs
+commit e38545908afb324f32790a8ef903f6a0a6df60bb,drm/amd/powerplay/smu7_hwmgr: Mark expected switch fall-throughs
+commit c81e5efeec48bd9c8dab08554d0209e5ea6cca1c,drm/amd/display/dce_mem_input: Mark expected switch fall-through
+commit 8328691d3b882d6b34d0928633efd4dbc1249c9d,drm/radeon/si_dpm: Mark expected switch fall-throughs
+commit 7ac65f42769f93d74c0b68ef1b054e01b971dba1,drm/amd/display/dc/bios_parser2: Mark expected switch fall-throughs
+commit e4e6c0b0ad79c077c6894b82edf9d7e214ccdf16,hwmon: (f71882fg) Mark expected switch fall-through
+commit c947e51cf8038ab05674931c189f2bfa8fd48d83,hwmon: (adt7462) Mark expected switch fall-throughs
+commit 3c97ce1f86851bff81876ec0ced73527d2f08a01,Bluetooth: a2mp: Use struct_size() helper
+commit 16e183423f1a3aeb603d7648d2ca3a578d5a9941,Bluetooth: hci_event: Use struct_size() helper
+commit d2d833e0bf2bad221a955626b942b38312630894,mfd: mxs-lradc: Mark expected switch fall-through
+commit efac6c75dc4b4aac56c4a40e7f4d2e54fcd87834,xen-scsiback: mark expected switch fall-through
+commit c9f19b67f04c817ab83e80012fd2435fc516a44d,xen: mark expected switch fall-through
+commit 4e116e93f4fbd1b5f0e800d312d62d1917370d1a,Input: db9 - mark expected switch fall-through
+commit 1da92d436c93a6ffc049f60206b684db2d25882f,HID: wacom: Mark expected switch fall-through
+commit 361bf8a9d88d50a5d7444e5e0cb1c5bd517e809d,tty/n_hdlc: mark expected switch fall-through
+commit ca5dc2d11787d72dd11f5af77ef07a93a293bea6,char: lp: mark expected switch fall-through
+commit 479826cc86118e0d87e5cefb3df5b748e0480924,staging: comedi: ni_660x: fix missing break in switch statement
+commit d2fce701751f288bbcb9e64b2ee0535204329334,USB: musb: mark expected switch fall-through
+commit 5340f23df8fe27a270af3fa1a93cd07293d23dd9,gpio: sprd: Add missing break in switch statement
+commit 131d34cb07957151c369366b158690057d2bce5e,audit: mark expected switch fall-through
+commit b67de691f60b471401798498c1bc68e63b00708d,isdn_v110: mark expected switch fall-through
+commit 56e9b6b9601c113b1c19c61e70ac972444cb40aa,isdn: i4l: isdn_tty: Mark expected switch fall-through
+commit b6cd7dd99a89ee2f0595bf3e62682a3cde3d4a62,ser_gigaset: mark expected switch fall-through
+commit 6ca64ef37da930ad0fd0f2c3dac1a4607e0af494,netfilter: xt_recent: Use struct_size() in kvzalloc()
+commit 6fde9df6b76eaf2395d158628d5f915857981a44,ipvs: Use struct_size() helper
+commit 439bb9edd430f606cce80b791307190ba23f7266,ixgbe: Use struct_size() helper
+commit 196d7311fab5941b1bc883471c7f46350fa1a797,igc: Use struct_size() helper
+commit a0feac18b8b590d9b588b4285841bac7c372fd8b,igb: use struct_size() helper
+commit 9a00536c38e9df8b6d942316888990d849fe1d01,fm10k: use struct_size() in kzalloc()
+commit af6f12f22b141d755876ab95635619166b1c574e,nfp: flower: cmsg: use struct_size() helper
+commit 9e475293cd40fc9c14de63c53b5754f06007059d,mlxsw: spectrum_router: Use struct_size() in kzalloc()
+commit 370600afdd2e33665c84d06f34e7c223d5379b4a,bnx2x: Use struct_size() in kzalloc()
+commit 13644be211bfd9e4685425c5adf7430a04768a06,wimax/i2400m: use struct_size() helper
+commit a3deec5b3f13b9807bbf2522b4779e4c07cbad66,wan: wanxl: use struct_size() in kzalloc()
+commit fd6d122678054fb10582143de1922e5dab11b1d8,net: usb: cdc-phonet: use struct_size() in alloc_netdev()
+commit 33b363e004fdb6abf12a5b0c51dc2c221d352cac,net: dsa: use struct_size() in devm_kzalloc()
+commit b4ba9354cc303c6ae8b223b335cdecea87ac7201,mpls_iptunnel: use struct_size() helper
+commit 8fe5756c73822b2891b9316eae0195f1da2a1bb2,net/sched: use struct_size() helper
+commit 4154b567b6d15a03cc9ac6c263c261da99b1ba32,bridge: use struct_size() helper
+commit 7499a288bf1a4a49be9d72beb0a5c7b9aa6ffec9,xen-netback: mark expected switch fall-through
+commit 671f2f96813569fcc4bac306cb5a61752de9b91d,net: wimax/i2400m: mark expected switch fall-through
+commit 1323f75fba732a20a694b66ee9eac22387664a4c,net: fddi: skfp: Mark expected switch fall-through
+commit 0d156a371542b14cf9bdd75c8e8453172864e964,net: usb: rtl8150: mark expected switch fall-through
+commit 209d6e7b47e3547b1fdf84de2d0c9d18cbf335cf,net: usb: pegasus: Mark expected switch fall-through
+commit 2067458cf67490ba1013c918803852fe5e56221a,net: appletalk: cops: mark expected switch fall-through
+commit a9b6d9ef0965d352a7c87175d7e9575b0e31d6d8,veth: Mark expected switch fall-throughs
+commit 9f208eca4f2faa38def458f663ec142a0b6f451b,mfd: sm501: Use struct_size() in devm_kzalloc()
+commit ae7b8eda27b33b1f688dfdebe4d46f690a8f9162,mfd: sm501: Fix potential NULL pointer dereference
+commit 1eb6ea4a820291107d1192df7d279f344ee2053f,drm/vc4: Use struct_size() in kzalloc()
+commit 14cfbd94998a3ad6aaa67da46d997eea9e31897e,svcrdma: Use struct_size() in kmalloc()
+commit 7b30196534c90154bfbd85532b181e14bad18c31,mtd: rawnand: marvell: use struct_size() in devm_kzalloc()
+commit f1e5b6239bdd46aa3f4e631611800ea7d10826c4,md-linear: use struct_size() in kzalloc()
+commit 489338a717a0dfbbd5a3fabccf172b78f0ac9015,perf tests evsel-tp-sched: Fix bitwise operator
+commit 1f533ba6d50d0e7a104d1a2c1e1a28ee0b919a90,ipv4: fib: use struct_size() in kzalloc()
+commit ee69804714e204787ec8d06e80ec21e089f030a9,nfp: use struct_size() in kzalloc()
+commit 6541d025906bd0b0bcb56a93eef288b8179ea8a1,tulip: eeprom: use struct_size() in kmalloc()
+commit c49f0ce0b692e8018c32f529a718bb41bc934ab3,cxgb4: smt: use struct_size() in kvzalloc()
+commit 3ebb18a48cbf03448087f9eef08cbade84fc0118,cxgb4: sched: use struct_size() in kvzalloc()
+commit db040dfa53e2905111e400b28d0bd6f38c78d348,qtnfmac: use struct_size() in kzalloc()
+commit bd4d73a1dbc12e099e63f72aefbd4a1881805925,drm/savage: mark expected switch fall-throughs
+commit 88c12a0211d2f70573d14f1ea11f50937bb06dd6,drm/via: mark expected switch fall-throughs
+commit 1575c083a78cc1137ad8bfa042d02eeb9dc86ef4,tty: serial: 8250_mtk: Fix potential NULL pointer dereference
+commit 75b710af7139768fd4ba2d4e05335d2344796279,timers: Mark expected switch fall-throughs
+commit c829f5f52db9bae0379b98fca2645f6ca9b0fb1e,cxgb4: cxgb4_tc_u32: use struct_size() in kvzalloc()
+commit 9f672984338d160aa262be7ad6d19fd182dc384d,cxgb4: clip_tbl: Use struct_size() in kvzalloc()
+commit 2f10d823739680d2477ce34437e8a08a53117f40,drm/amd/powerplay: Fix missing break in switch
+commit 2b0fc3742bc77687f58d389c902ee092df6f8669,x86/events: Mark expected switch-case fall-throughs
+commit 07c69f1148da7de3978686d3af9263325d9d60bd,usb: gadget: udc: net2272: Fix bitwise and boolean operations
+commit 6fcebf1302b43e7a610d1d2fa89f41e693249aa5,x86/kernel: Mark expected switch-case fall-throughs
+commit 89da3446294a8b811b28a4807e74e7ee7044d49f,x86/insn-eval: Mark expected switch-case fall-through
+commit fe96b99dc72b16e3c8406ab17fe9e73e0aef1bd9,drm/amdgpu: Replace kzalloc with kcalloc
+commit b2869f28e1476cd705bb28c58fd01b0bd661bb99,KVM: x86: Mark expected switch fall-throughs
+commit 4af217500e7fc7cf87528488db5bc6494f4890a9,cfg80211: mark expected switch fall-throughs
+commit 26880dc87719286873c02b43cbe23f0ff1b42a20,drm/nouveau/nvkm: mark expected switch fall-throughs
+commit ee58c3045d8221ba69972859a9eafa2c55687a7c,afs: Mark expected switch fall-throughs
+commit 921e88a4f9649cbd44b4995ebe9a52b384e2fef4,clk: imx: imx7ulp: use struct_size() in kzalloc()
+commit 6317950c1b9c3d2a64ccbdf1ab37650a48cb5009,Bluetooth: Mark expected switch fall-throughs
+commit 482dcf7df7e9be692b57159da414491389f93d03,net/mlx4: Mark expected switch fall-through
+commit ed35da4fce1d203d7dc56b371069d53b17063d70,qed: Mark expected switch fall-through
+commit 9536d6ed156feda000a2c1660f98b01b7704d6dc,bna: Mark expected switch fall-throughs
+commit 015496c43f399675589132d3dd48a55d8c5fc5ba,broadcom: Mark expected switch fall-throughs
+commit d422a286e181a36ce97fc8beb087e45ce1cff382,net: 3c509: mark expected switch fall-throughs
+commit f79e3365bc1faeda0e8e1c8e7e332631a43ebdba,tipc: mark expected switch fall-throughs
+commit a7102c7461794a5bb31af24b08e9e0f50038897a,ipmi: msghandler: Fix potential Spectre v1 vulnerabilities
+commit 3bbe8b1a4ae9585e9cf15e7036bf9e5374a482df,9p: mark expected switch fall-through
+commit d7ac3c6ef5d8ce14b6381d52eb7adafdd6c8bb3c,applicom: Fix potential Spectre v1 vulnerabilities
+commit 48b02a85fe2e6a0927acaa754ba3bef4a20a5e37,dmaengine: axi-dmac: Use struct_size() in kzalloc()
+commit 3c215fd868dd9fe077af63dbddca585e5116f598,dmaengine: timb_dma: Use struct_size() in kzalloc()
+commit 863326a6eec9c737fdd40bf9bebe135cba27ab97,dmaengine: tegra210-adma: Use struct_size() in devm_kzalloc()
+commit 701956d4018e5d5438570e39e8bda47edd32c489,char/mwave: fix potential Spectre v1 vulnerability
+commit e3575c1201f009a24885804975b859d868314d9c,misc: enclosure: Use struct_size() in kzalloc()
+commit e25df7812c91f62581301f9a7ac102acf92e4937,misc: ibmvsm: Fix potential NULL pointer dereference
+commit 6041828fdae09b973d3eed4e2c1ae82ddcf28c58,uwb: use struct_size() in kzalloc()
+commit da79ff6e586bd5aaa3bd9c73e56ae9d9183c3263,xhci: Use struct_size() in kzalloc()
+commit c6ac875446f96564232931fafd149e43e728dd6f,s390/hypfs: Use struct_size() in kzalloc()
+commit 4559dd248297cf8eb0318cff971d5f5c33660b6c,net: hns: Use struct_size() in devm_kzalloc()
+commit 78c787c21f974fe87a9c4418f57a5f76ba880608,cxgb4/l2t: Use struct_size() in kvzalloc()
+commit c5c3899de09e307e3a0999ab8d620ab0ede05aa1,openvswitch: meter: Use struct_size() in kzalloc()
+commit bb3e16ad8b17dd83a11a7bcc5ca806c28de03c60,net, decnet: use struct_size() in kzalloc()
+commit faa311e950e37eaa1a3ca30eb42a2aee858ecbf7,mlxsw: spectrum_nve: Use struct_size() in kzalloc()
+commit 2285ec872d9dd5bd6a5c517cfd774be259e5f478,mlxsw: spectrum_acl_bloom_filter: use struct_size() in kzalloc()
+commit 2bc217c61685487987c5befd807e10936371643c,x86/platform/UV: Replace kmalloc() and memset() with k[cz]alloc() calls
+commit 8e8aa1454205839030c9406febd1f6d4ece0d573,RDMA/mlx5: Replace kzalloc with kcalloc
+commit 4944514e6c7e613b578aaaafb2a2dd1a54bcf538,cpufreq: e_powersaver: Use struct_size() in kzalloc()
+commit 2037f9d8c242af5d549dd5ba32ff1ec1f49ceaad,mtd: lpddr: Use struct_size() in kzalloc()
+commit 04b4c06caf2b810f0ce4822f6611ed35326ca11a,mtd: cfi: cmdset_0001: Use struct_size() in kmalloc()
+commit 9cb76a6aa1a9524866ec1558f08d044506b707fa,mtd: gen_probe: Use struct_size() in kmalloc()
+commit 4cb79ef9c6c4413427cd70afbb1f3bc01e9b7abf,ASoC: amd: Fix potential NULL pointer dereference
+commit 060d0bf491874daece47053c4e1fb0489eb867d2,ASoC: rt5514-spi: Fix potential NULL pointer dereference
+commit fe2570fbf3dfce39996819deeaf1693ac6d7b5a3,staging: wilc1000: fix memory leak in wilc_add_rx_gtk
+commit 891fd847605d4d7e8aef07db39f1868b5a70e047,staging: rtl8188eu: Replace kzalloc with kcalloc
+commit 0855c9c9ec28451858aeb1e512d2d25fd8397828,drm/amdgpu_vm: fix boolean expressions
+commit 66f92bcff0f90405150f685e4ef78fd548275f10,drm/amd/display: Fix boolean expression in get_surf_rq_param
+commit 00def7130af8b3fad1bdef98429c94a67dbbd896,powerpc/spufs: use struct_size() in kmalloc()
+commit 31367b9a01d6a3f4f77694bd44f547d6f738ff28,powerpc/ps3: Use struct_size() in kzalloc()
+commit a73450036e3222ffd1cb20fc4a88832bb17921b8,Input: mcs_touchkey - use struct_size() in kzalloc()
+commit fb5fc09cc8033db207803cb4b6d0409505dc0fd4,Input: tca6416-keypad - use struct_size() in kzalloc()
+commit 8d008e64a2ebe6567c3f5e048b05842a0297350b,mISDN: hfcsusb: Use struct_size() in kzalloc()
+commit 4edff70494e4c7c4371270a7b0b56b2776adc0ee,scsi: aic7xxx: aic79xx: mark expected switch fall-through
+commit f1b1dceedd7b046d04031a187aa1d51a62d8847c,scsi: bfa: bfa_ioc: Mark expected switch fall-throughs
+commit d14e4cd45ac83edf96b249a222b02344889fb6f9,scsi: bfa: bfa_fcs_rport: Mark expected switch fall-throughs
+commit 8425811b8d95d441499d963b7d09b7910c630f71,scsi: bfa: bfa_fcs_lport: Mark expected switch fall-throughs
+commit b9f57f5805cf0e72db20a435e72e8b557a8d28b1,scsi: esas2r: esas2r_init: mark expected switch fall-throughs
+commit 211d62a8ce689bf8e7fd0ede67b3a6b1d8de970b,scsi: st: mark expected switch fall-throughs
+commit fc9ac87eabb23b4c354cd2f3b89d94a0db9f9fdc,scsi: qla4xxx: ql4_os: mark expected switch fall-through
+commit d14eff1bc53e6a268c3b48da5cdb469f26832d1a,KVM: x86: Fix bit shifting in update_intel_pt_cfg
+commit 21face6f0d4d033d949d5517f307a15f76a9d9f2,ARM: integrator: impd1: use struct_size() in devm_kzalloc()
+commit 1e11820f72b71d276ae8fdc64fee7cdb49c05bc6,pinctrl: sirf: atlas7: use struct_size() in devm_kzalloc()
+commit 16f4372fd7a5a560abe0edb4c68be1200599dc8a,pinctrl: mcp23s08: use struct_size() in devm_kzalloc()
+commit c2b8bd49d35a768d3966c5e14e8f6971f2a63439,afs: Use struct_size() in kzalloc()
+commit 4f340efcb21220b7a0afcea3884e66f79e6f2306,clk: zynqmp: Fix memory allocation in zynqmp_clk_setup
+commit d4b9dd50076e02b46292be379ce976e9ad75dc40,qxl: Use struct_size() in kzalloc()
+commit 5bd5f66cf142703e163459e1b36b73e265f0a0da,scsi: lpfc: lpfc_sli: Mark expected switch fall-throughs
+commit 12de280b36f0e0599c7f170aa7f1058f3aeb6d9d,scsi: smartpqi_init: fix boolean expression in pqi_device_remove_start
+commit 7a7b0fea6f848d0a73ee6defe6b9d192af2dda3a,IB/srp: Use struct_size() in kzalloc()
+commit 833954a4e34ed090a8e2f3b3a8d4624002f29d30,serial: max310x: Use struct_size() in devm_kzalloc()
+commit 84f1c5c0174ace114af318c8de35c3eeb0d04495,sc16is7xx: Use struct_size() in devm_kzalloc()
+commit 6756f4c375db11af7039985636bddde676615a94,USB: core: urb: Use struct_size() in kmalloc()
+commit b0407d820b65272fcaa77e0dd1347dc7678d23b8,hwmon: (occ) Fix potential integer overflow
+commit e2477233145f2156434afb799583bccd878f3e9f,ARM: s3c24xx: Fix boolean expressions in osiris_dvs_notify
+commit 5aad26a7eac5a15f6a87ab83da8bebc3500c1915,IB/core: Use struct_size() in kzalloc()
+commit 02fc1848414e116b948ebd70e865b7539e5d7b8d,IB/usnic: Use struct_size() in kmalloc()
+commit b5c61b968def698c21e1aa8ae402cca393fe491f,IB/cm: Use struct_size() in kmalloc()
+commit f87d8ad9233f115db92c6c087d58403b0009ed36,tipc: fix memory leak in tipc_nl_compat_publ_dump
+commit de1fa4f61be71725581c8e30f3665aaa20d1610e,dmaengine: fsl-edma: use struct_size() in kzalloc()
+commit d3d70373f6fee9ed41bc4e9f1acdbc80c5b3a684,dmaengine: tegra-apb: Use struct_size() in devm_kzalloc()
+commit edd3c389999678ddff93e72d04368ed576bf36f8,dmaengine: qcom: bam_dma: use struct_size() in kzalloc()
+commit 55f53b9c1746bba0e1b3a8d82ff3abe7ad3b96ce,dmaengine: st_fdma: use struct_size() in kzalloc()
+commit ed414d580310c3ec95abcef508035040e21a629d,dmaengine: dma-jz4780: Use struct_size() in devm_kzalloc()
+commit 5fde600537db4c61621783ae9d1c18f35e5e342c,dmaengine: bcm2835: Use struct_size() in kzalloc()
+commit 045ee2d0d0757b02f7a8897c26bed3dc127aa564,staging: mt7621-dma: Use struct_size() in devm_kzalloc()
+commit 1d38b4e903d577f05393eb0ac6727f40d90dd6c6,ASoC: xlnx: fix error handling in xlnx_formatter_pcm_probe
+commit 07fa6010ff939ef6c5a9ae0d230fdfd3bad82722,cifs: suppress some implicit-fallthrough warnings
+commit a3ac5817ffe8f81dbe6be1522b499b48bc322e3a,can: af_can: Fix Spectre v1 vulnerability
+commit a95386f0390ab602904d11fe6bd7ea5ef9b136f8,nfc: af_nfc: Fix Spectre v1 vulnerability
+commit d686026b1e6ed4ea27d630d8f54f9a694db088b2,phonet: af_phonet: Fix Spectre v1 vulnerability
+commit 50d5258634aee2e62832aa086d2fb0de00e72b91,net: core: Fix Spectre v1 vulnerability
+commit d52c499b476b2f82eebecdd5fc4be8318a4e8ef7,lightnvm: pblk: fix use-after-free bug
+commit da7903092b880b25971ca9103cb0b934a44ace2b,scsi: isci: request: mark expected switch fall-through
+commit 87be32b3ad27d7696cdc4340644894ba4c7a89e5,scsi: isci: remote_node_context: mark expected switch fall-throughs
+commit 4f09ac9d96ceea2a0532e17b614b9b2835041c17,scsi: isci: remote_device: Mark expected switch fall-throughs
+commit 1aba50b880e1834a6f2f1cb0df23ccce3e84b8a8,scsi: isci: phy: Mark expected switch fall-through
+commit 4c5765e4851008812488686619e8592783b28b33,scsi: myrb: Mark expected switch fall-throughs
+commit a8cc10e232f1fc651b6465ee120e7ecec06dc2f7,scsi: mpt3sas: mpt3sas_scsih: Mark expected switch fall-through
+commit 505b5240329b922f21f91d5b5d1e535c805eca6d,drm/ioctl: Fix Spectre v1 vulnerabilities
+commit 83ea00d6873fd7a6b7e94cf40f6dd0007593fb1e,iwlwifi: mvm: d3: use struct_size() in kzalloc()
+commit c23b2e6fc4ca346018618266bcabd335c0a8a49e,KVM: arm/arm64: vgic: Fix off-by-one bug in vgic_get_irq()
+commit 5ae4f61f012a097df93de2285070ec8e34716d29,ALSA: emu10k1: Fix potential Spectre v1 vulnerabilities
+commit 0b84304ef5da92add8dc75a1b07879c5374cdb05,ALSA: rme9652: Fix potential Spectre v1 vulnerability
+commit 69d2c86766da2ded2b70281f1bf242cb0d58a778,ip6mr: Fix potential Spectre v1 vulnerability
+commit 94ffb030b6d31ec840bb811be455dd2e26a4f43e,ALSA: pcm: Fix potential Spectre v1 vulnerability
+commit 4aea96f4237cea0c51a8bc87c0db31f0f932f1f0,ALSA: emux: Fix potential Spectre v1 vulnerabilities
+commit 5648451e30a0d13d11796574919a359025d52cce,ipv4: Fix potential Spectre v1 vulnerability
+commit 1ff2d8c43bc2ac78470033eae2947aec0c2e8cb6,scsi: BusLogic: mark expected switch fall-through
+commit 9167f0dcc523735d5df7c6e27b58c05740433657,scsi: xen-scsifront: mark expected switch fall-through
+commit 74e716f2a9d8fbe039b4149537dbc4cdf1b4bdf3,scsi: megaraid_sas_fusion: Mark expected switch fall-through
+commit 8d07f7d0009c8e2281a79fced49aa6ea60dc9153,scsi: megaraid: megaraid_sas_base: Mark expected switch fall-through
+commit 76df1da36c3d576452ce31eba90d089c85d70dd2,scsi: libfc: fc_rport: Mark expected switch fall-through
+commit 5dfdb0893596a837a95fa4013c122ba32aae9946,scsi: hpsa: mark expected switch fall-throughs
+commit c121c57a45ec048d1f3c70b20727fcf400237058,scsi: aacraid: Mark expected switch fall-through
+commit 8d4d5b346cfc597295598afad7312bee3e7ae147,scsi: aacraid: Mark expected switch fall-throughs
+commit 4ecd94b8e13b014a28be48c94f751fb62f7c749e,platform/x86: dell-laptop: Mark expected switch fall-throughs
+commit aa1f0fa374ed23528b915a693a11b0f275a299c0,parport: parport_pc: Mark expected switch fall-through
+commit 646558ff1643467d3b941b47f519867cbca462c3,kdb: kdb_support: mark expected switch fall-throughs
+commit 01cb37351bafc1b44b962842926210115e231f0a,kdb: kdb_keyboard: mark expected switch fall-throughs
+commit 9eb62f0e1bc70ebc9b15837a0c4e8f12a7b910cb,kdb: kdb_main: refactor code in kdb_md_line
+commit fee05f455ceb5c670cbe48e2f9454ebc4a388554,drivers/misc/sgi-gru: fix Spectre v1 vulnerability
+commit f7d6cf6d0c7e2d8035f849c9c4407c48924cbd0f,mtd: cfi_cmdset_0020: Mark expected switch fall-throughs
+commit 98473f5acc0070624746f30a8d6012dc70487740,mtd: block2mtd: mark expected switch fall-throughs
+commit 7cbbe1597e4497d14b4d4b22d444a168caae1ce4,zd1201: mark expected switch fall-through
+commit 89e54fa4562e74f129a95855b0e81ef5863d618b,rtlwifi: rtl8821ae: phy: Mark expected switch fall-through
+commit d22d2492a35d507ec8edc0797418341bb716d8ff,ray_cs: mark expected switch fall-throughs
+commit 641dd8068ecb078e7d12efe465df202bc16ca5eb,rt2x00: rt61pci: mark expected switch fall-through
+commit 916e6bbcfcff6cc5d7d33bba8557a30f3af50326,rt2x00: rt2800lib: mark expected switch fall-throughs
+commit 10bb92217747c3384a01ebec005faa2f5e72bbd8,rt2x00: rt2500pci: mark expected switch fall-through
+commit 6eba8fd2235237784dfd01da55c3210d493aebdb,rt2x00: rt2400pci: mark expected switch fall-through
+commit 63fdc952df36b26279ad394a84e454cc74decb89,mwifiex: Mark expected switch fall-through
+commit 38a0792d08e98a9aac5bcf638d8533d3fa5ff253,prism54: islpci_dev: mark expected switch fall-through
+commit 3d238b9d5048886ca6c4dbbd1381c2ae81759a14,prism54: isl_ioctl: mark expected switch fall-through
+commit d22b8fadd08e95124e13860397d2071a6f6625bc,prism54: isl_38xx: Mark expected switch fall-through
+commit d56b26801e1d7663f4d138fa8893174d91205586,orinoco_usb: mark expected switch fall-through
+commit af71f8fef45ce7ebc2d4cab611942dbe439905f1,iwlegacy: common: mark expected switch fall-throughs
+commit e9904084dd1be8de5bc06eaca75276556ef53e79,iwlegacy: 4965-mac: mark expected switch fall-through
+commit 307b00c5e695857ca92fc6a4b8ab6c48f988a1b1,rtl8xxxu: Fix missing break in switch
+commit e20c50cdca19e1dfcba64b17e9ae8a0a7540c7a2,rtl8xxxu: Mark expected switch fall-throughs
+commit 657f600397927c302e11c32fa2c162bbc7ef75ed,drm/radeon/r300: Mark expected switch fall-throughs
+commit fa2549800c84aecb7a9559cdb3978865d1d50513,drm/radeon/r420: mark expected switch fall-through
+commit f458f9f4369086e86f0cdedf9aae86a525da0736,carl9170: tx: mark expected switch fall-throughs
+commit 003161445bc8ec38882e571916b0c2c495277297,carl9170: rx: mark expected switch fall-through
+commit 6d9e1ecd15373c4fff03e2066581e2374c0e1e61,ath6kl: Mark expected switch fall-through
+commit bf74fd75137dd1fa9b95b82c49866e6608fb4990,ath9k: hw: mark expected switch fall-through
+commit f2a881055094444da9f7c5a9609b261bba8634a9,ath9k: ar9002_phy: mark expected switch fall-throughs
+commit 604e986700721a4371546d0a356e00bc5ba46806,ath9k: ar5008_phy: mark expected switch fall-through
+commit 41d6f0d07d76257cf2d39071a439c7dd1da7271e,mtd: rawnand: fsmc: Fix unchecked return value in fsmc_read_page_hwecc
+commit 846429bc998f4c42d9961c139ce82d0f76a51d35,ntb: ntb_transport: Mark expected switch fall-throughs
+commit 1b7619828d0c341612f58683e73f279c37e70bbc,NTB: ntb_hw_idt: replace IS_ERR_OR_NULL with regular NULL checks
+commit 3819ddec1f8c8a5daf215bec4067f8fd1dc40d6d,include/linux/signal.h: mark expected switch fall-throughs
+commit 89976005536c47a788bdd6cef5a4e9fef3c0de32,include/linux/compat.h: mark expected switch fall-throughs
+commit 0ac203cb1f03734606c0674eded43aaefb5a491a,nfsd: fix fall-through annotations
+commit 61855f021c3ae2ccc244111e2a321690f9786aed,mm/zsmalloc.c: fix fall-through annotation
+commit d91dc172e34f6954a94957b012c3b08f4103d5f9,skd: fix unchecked return values
+commit f70556c8cae976e50ba9c27dd4c1a86b57efc17d,smb2: fix uninitialized variable bug in smb2_ioctl_query_info
+commit 7e5583fd77194b45eef04835576a4fe7f3f235c8,ubi: Mark expected switch fall-throughs
+commit 6acb47d1a318e5b3b7115354ebc4ea060c59d3a1,phy: ocelot-serdes: fix out-of-bounds read
+commit 81fa7a69c2174ed8de314b9c231ef30a8718e5e1,dt-bindings: phy: Update SERDES_MAX to be SERDES_MAX + 1
+commit cfb347979e71d3ce6be59a988b3357f541c9eacf,power: max8925: mark expected switch fall-through
+commit f4445bb93d82a984657b469e63118c2794a4c3d3,scsi: hisi_sas: Fix NULL pointer dereference
+commit 82385b0d2d2504aee51aa3fb40ebfb03603f64c3,net: skbuff.h: Mark expected switch fall-throughs
+commit 47d20212aa1c64f52aba0c5409d03c22bf25cd66,net: phy: mscc: fix memory leak in vsc8574_config_pre_init
+commit e519869af368fe1da218b43bdb3a553d66f4fcd0,net: phy: mscc: fix signedness bug in vsc85xx_downshift_get
+commit efa61c8cf2950ab5c0e66cff3cabe2a2b24e81ba,ptp: fix Spectre v1 vulnerability
+commit 9ae24af3669111d418242caec8dd4ebd9ba26860,usb: gadget: storage: Fix Spectre v1 vulnerability
+commit a37805098900a6e73a55b3a43b7d3bcd987bb3f4,drm/bufs: Fix Spectre v1 vulnerability
+commit 6940d12b3b02fadd9c8cfce551772470976c7ffc,scsi: aic94xx: mark expected switch fall-throughs
+commit 9023705192242a77f05c1647b9f0c6b55c955ecf,Input: xen-kbdfront - mark expected switch fall-through
+commit 5d25ff7a544889bc4b749fda31778d6a18dddbcb,scsi: ips: fix missing break in switch
+commit a3671a4f973ee9d9621d60166cc3b037c397d604,RDMA/ucma: Fix Spectre v1 vulnerability
+commit 0295e39595e1146522f2722715dba7f7fba42217,IB/ucm: Fix Spectre v1 vulnerability
+commit c3e04915b8674a748916db6f7adf92da03b68bef,rtc: m41t80: mark expected switch fall-through
+commit 03bf67817ec1b8eb3017d2884486ef1bac128764,Input: atmel_mxt_ts - mark expected switch fall-through
+commit 15ee2992c07eb67576bab2d764f34d76aabb9143,Input: cyapa - mark expected switch fall-throughs
+commit c65a0d84ee9cae48ce4b40346e238415e47904fa,iio: dpot-dac: mark expected switch fall-through with text GCC expects.
+commit a7ed5b3e7dca197de4da6273940a7ca6d1d756a1,staging: comedi: tio: fix multiple missing break in switch bugs
+commit 7bfd82bff60ef572b9acef8ca32669ace1f50664,ath10k: remove unnecessary comparison of unsigned integer with < 0
+commit 9d9cdbf3f9edbcc0d4f2b4d17f3329315c5f84ad,ath10k: htt_rx: fix signedness bug in ath10k_update_per_peer_tx_stats
+commit 4fe81669df50889ff1072c030c59df5f1fa6534e,pinctrl: madera: Fix uninitialized variable bug in madera_mux_set_mux
+commit 74a07c0a59fa372b069d879971ba4d9e341979cf,drm/nouveau/secboot/acr: fix memory leak
+commit 062f97a314355c3f0021cfa1454726cfe12432fa,isdn/gigaset/isocdata: mark expected switch fall-through
+commit 272a66173bbc300abbb10d013fd80bb7ba6f43f0,isdn/gigaset: mark expected switch fall-throughs
+commit 97037597d6702f4446dd79af8bdb6959a35586b8,video: fbdev: arcfb: mark expected switch fall-through
+commit d2681cd81b05f313bf6cda55b56c15cd46572034,mmc: meson-mx-sdio: mark expected switch fall-through
+commit a5c83eb2bdc35af7fc7947fadf6e740a5792f08e,mmc: tifm_sd: Mark expected switch fall-through
+commit b7dc10b64f6190a008f05baf697d4d8fa9b8ed51,sparc64: fix fall-through annotation
+commit c4beb225f93a2fdaffbe2a610eccb0f6c86b3e45,sparc32: fix fall-through annotation
+commit 5fc7c12ffa7fe463c4da2295cdc199da9663dce5,bnxt_en: Remove unnecessary unsigned integer comparison and initialize variable
+commit 2b9156129f8ee7312287c4826fe4c34a5402d74e,gigaset: asyncdata: mark expected switch fall-throughs
+commit 74aa3586c59906f9b76720416aee045db2f7b3b5,ssb: chipcommon: fix fall-through annotation
+commit fa295becc533234e4b1ea774caed2446a65ff695,PCI / ACPI: Mark expected switch fall-through
+commit 2c1833767bd8d906489a91cbbcb151fe3b818b61,spi: pxa2xx: Rewrite switch code block in interrupt_transfer
+commit 4b03227a65dc7aa8c0c1f8f6b3726225ae529e47,regulator: axp20x: Mark expected switch fall-throughs
+commit 2cc543f5cd6deda27ef463686fa08c16c8c0990b,sctp: fix fall-through annotation
+commit 2e75b676c3284930489a968d33b75e5d2b2c36c6,ALSA: intel8x0: Fix fall-through annotations
+commit c24bfa8f21b59283580043dada19a6e943b6e426,spi: slave: Fix missing break in switch
+commit fbed20280d912449cfb40c382cb55e3d11502587,mtd: rawnand: atmel: Fix potential NULL pointer dereference
+commit 3f60b03f74277a4971a42ee980b4e72b8e9e4751,isdn/hisax: Fix fall-through annotation
+commit fe1a10bab242ef0184fdaea6d63905e5f49b6041,ALSA: sb8: Fix fall-through annotations
+commit fb6360b1ef33b7799e6a81e1075a47e3b8ae01fd,pktcdvd: fix fall-through annotation
+commit 7c968791f7753bf0e52a21729498509ea3dd751b,video/fbdev/stifb: Fix spelling mistake in fall-through annotation
+commit 2462080fe9417717a0594e082f50fce048d5a09b,soc: mediatek: pwrap: use true and false for boolean values
+commit 4310834412199ac9ab02350e5c360a210478e015,i2c: synquacer: fix fall-through annotation
+commit 1cafbb867c6905d481c654291f2dc79d163a16f5,media: venus: helpers: use true and false for boolean values
+commit b31bd669b45dca9c42d9dbd7eb1a4b02fa8f5323,misc: sgi-gru: fix fall-through annotations
+commit b1fed3edc82ae0d763d5c24769e4a0193da150c9,Smack: Mark expected switch fall-through
+commit e97267cb4d1ee01ca0929638ec0fcbb0904f903d,tty: vt_ioctl: fix potential Spectre v1
+commit 17a0a1e5f6c4bd6df17834312ff577c1373d87b8,PCI: mediatek: Fix unchecked return value
+commit 982e386379f01aa6254e3313cff1edcb04c66685,ASoC: hisilicon: fix fall-through annotations
+commit 597d18325acdb48eb516ca9ef33d5148e79ca3bb,ASoC: es8328: Fix fall-through annotations
+commit 05e2ec3b00edb277b325489e0d1de3570ad16359,ALSA: atiixp: fix fall-through annotations
+commit f91845da9fdabd920543e0fb4feb970181e33a0f,pktgen: Fix fall-through annotation
+commit 310fc0513ea9bac6cb772b9fb6ec936dce12913b,tg3: Fix fall-through annotations
+commit 78cf8c842c111df656c63b5d04997ea4e40ef26a,media: drxj: fix spelling mistake in fall-through annotations
+commit de916736aaaadddbd6061472969f667b14204aa9,misc: hmc6352: fix potential Spectre v1
+commit 46feb6b495f7628a6dbf36c4e6d80faf378372d4,switchtec: Fix Spectre v1 vulnerability
+commit 829682b3dba16120c3366d8eaef620a8a41e5fb8,media: uvcvideo: Remove unnecessary NULL check before debugfs_remove_recursive
+commit 23feefda22392d44ee4101dfcf946bc87a6c74b3,usb: iowarrior: replace kmalloc with kmalloc_array
+commit 426d5a0f9733ecc2c4d7b252672fa8b1970d1c91,9p: fix spelling mistake in fall-through annotation
+commit 49925f24701600433d0342135e9963818c6b0238,wil6210: fix unsigned cid comparison with >= 0
+commit 40b5a0f8c6c701dddd9b508b1d244203e89e9422,mac80211: remove unnecessary NULL check
+commit b034ed50a2bb517c4b76e84f7723cb6bf60a4edd,HID: core: fix NULL pointer dereference
+commit 683a0e630cb463d18e9c158496270dc918cf5437,dma-buf/udmabuf: Fix NULL pointer dereference in udmabuf_create
+commit 2f91eb6951d9e9d8d751a390cfd3e8b0216d88ef,mtd: rawnand: atmel: use struct_size() in devm_kzalloc()
+commit 81592c69c9ed34138fef8b6fe3a990f8380148f4,mtd: rawnand: jz4780: use struct_size() in devm_kzalloc()
+commit 2fc4aa59ab470f1d5124b33c05680e2b2f2c6f65,net: usbnet: mark expected switch fall-through
+commit cf5652c962dae3bff1e256be7eba142b067e74ba,orinoco_usb: fix spelling mistake in fall-through annotation
+commit a8627cda7cfffe1792c199660c2b4f03ba2bd97b,ipmi: Fix NULL pointer dereference in ssif_probe
+commit e9a2310fb689151166df7fd9971093362d34bd79,reset: hisilicon: fix potential NULL pointer dereference
+commit 681cd4a890e394b91b0b5df0d7f6095d3ae83193,clk: qcom: clk-branch: Use true and false for boolean values
+commit d290e096d2a59c655b3c718aa17bb8864bb6fa5e,pinctrl: lpc18xx: mark expected switch fall-throughs
+commit 29adeb4f954b2e398c75d71bd49e62b0287d50c7,drm/rockchip: Use struct_size() in devm_kzalloc()
+commit 450b6b9b169382205f88858541a8b79830262ce7,clk: npcm7xx: fix memory allocation
+commit 06ae8dc00433797555481ee3391cab6acaf1a5db,ath10k: use struct_size() in kzalloc()
+commit f62df676d7f16580fa5085a8f51a1cbe27f7dd10,memory: atmel-ebi: Use struct_size() in devm_kzalloc()
+commit 725e0e15f84bb30e83fad8fa4b4dd1f335506172,rtc: sun6i: Use struct_size() in kzalloc()
+commit d49dbfade96d5b0863ca8a90122a805edd5ef50a,hwmon: (nct6775) Fix potential Spectre v1
+commit 06e3c29716d9ba1eedfbd697afddbd7495491b26,drm/sun4i: tcon-top: Use struct_size() in devm_kzalloc()
+commit addb3ffbca66954fb1d1791d2db2153c403f81af,Bluetooth: mediatek: Fix memory leak
+commit b639186ffe9168fd1d2f95a1fff8571720739126,futex: Mark expected switch fall-throughs
+commit 9ffa68f65416094714c63ed1db219493e84fe21d,iio: health: max30102: Mark expected switch fall-throughs
+commit aa7d16bfa3bd7a753c59b9bae1ac1ccda33bc27a,platform/x86: acer-wmi: refactor function has_cap
+commit 1bf0572fe27030a0e82fc60f8323a2114c2b69d3,ubifs: use swap macro in swap_dirty_idx
+commit 4597b62f7a60d912a2bd00ca574e6bc7b87be905,net: filter: mark expected switch fall-through
+commit de5372da605d3bca46e3102bab51b7e1c0e0a6f6,drm/i915/kvmgt: Fix potential Spectre v1
+commit a2eed33dcdb7663170b01f05dd8d0a3323ffe4b3,ide: mark expected switch fall-throughs
+commit 062a585ec21ea478be4826be7ddddb5b3ac49789,KVM: arm: Use true and false for boolean values
+commit 8a8a894ebbc23f52669b80c2ca5bf62d75267324,wimax: usb-tx: mark expected switch fall-through
+commit 849063074a84fe388a15f5655bc26fdf3290a2ac,wimax: usb-fw: mark expected switch fall-through
+commit d331e7589753f02f93db350910e4bcbbecf6f726,net: dp83640: Mark expected switch fall-throughs
+commit 6e45f2a59ffb440f28719ab3a68bee5b8e9df16b,f2fs: use true and false for boolean values
+commit 1a363b0d3bdc7ee369d1f46f2ed7538b1d9481c7,s390/qeth: use true and false for boolean values
+commit a677a78325b3057ce03b6129f549ece85b0c8dd2,nfsd: use true and false for boolean values
+commit 7b4d6da4bb6d0ece17ca27f0b4612df87f873d83,nfsd: Mark expected switch fall-through
+commit 0a1c749dee4c52465d5580d77e0f8aaa9215c357,block: paride: pd: mark expected switch fall-throughs
+commit c7743c428111912fffceb38b860024f7e33b3e3c,ssb: driver_gige: use true and false for boolean values
+commit f2cf0ef7c0ce141bb38f315c34c56e6ef5667a27,ASoC: adav80x: mark expected switch fall-through
+commit 91c6e15efc1756b068dc6e945c1626397e60a119,ALSA: usb-audio: Mark expected switch fall-through
+commit 725097323bbcbbca51ede20b542c6229a2869445,ALSA: mixart: Mark expected switch fall-through
+commit 10db5b7a2f44379f63c159a77456d4d22df53c51,pnfs: Use true and false for boolean values
+commit 01e03bdc745bf2b86fadfc44e57512fd39f9d54f,NFS: Mark expected switch fall-throughs
+commit 1c02cbf7de0dc778bbd3735089ce903c8a55517d,i2c: designware-pcidrv: Mark expected switch fall-through
+commit ee87a0ce2f91aa4f4906a5f515152aa5019200ad,i2c: amd8111: Mark expected switch fall-through
+commit 0c93c5ce107659069d16fa34ddce465acdf9d996,ALSA: opl3: Mark expected switch fall-through
+commit 17a4ed5545c5599852a5d75c5fb2c8e597943f99,Input: mark expected switch fall-throughs
+commit 6cad4e269e25dddd7260a53e9d9d90ba3a3cc35a,Input: raydium_i2c_ts - use true and false for boolean values
+commit 3c4d9137eefecf273a520d392071ffc9df0a9a7a,arm64: alternative: Use true and false for boolean values
+commit e38c2e11ebcc2bd13aa8220bc4ccce5228030526,net: ethernet: ti: cpts: mark expected switch fall-through
+commit 681685a1ce060c4fd69b0a1124ef40baadb330a4,net: tlan: Mark expected switch fall-through
+commit 5683a7a6972059611ea164be0529fdb8db28938c,net: sfc: falcon: mark expected switch fall-through
+commit 4e50ffcf1fb65375bed0cdb44ee369f33ee3729d,net: ethernet: sxgbe: mark expected switch fall-throughs
+commit 201e894570b182ab6e49097ed3b3fcc1a7e3cf3c,qlge: mark expected switch fall-through
+commit d19911ca0521623bcc306738f7a1298f9f56d3c9,qlcnic: Mark expected switch fall-througs
+commit b84ad65a75f36abfe20b3c9386e8377982ca8eaa,qede: qede_fp: Mark expected switch fall-through
+commit fd3da12dba0d91d817adc4a6037513906bb4e8e9,netxen_nic: Mark expected switch fall-throughs
+commit 53a42286f29f88663d7b40922eca978c88e69709,qed: qed_dev: Mark expected switch fall-throughs
+commit e77f02b812ccb10396d9e5a9a23db14983a344a9,net/mlx5e: Mark expected switch fall-throughs
+commit 9d81e6a3f64315fa3af3e8f880bbfda35be04188,vxge: Mark expected switch fall-throughs
+commit 76df93b1779563cda9d38237e5b6422df9ebd2e5,igbvf: netdev: Mark expected switch fall-through
+commit eed05a094a0dd03f181d3fd65e4be375d88a582c,igb: e1000_phy: Mark expected switch fall-through
+commit b9e0e23f918bafddaaf3b91b099f027679a77467,igb: e1000_82575: Mark expected switch fall-through
+commit 7e9660ff6ff1c154f2590ade0ac3ad563f1522ab,igb_main: Mark expected switch fall-throughs
+commit c8581f2bb5dd02d14be61ed9faa052a693a3960e,net/mlx4/en_rx: Mark expected switch fall-throughs
+commit 49a9776fe5d62fd4ff87406efa390a5de9f5f07d,net/mlx4/mcg: Mark expected switch fall-throughs
+commit f7c3ca2da4640143f04fc50dba74804be02c16ac,i40e_txrx: mark expected switch fall-through
+commit 1e84374f1c3c233c64be6122742c85446c774689,i40e_main: mark expected switch fall-through
+commit be44b3afa98205607a7930b155557ccda9efd1e2,net: hns3: Mark expected switch fall-through
+commit 1e14ef19fb49ed6f822129ce7bc819a462b88e11,net: hns: Mark expected switch fall-through
+commit 40f99eda21bd14c7bbc62caee42c9b604ea24f6e,be2net: Mark expected switch fall-through
+commit 8fc85c25c1f3f05ccc147af4c470c911afc54998,net: tulip: de4x5: mark expected switch fall-throughs
+commit 10c7666e70d979d78bf6b8c1b6ab6dd68cd0d96b,net: tulip_core: mark expected switch fall-through
+commit 6da5ae5f00e84b469ba52e734c856b707eac90a6,net: thunderx: mark expected switch fall-through
+commit 92072679a8036215b9ef8fd68d7ef9eef786a9e9,cxgb3/l2t: Mark expected switch fall-through
+commit d135955f550df5d61bf973a71b758384b32fe638,cxgb4/t4_hw: mark expected switch fall-throughs
+commit 20e4fb12b146cab4ca9c4f1e10c04fcd67823f43,cxgb4/l2t: Mark expected switch fall-through
+commit 19aa45d447002798ec006faddd4f491a5839bebe,liquidio: mark expected switch fall-through
+commit b4bc39a3f666c3e93590aefbc00d94b95f80567f,net: macb: Mark expected switch fall-through
+commit bc171e87a7e29a41b119fdfccd378f7179b39c23,bnx2x: Mark expected switch fall-thoughs
+commit 8ea34505060486010f27e323c741eeca5af7980e,alteon: acenic: mark expected switch fall-through
+commit 497e0049b6c8b1923ba6ccb58f3ccf840a32be7e,8390: axnet_cs: Mark expected switch fall-through
+commit 544c05a60aef7de34ef60eebaf46582ca2bf05f9,vfio: Mark expected switch fall-throughs
+commit bf06bad958c4536ee5ac3461a18976ea3e896f26,xen/biomerge: Use true and false for boolean values
+commit f87c30c96cd9b5baa28bc63900f16e04e8c7cbb2,xen-blkfront: use true and false for boolean values
+commit ad0eaee6195db1db1749dd46b9e6f4466793d178,ASoC: wm8994: Fix missing break in switch
+commit bee7d3c9f89a1bbe3d5f88ac9d6946de4705731b,ASoC: wm8903: use true and false for boolean values
+commit e1ec62b147c2f2deae66e69ee4f7347dc80123ae,ASoC: da9055: use true and false for boolean values
+commit 380ae4ec420304aa59adb36776eaf78aef37192c,ASoC: wm5100-tables: use true and false for boolean values
+commit 1752a35acd8e837463fb7b7d9492b18e2a2ed5e3,ASoC: da7213: use true and false for boolean values
+commit bc94c8884e5a94914ec950dfc615563a1253e3f3,ASoC: twl6040: use true and false for boolean values
+commit 965afd3c1dbaf293bfa9452aaf0a7e53d78d07f3,ASoC: da7219: use true and false for boolean values
+commit eb086306bc6b42dc2c538ec2350d44a82d1a835b,ASoC: wm8996: use true and false for boolean values
+commit c34c4515286f27e7e99d8a0011b4322d1de6c9bc,ASoC: cs4270: use true and false for boolean values
+commit 064ee5a370150534e12e5bac4ff81f86528e27ca,ASoC: wm8990: use true and false for boolean values
+commit 10754bfc051256ab922b818de3ddd11391862a5f,ASoC: tda7419: use true and false for boolean values
+commit 508e8641f89cc89554adbec3ce59bcd28a4ced4b,ASoC: rt5631: use true and false for boolean values
+commit 038541dae968dbef99edca4b22bbb2a7b4afdc83,ASoC: max9850: use true and false for boolean values
+commit 82837ad5bda79cd13d64b9abad92e7872a06bc65,PM / hibernate: Mark expected switch fall-through
+commit ef0075280cfe09ef076ce1b85f0a2294c5ed86f3,ALSA: echoaudio: Mark expected switch fall-throughs
+commit 9d5a289a86a15a1a4248022f9338517f7e62832b,ALSA: emu10k1: Mark expected switch fall-throughs
+commit ac69c2f578bf51a3804c5e96467571ea5be0e882,ALSA: mixart: Mark expected switch fall-through
+commit b633d4405bb276518812fbc20a5c61ce4cef25ae,virtio-net: mark expected switch fall-throughs
+commit 7964410fcf135d7e76deef4e475816ec02482f7b,fs: dcache: Use true and false for boolean values
+commit 7a92719356cac8fef100a8a92e64b583f39368d2,genwqe: card_base: Use true and false for boolean values
+commit eb2caeb88c181904110f8e74995c7b0bb7fd39f6,ALSA: seq_oss: Mark expected switch fall-through
+commit 2f3b94e539a46052f8eba1f295ff5646e227578a,ALSA: seq: Mark expected switch fall-through
+commit 5019027a566de4986a7f66017cf0d6d794fc155f,ASoC: samsung: i2s: Mark expected switch fall-through
+commit a773c3b6be185d171e2755ac715e8b1ea099ebbc,ASoC: omap-dmic: Mark expected switch fall-throughs
+commit 16bbeb2b43c3f5d69e1348477e75a24ae6d55d5a,ASoC: fsl_esai: Mark expected switch fall-through
+commit 1a12d5dc7dd1ffd985503f9770b736fb03db2e3f,ASoC: core: mark expected switch fall-through
+commit 85c81941d5033fc8a68646823d3157840c9de8b3,ASoC: omap-mcpdm: Mark expected switch fall-throughs
+commit 3b7c88fcc2873eba64f9e8cef34c4af0cba20887,ASoC: davinci-i2s: mark expected switch fall-through
+commit 8530ebf1079ccc84ffa32d970cdcae168b2f3684,ASoC: smd845: fix memory leak
+commit 3512a18cbd8d09e22a790540cb9624c3c49827ba,mailbox: xgene-slimpro: Fix potential NULL pointer dereference
+commit 13a01635823c409a0911304ee50987cb851317da,ALSA: es18xx: mark expected switch fall-through
+commit 734be97b967c7e2bab72b34da87534ccd854c72d,ALSA: opti9xx: mark expected switch fall-throughs
+commit 3e313f34720ea1bb876636263e30a779ff65836e,ALSA: opti92x: mark expected switch fall-throughs
+commit a9fe47e5e96be6401738f6c1e087edbcff6a5ceb,ALSA: galaxy: Mark expected switch fall-throughs
+commit d3e2a25bcd0b24f0905554ef0762eb77cbca7ad5,xen-netback: use true and false for boolean values
+commit 99972f171bba19243999310154b7442198f0ab30,aoe: mark expected switch fall-through
+commit 2cea1542859bc812f1ec51ea71c06e927e5b922e,ASoC: wm8994: Mark expected switch fall-through
+commit 7a2235ef507822679ac89007a6a37b23f30eed56,ASoC: wm9081: Mark expected switch fall-through
+commit af5d1d5d4ba71164711025e077511ad48d5690e9,ASoC: wm8995: Mark expected switch fall-through
+commit a9531ab151117e976544e0dc74a9bc8cbd01145f,ASoC: wm8962: Mark expected switch fall-through
+commit 42ef3c94ff6e8315377c04504f1bce50d1f21738,ASoC: wm8996: Mark expected switch fall-through
+commit da41787b9f319a7a23fcc8cf65c6ad646803962e,ASoC: wm8904: Mark expected switch fall-through
+commit 3eb7dbc6d844d2033271434d02ff90ac9b19e393,ASoC: wm8960: Mark expected switch fall-through
+commit 85e7e77079f3201799467803f6c8533a9921e32d,ASoC: wm8955: Mark expected switch fall-through
+commit 43a26bd026dab09a8b28c40e94ba534a52375b20,ASoC: rt5677: Mark expected switch fall-through
+commit 065dcc270af66acb4226b49f635b41a054b663d4,ASoC: rt5640: Mark expected switch fall-through
+commit 9a73f6a235c2351adc07471519d4980e2fb33bbc,ASoC: wm8961: Mark expected switch fall-through
+commit 44ec3ec01fb7d54d1a14c138cb43b90a0e934b89,ftrace: Use true and false for boolean values in ops_references_rec()
+commit d5e77fca87e636dda510710689b4c2ca93765598,ALSA: usb: Mark expected switch fall-through
+commit 96d395020e87607b3454edc2f49a03ddcfbef986,net/mlx5e: Fix uninitialized variable
+commit 5a6cd13d4faef48bdcb7ae9c1e98175332ced7cd,ALSA: pcm: Mark expected switch fall-through
+commit ddf74e79a54070f277ae520722d3bab7f7a6c67a,drm/amdgpu/pm: Fix potential Spectre v1
+commit aff24cd1f531b0dd55e46f6a8f76cf44117f0a24,drm/msm: Replace PTR_RET with PTR_ERR_OR_ZERO
+commit ae1c696a480c67c45fb23b35162183f72c6be0e1,ASoC: sirf: Fix potential NULL pointer dereference
+commit 62bbdd9974678513fee113f09f6b672623521179,ext4: use swap macro in mext_page_double_lock
+commit a4789089937941959be6c18fa53e1fc0189257fd,crypto: rmd320 - use swap macro in rmd320_transform
+commit d75f482eaface11dd30e73977c245fab5e07c3aa,crypto: rmd256 - use swap macro in rmd256_transform
+commit b094e64fbd88dfcde137c2235b58c904ccac00ea,media: dib0700: add code comment
+commit f2047d6044e530c05a618a33d1be09b1498f9e0b,media: dvb-bt8xx: remove duplicate code
+commit f805ed84895abc56e20328ccfe340d4ff74a3983,can: peak_usb: mark expected switch fall-throughs
+commit 2ed9db3074fcd8d12709fe40ff0e691d74229818,net: sched: cls_api: fix dead code in switch
+commit dc66fe43b7ebdb53628dcbc1f8f15de3e000aacf,rds: send: Fix dead code in rds_sendmsg
+commit 502defbb476bca222ddb5a78f2cc19c12c4e42f3,fsi: master-ast-cf: Fix memory leak
+commit c5b974bee9d2ceae4c441ae5a01e498c2674e100,iio: sca3000: Fix missing return in switch
+commit 12382ad98ca06afb7ce4dce53aebf115b5f6b948,video: fbdev: mark expected switch fall-throughs
+commit 2968b5265f00c14fbb44daa2721cf07ff7a917d9,omapfb: Mark expected switch fall-throughs
+commit 810180fc8e63f75e8bdaba42057781a50925aa06,fbdev: fbmem: mark expected switch fall-through
+commit 249090f9016b7d68a18fc4c79c42accca18d6961,nvme-rdma: mark expected switch fall-through
+commit cc44ba91166beb78f9cb29d5e3d41c0a2d0a7329,power: supply: max77693_charger: fix unintentional fall-through
+commit 37bab356f86b85f3bba85d3c82323a01255902bc,power: supply: mark expected switch fall-throughs
+commit baa2d2b17ee93e2a5b8accc2dd5328db17caf90e,net: sched: use PTR_ERR_OR_ZERO macro in tcf_block_cb_register
+commit eecd6857709e08781e41f3eb0e0c669d9ca07d87,tls: Fix copy-paste error in tls_device_reencrypt
+commit 3fd8093b41e745448ffeb0a0d3becc2cd1f9d7ad,crypto: dh - fix memory leak
+commit cd0ed39dc9e8b10d469f53ae03310bca09296bdd,s390/tape: replace PTR_RET with PTR_ERR_OR_ZERO
+commit 9fa6a659ca98c45a5c226d165adfed96a1e01564,s390/hypfs: Replace PTR_RET with PTR_ERR_OR_ZERO
+commit 757853ea19755c24609e122268145527b541a4d4,s390/dasd: replace PTR_RET with PTR_ERR_OR_ZERO
+commit 9c705206d0b5f834650c379d6cfbd07a597a0a1e,s390/ap_bus: replace PTR_RET with PTR_ERR_OR_ZERO
+commit 9ba8376ce1e2cbf4ce44f7e4bee1d0648e10d594,ptp: fix missing break in switch
+commit 676bcfece19f83621e905aa55b5ed2d45cc4f2d3,net: cxgb3_main: fix potential Spectre v1
+commit 0e714d27786ce1fb3efa9aac58abc096e68b1c2a,vfio/pci: Fix potential Spectre v1
+commit e146471f588e4b8dcd7994036c1b47cc52325f00,net: mvpp2: debugfs: fix incorrect bitwise operator
+commit e4e542a683c16945533d700339a0aec261d39f34,xfs: use swap macro in xfs_dir2_leafn_rebalance
+commit 897992b7e3505659fda57887223bd6bfe163c12f,xfs_bmap_util: use swap macro
+commit 1d5bebbafc73d82e5af003cdd2bf8ee5741cd1df,xfs_attr_leaf: use swap macro in xfs_attr3_leaf_rebalance
+commit 108019a7e6a34df91246365066bea7cf6faf6b02,drm/pl111: Use 64-bit arithmetic instead of 32-bit
+commit 7373c2a99abf2b11b5e8a226071331c0176253ff,ALSA: emu8000: Use swap macro in snd_emu8000_sample_new
+commit e2d2f240497c63a157f897c87567b93ed43a2213,ALSA: emu10k1_patch: Use swap macro in snd_emu10k1_sample_new
+commit ae85467cccba9b255bd91b583effb17a5b57a12f,net: usb: hso: use swap macro in hso_kick_transmit
+commit 399476bd40a5f3518d9ca8e809ca042028c41cea,pinctrl: baytrail: Mark expected switch fall-throughs
+commit e12fa73c97a4c5fbc77b28e6436277fdc4f9b3b5,pinctrl: mt7622: mark expected switch fall-through
+commit 2061594c612c4535b14bcd062a5bcf308bdd2b98,mmc: sdhci-xenon: mark expected switch fall-through
+commit 34bcfdac8c92cc7971254ba5856afd12047c50b2,parport: ieee1284: mark expected switch fall-throughs
+commit 884b031b288bae15397dd07b084a41ffb44f99e4,lightnvm: pblk: mark expected switch fall-through
+commit d6be72ee2c77469d4fb391ccccc2ebc1b167a242,crypto: chtls - use 64-bit arithmetic instead of 32-bit
+commit 858c5dfc8c336ca26b8d4d9f639a9dc40c5daa80,backlight: adp8860: Mark expected switch fall-through
+commit d6488ac19aabcc6c85a74b69eaf1b7301124c323,PCI: Mark fall-through switch cases before enabling -Wimplicit-fallthrough
+commit fc21ae8927f391b6e3944f82e417355da5d06a83,scsi: mptfusion: mark expected switch fall-throughs
+commit 31e1c59796c8abeba8bbb961bc329a6aa5f5847c,drm/ttm: use swap macro in ttm_bo_handle_move_mem
+commit 01abdcc5288f3bf3ea65378a4717138508b9c574,phy: qcom-usb-hs: Mark expected switch fall-through
+commit 572d8fda26fecbb6bbb63e917b5610c7157cde96,char: amd64-agp: Use 64-bit arithmetic instead of 32-bit
+commit d893ff86034f7107f89d8b740c2b5902a21a49db,block/loop: mark expected switch fall-through
+commit d769a992966b0a188096fda24fc08fc769ec6547,drbd: mark expected switch fall-throughs
+commit 4f65245f2d178b9cba48350620d76faa4a098841,HID: hiddev: fix potential Spectre v1
+commit 38fce264b12bab641f22cef59db5d5b0b0cd841f,dmaengine: nbpfaxi: Mark expected switch fall-through
+commit ffb32432457c6a6deffb64982b54d8f7b72ef618,hwmon: Mark expected switch fall-throughs
+commit e161ef7c3c376f6807cdef7e8a2804b964dd7584,iio: mma8452: Mark expected switch fall-through
+commit 82d65f9d552818b7e56c85edaaf6c3d2b104d07d,iio:imu:adis: Mark expected switch fall-throughs
+commit bcde98fcf9cf084f6ed6c1751d2ef68877a87c20,misc: mic: mark expected switch fall-through
+commit f1a54cddbbc36ebf1e8ce10a3e1fa5f8a4ce9613,sgi-xp: xpc_partition: mark expected switch fall-throughs
+commit 0c2ccd8cd1436d79010354029f43e4d167f1d755,eeprom: at25: mark expected switch fall-throughs
+commit 5faecb0162883df2b06965c7e6dd7c42278f7e0d,/dev/mem: Mark expected switch fall-through
+commit 6f3472a993e7cb63cde5d818dcabc8e42fc03744,drm/amd/display/dc/dce: Fix multiple potential integer overflows
+commit f7ddff54d0a0f068442414b48bec7f22aa777de7,ASoC: nau8824: use 64-bit arithmetic instead of 32-bit
+commit f0d759f038dcced7dfb756dc54c224f09ad062a2,drm/i915: Mark expected switch fall-throughs
+commit 2cc0608e42aceb38abc9e57a017449b9efc2e4a9,net: core: filter: mark expected switch fall-through
+commit 3cc87d03992fc2a2d57b8a76110463fb18a95d72,net: decnet: dn_nsp_in: mark expected switch fall-through
+commit c53e0c787e672b4edbf719b7c1ec5833db3af2da,tipc: mark expected switch fall-throughs
+commit b999a7a9e72bd2d37b5d03772cedfc4dd45875bf,ASoC: fsl_spdif: Use 64-bit arithmetic instead of 32-bit
+commit 04614fe46f315a223d96b8f5df7b52130965677b,wlcore: Fix memory leak in wlcore_cmd_wait_for_event_or_timeout
+commit da13ed1d80fe6a4d95043aaf2e0aff292ade5708,ASoC: nau8825: use 64-bit arithmetic instead of 32-bit
+commit d287c5024361554d746e918b20d69a37f1b6bd79,isdn: mark expected switch fall-throughs
+commit e0431de301cbb8e3915261dfff4d0b072738de69,ASoC: pxa-ssp: mark expected switch fall-through
+commit c18a9c096683dd30300686ffc755443816893968,net: stmmac_tc: use 64-bit arithmetic instead of 32-bit
+commit 25b22e353c1f8d48e69fdef70a31be2f0d2bc410,USB: mark expected switch fall-throughs
+commit 169d3606dccfa3cfc5aa98b6e01705582074e1eb,USB: musb: mark expected switch fall-throughs
+commit ced9e191501e52b95e1b57b8e0db00943869eed0,atm: zatm: Fix potential Spectre v1
+commit 9ca78674eb6a19acbb1d69e86273ebd1d3edf087,net: usb: Mark expected switch fall-throughs
+commit 83607344d667315687e1a5ddd2ad2fbbff22cc43,bnx2x: Mark expected switch fall-throughs
+commit 9b10000f4921e9f9f8231f9ceecae4446928844a,tg3: Mark expected switch fall-throughs
+commit 47aa7861b9bf8e8a540f3b11971e4a3f631e8ff4,mac80211: fix potential null pointer dereference
+commit 5ae79cf18dc1a97d8d0ab420fc4d3f8674bcf0e8,drm/gma500: Fix compile warning
+commit 80c18ba11a7a84cb97e39e5c9b6cdeee9f3c0728,drm/gma500: Fix potential NULL pointer dereference
+commit 08ae88f8104f486fd4103854119169f3e55dbc4c,tracing: Use swap macro in update_max_tr
+commit 80dc12cdfb9e8966da4f02d6d7accf2cb691caf2,spi: spi-fsl-dspi: Fix copy-paste error in dspi_probe
+commit c1e3f64f87381ed3768b9247ab0cd08b41927da6,qtnfmac: fix NULL pointer dereference
+commit fe78627d430435d22316fe39f2012ece31bf23c2,drm/amd/display: fix type of variable
+commit 12b67b0d6bcbe91d8b0682610f43d1cd8cdf280e,ath9k: mark expected switch fall-throughs
+commit 4de30c906ef08af67c6d81c03e3505ee467db026,ath6kl: mark expected switch fall-throughs
+commit aae28cefc279203c1d1bc460c831b0a557662945,ath5k: mark expected switch fall-through
+commit f1d270ae10ffc8d4f9726cc8b654e4e8cda294b5,ath10k: htt_tx: mark expected switch fall-throughs
+commit 299eafee39a22a9d9a7c19ae592b230bd199f259,IB/mlx5: Fix memory leak in mlx5_ib_create_flow
+commit 06895b1627fe36f0bea49d4c9fd0e27f0f7498b1,rtlwifi: remove duplicate code
+commit 666cc438f36918fb4ed5cab37f0cfaf14586b85e,mwifiex: mark expected switch fall-throughs
+commit b3b2d5b624f2ee973a22aabb1e504a9008cad2ff,media: au8522: remove duplicate code
+commit 23d6aef74da86a33fa6bb75f79565e0a16ee97c2,kernel/sys.c: fix potential Spectre v1 issue
+commit a0d6ec88090d7b1b008429c44532a388e29bb1bd,usbip: vhci_sysfs: fix potential Spectre v1
+commit 7bf5b70befd7817b9e42acbd2291b2042ea1bf81,drm/nouveau/secboot: remove VLA usage
+commit a78622932c27e8ec33e5ba180f3d2e87fb806b28,bpf: sockmap, fix double-free
+commit 0e4364560361d57e8cd873a8990327f3471d7d8a,bpf: sockmap, fix uninitialized variable
+commit acf784bd0ce257fe43da7ca266f7a10b837479d2,net: atm: Fix potential Spectre v1
+commit 2be147f7459db5bbf292e0a6f135037b55e20b39,atm: zatm: Fix potential Spectre v1
+commit 2b7db29b79190f7ad5c32f63594ba08b9b9171ea,media: imx-media-csi: Fix inconsistent IS_ERR and PTR_ERR
+commit ad109ba1378679f922f7286e7a9e50e2be778d87,staging: wilc1000: fix infinite loop and out-of-bounds access
+commit 3f1109d1324405eaeb6c4a586084bd1d933d8b19,mmc: sdhci-cadence: fix logically and structurally dead code

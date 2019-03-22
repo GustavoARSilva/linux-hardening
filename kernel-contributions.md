@@ -1,5 +1,5 @@
 Last update: Thu, April 5, 2018
-# My Linux Kernel Contributions
+# My All-time Linux Kernel Contributions
 
 `git log --shortstat --author="Gustavo A. R. Silva" --author="Gustavo A R Silva" | grep "Author" | wc -l`
 

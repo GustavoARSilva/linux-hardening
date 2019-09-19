@@ -1,4 +1,4 @@
-Last update: Friday, August 9, 2019
+Last update: Thursday, September 19, 2019
 
 ## Among the most active Linux kernel developers
 

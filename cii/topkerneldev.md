@@ -4,7 +4,7 @@ Last update: Friday, August 9, 2019
 
 | Version | Commits upstream | Gustavo's Ranking |
 | :----------------: | :------------------: | :--------------: |
-| [Linux 5.2](https://lwn.net/Articles/798505/) | 128  |  9 |
+| [Linux 5.3](https://lwn.net/Articles/798505/) | 128  |  9 |
 | [Linux 5.2](https://lwn.net/Articles/791606/) | 104  |  11 |
 | [Linux 5.1](https://lwn.net/Articles/786638/) | 192  |   1 |
 | [Linux 5.0](https://lwn.net/Articles/780271/) | 77   |  20 |

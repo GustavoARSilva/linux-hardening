@@ -12,3 +12,5 @@ Last update: Friday, March 25, 2019
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |
 | 702 | 1673 | 1027 |
+
+[![Kernel Recipes 2017](http://img.youtube.com/vi/y0__yxM0New/0.jpg)](http://www.youtube.com/watch?v=y0__yxM0New "Fixing coverity bugs all over the Linux kernel - Gustavo A. R. Silva")

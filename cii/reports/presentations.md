@@ -1,16 +1,9 @@
-Last update: Friday, March 25, 2019
-# Linux Kernel Contributions (May 1, 2018 - Mar 25, 2019)
+Last update: Tuesday, Octobre 22, 2019
 
-`git log --oneline --author="Gustavo A. R. Silva" --since="1 May, 2018" | wc -l`
+# Gustavo A. R. Silva - Core Infrastructure Initiative Public Presentations
 
-| Issues fixed | Patches upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
-| :----------------: | :---------:| :-----: | :-----: | :------: | :----: | :-----: |
-| 578+ | 578 | 12 | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
+## Kernel Recipes 2017 - Fixing coverity bugs all around the Linux kernel
 
-`git log -p --author="Gustavo A. R. Silva" --since="1 May, 2018" | diffstat -p1 | tail -n1`
-
-| files changed | lines inserted | lines deleted |
-| :------: | :------: | :------: |
-| 702 | 1673 | 1027 |
+Coverity scans the kernel code and reports issues that can hide coding mistakes and vulnerabilities. It reports around 6,000 outstanding defects in the Linux kernel, some of which were identified 11 years ago. I’m dedicated to fix those defects and this is a presentation about my work. I’m looking forward to getting your feedback as I’m looking for ways to improve my workflow and also helping others to get started with kernel hacking.
 
 [![Kernel Recipes 2017](http://img.youtube.com/vi/y0__yxM0New/0.jpg)](http://www.youtube.com/watch?v=y0__yxM0New "Fixing coverity bugs all over the Linux kernel - Gustavo A. R. Silva")

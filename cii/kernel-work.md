@@ -1,6 +1,6 @@
 Last update: Wednesday, October 23, 2019
 
-[Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
+!![Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
 
 # My Linux Kernel Work
 

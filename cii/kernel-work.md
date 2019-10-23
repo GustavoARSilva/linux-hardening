@@ -1,4 +1,4 @@
-Last update: Tuesday, October 22, 2019
+Last update: Wednesday, October 23, 2019
 
 ![Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
 

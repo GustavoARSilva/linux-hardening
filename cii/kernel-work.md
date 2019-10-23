@@ -59,7 +59,7 @@ Last update: Wednesday, October 23, 2019
 
 
 
-## Linux Foundation's Core Infrastructure Initiative Reports
+## Linux Foundation's CII Reports
 
 [Report for 2018-2019] (https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
 

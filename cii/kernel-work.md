@@ -5,7 +5,7 @@ Last update: Tuesday, October 22, 2019
 
 | Issues fixed | Commits upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
 | :----------------: | :---------:| :-----: | :-----: | :------: | :----: | :-----: |
-| 1400+ | 1401 | 20 | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
+| 1000+ | 1401 | 20 | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
 
 `git log -p --author="Gustavo A. R. Silva" | diffstat -p1 | tail -n1`
 
@@ -76,7 +76,7 @@ At a rate of almost 9 changes per hour (24/7), the Linux kernel is definitely a 
 
 ## Kernel Recipes 2018 - A year of fixing Coverity issues all over the Linux kernel
 
-Coverity is a static analyzer that scans the kernel code and reports issues that can hide coding mistakes and vulnerabilities. Currently, it reports around 5,000 outstanding defects in the Linux kernel. I’m dedicated to fixing those defects and, this talk is a status report of the work I have been doing over the course of a year. Lessons learned, as well as the most common types of issues reported, will also be presented.
+Coverity is a static analyzer that scans the kernel code and reports issues that can hide coding mistakes and vulnerabilities. Currently, it reports around 5,000 outstanding defects in the Linux kernel. I’m dedicated to fixing those defects and, this talk is a status report of the work I have been doing over the course of a year. Lessons learned, as well as the most common types of issues reported, will also be presented. [[slides]](https://embeddedor.com/slides/2018/kr/kr2018.pdf)
 
 [![Kernel Recipes 2018](http://img.youtube.com/vi/qj1Yjc_dK6s/0.jpg)](http://www.youtube.com/watch?v=qj1Yjc_dK6s "A year of fixing Coverity issues all over the Linux kernel - Gustavo A. R. Silva")
 
@@ -84,6 +84,6 @@ Coverity is a static analyzer that scans the kernel code and reports issues that
 
 ## Kernel Recipes 2017 - Fixing coverity bugs all around the Linux kernel
 
-Coverity scans the kernel code and reports issues that can hide coding mistakes and vulnerabilities. It reports around 6,000 outstanding defects in the Linux kernel, some of which were identified 11 years ago. I’m dedicated to fix those defects and this is a presentation about my work. I’m looking forward to getting your feedback as I’m looking for ways to improve my workflow and also helping others to get started with kernel hacking.
+Coverity scans the kernel code and reports issues that can hide coding mistakes and vulnerabilities. It reports around 6,000 outstanding defects in the Linux kernel, some of which were identified 11 years ago. I’m dedicated to fix those defects and this is a presentation about my work. I’m looking forward to getting your feedback as I’m looking for ways to improve my workflow and also helping others to get started with kernel hacking. [[slides]](https://embeddedor.com/slides/2017/kr/kr2017.pdf)
 
 [![Kernel Recipes 2017](http://img.youtube.com/vi/y0__yxM0New/0.jpg)](http://www.youtube.com/watch?v=y0__yxM0New "Fixing coverity bugs all over the Linux kernel - Gustavo A. R. Silva")

@@ -46,17 +46,22 @@ Last update: Tuesday, October 22, 2019
 | [linux-rockchip](https://patchwork.kernel.org/project/linux-rockchip/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [linux-input](https://patchwork.kernel.org/project/linux-input/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [linux-renesas-soc](https://patchwork.kernel.org/project/linux-renesas-soc/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [xen-devel](https://patchwork.kernel.org/project/xen-devel/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) |
 | [linux-arm-kernel](https://patchwork.kernel.org/project/linux-arm-kernel/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [linux-media](https://patchwork.kernel.org/project/linux-media/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | - | - |
 
+
+
 ## -Wimplicit-fallthrough work
 
 [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) [LWN Article]
 
 [Twitter thread](https://twitter.com/embeddedgus/status/1155206150104801282?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1155206150104801282&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252Fembeddedgus%252Fstatus%252F1155206150104801282%26widget%3DTweet)
 
+
+
 ## Linux Foundation's Core Infrastructure Initiative Reports
 
 [Report for 2018-2019] (https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
 
 [Report for 2017-2018] (https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2017-2018.md)
+
 
 
 ## Public Presentations

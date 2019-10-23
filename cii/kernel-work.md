@@ -46,21 +46,26 @@ Last update: Tuesday, October 22, 2019
 | [linux-rockchip](https://patchwork.kernel.org/project/linux-rockchip/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [linux-input](https://patchwork.kernel.org/project/linux-input/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [linux-renesas-soc](https://patchwork.kernel.org/project/linux-renesas-soc/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [xen-devel](https://patchwork.kernel.org/project/xen-devel/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) |
 | [linux-arm-kernel](https://patchwork.kernel.org/project/linux-arm-kernel/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | [linux-media](https://patchwork.kernel.org/project/linux-media/list/?submitter=Gustavo+A.+R.+Silva&state=*&archive=both) | - | - |
 
-### -Wimplicit-fallthrough work
+## -Wimplicit-fallthrough work
 
 [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) [LWN Article]
 
 [Twitter thread](https://twitter.com/embeddedgus/status/1155206150104801282?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1155206150104801282&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252Fembeddedgus%252Fstatus%252F1155206150104801282%26widget%3DTweet)
 
-### Public Presentations(https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/presentations.md)
+## Linux Foundation's Core Infrastructure Initiative Reports
 
-[Kernel Recipes 2019 - Hunting and Fixing bugs all over the Linux kernel](https://www.youtube.com/watch?v=9UQs1ca5Uwk)  [video]  [slides](https://embeddedor.com/slides/2019/kr/kr2019.pdf)
+[Report for 2018-2019] (https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
 
-[Kernel Recipes 2018 - A year of fixing Coverity issues all over the Linux kernel](https://www.youtube.com/watch?v=qj1Yjc_dK6s)  [video]  [slides]()
-
-[Kernel Recipes 2017 - Fixing coverity bugs all around the Linux kernel](https://www.youtube.com/watch?v=y0__yxM0New)  [video]  [slides]( )
-
-### [Report for 2018-2019](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
+[Report for 2017-2018] (https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2017-2018.md)
 
 
-### Report for 2018-2019
+## Public Presentations
+(https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/presentations.md)
+
+[Kernel Recipes 2019 - Hunting and Fixing bugs all over the Linux kernel](https://www.youtube.com/watch?v=9UQs1ca5Uwk)  [video]  [[slides]](https://embeddedor.com/slides/2019/kr/kr2019.pdf)
+
+[Kernel Recipes 2018 - A year of fixing Coverity issues all over the Linux kernel](https://www.youtube.com/watch?v=qj1Yjc_dK6s)  [video]  [[slides]]()
+
+[Kernel Recipes 2017 - Fixing coverity bugs all around the Linux kernel](https://www.youtube.com/watch?v=y0__yxM0New)  [video]  [[slides]]( )
+
+

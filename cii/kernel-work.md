@@ -64,6 +64,7 @@ Last update: Tuesday, October 22, 2019
 
 
 
+
 ## Top most active Linux kernel developers
 
 | Kernel development cycle statistics [LWN] | Commits upstream | Ranking |

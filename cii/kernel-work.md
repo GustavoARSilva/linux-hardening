@@ -66,7 +66,7 @@ Last update: Tuesday, October 22, 2019
 
 ## Top most active Linux kernel developers
 
-| Kernel development cycle statistics | Commits upstream | Ranking |
+| Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
 | :----------------: | :------------------: | :--------------: |
 | [Linux 5.3](https://lwn.net/Articles/798505/) | 128  |  9 |
 | [Linux 5.2](https://lwn.net/Articles/791606/) | 104  |  11 |

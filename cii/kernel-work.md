@@ -107,3 +107,11 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 ## Twitter
 [@embeddedgus](https://twitter.com/embeddedgus)
+
+
+<!-- blank line -->
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/enMumwvLAug" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<!-- blank line -->
+

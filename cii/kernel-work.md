@@ -55,7 +55,7 @@ Last update: Wednesday, October 23, 2019
 
 [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) [LWN Article]
 
-[Twitter thread](https://twitter.com/embeddedgus/status/1155206150104801282?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1155206150104801282&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252Fembeddedgus%252Fstatus%252F1155206150104801282%26widget%3DTweet)
+[-Wimplicit-fallthrough will be finally globally enabled in Linux v5.3](https://twitter.com/embeddedgus/status/1155206150104801282?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1155206150104801282&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252Fembeddedgus%252Fstatus%252F1155206150104801282%26widget%3DTweet)  [Twitter thread]
 
 
 

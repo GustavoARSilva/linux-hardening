@@ -59,6 +59,12 @@ Last update: Wednesday, October 23, 2019
 
 
 
+## Bugfixes for ancient bugs
+
+[Linus is happy when people fix old bad code. :)](https://twitter.com/embeddedgus/status/1189097430526021633?s=20)  [Twitter thread]
+
+
+
 ## Linux Foundation's CII Reports
 
 [Report for 2018-2019] (https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)

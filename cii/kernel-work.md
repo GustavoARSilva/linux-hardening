@@ -8,13 +8,13 @@ Last update: 30 October, 2019
 
 | Issues fixed | Commits upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
 | :----------------: | :---------:| :-----: | :-----: | :------: | :----: | :-----: |
-| 1000+ | 1401 | 20 | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
+| 1000+ | 1402 | 20 | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
 
 `git log -p --author="Gustavo A. R. Silva" | diffstat -p1 | tail -n1`
 
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |
-| 1438 | 3928 | 2969 |
+| 1483 | 3926 | 2967 |
 
 ## Contributions to stable trees
 `git log --shortstat --author="Gustavo A. R. Silva" vw.xx.$(git tag -l "vw.xx.*" | cut -d "." -f 3 | sort -nr | head -1) --since="1 May, 2017" | grep "Author" | wc -l`

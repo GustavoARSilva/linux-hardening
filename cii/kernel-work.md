@@ -51,7 +51,7 @@ Last update: October 30, 2019
 
 
 
-## -Wimplicit-fallthrough work (Making C less dangerous)
+## Making C less dangerous (-Wimplicit-fallthrough work)
 
 [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) [LWN Article]
 

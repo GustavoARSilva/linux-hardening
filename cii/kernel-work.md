@@ -13,7 +13,7 @@
 
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |
-| 1916 | 4721 | 3776 |
+| 2,973 | 9,870 | 8,833 |
 
 ## Contributions to stable trees
 `git log --shortstat --author="Gustavo A. R. Silva" vw.xx.$(git tag -l "vw.xx.*" | cut -d "." -f 3 | sort -nr | head -1) --since="1 May, 2017" | grep "Author" | wc -l`

@@ -121,7 +121,7 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 [![Linux Plumber 2020](https://img.youtube.com/vi/kJNNQgJPY3M/0.jpg)](https://www.youtube.com/watch?v=kJNNQgJPY3M&t=34m10s "-Wimplicit-fallthrough work, by Gustavo A. R. Silva")
 
-## Keynote: MDS, Fallout, Zombieland & Linux - Greg Kroah-Hartman - Open Source Summit Noth America 2019
+## Keynote: MDS, Fallout, Zombieland & Linux - Greg Kroah-Hartman - Open Source Summit North America 2019
 
 [![Greg's keynote OSS North America 2019](https://img.youtube.com/vi/kahLQVs9658/0.jpg)](https://www.youtube.com/watch?v=kahLQVs9658&t=13m58s)
 

@@ -115,6 +115,12 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 [![Kernel Recipes 2017](http://img.youtube.com/vi/y0__yxM0New/0.jpg)](http://www.youtube.com/watch?v=y0__yxM0New "Fixing coverity bugs all over the Linux kernel - Gustavo A. R. Silva")
 
 
+## Mentions
+
+## The Kernel Report, by Jonathan Corbet - Linux Plumbers 2020
+
+[![Linux Plumber 2020](https://img.youtube.com/vi/kJNNQgJPY3M/0.jpg)](https://www.youtube.com/watch?v=kJNNQgJPY3M&t=34m10s "-Wimplicit-fallthrough work, by Gustavo A. R. Silva")
+
 
 ## Twitter
 [@embeddedgus](https://twitter.com/embeddedgus)

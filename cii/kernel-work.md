@@ -1,3 +1,4 @@
+Last update: 2020-09-09
 
 ![Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
 

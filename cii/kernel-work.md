@@ -91,6 +91,7 @@
 | [Linux 4.15](https://lwn.net/Articles/742672/) | 138 |  5 |
 | [Linux 4.14](https://lwn.net/Articles/736578/) | 156  |  3 |
 
+[Twitter thread on this...](https://twitter.com/embeddedgus/status/1122178326657937408)
 
 ## Public Presentations
 

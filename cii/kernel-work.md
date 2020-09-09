@@ -75,7 +75,7 @@
 
 
 
-## Top most active Linux kernel developers
+## Appearances in the top most active Linux kernel developers
 
 | Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
 | :----------------: | :------------------: | :--------------: |

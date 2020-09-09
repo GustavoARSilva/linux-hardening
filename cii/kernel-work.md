@@ -75,10 +75,11 @@
 
 
 
-## Appearances in the top most active Linux kernel developers
+## Appearances in the top most active Linux kernel developers (10 times)
 
 | Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
 | :----------------: | :------------------: | :--------------: |
+| [Linux 5.8](https://lwn.net/Articles/827735/) | 136  |  8 |
 | [Linux 5.7](https://lwn.net/Articles/821813/) | 235  |  1 |
 | [Linux 5.3](https://lwn.net/Articles/798505/) | 128  |  9 |
 | [Linux 5.2](https://lwn.net/Articles/791606/) | 104  |  11 |

@@ -2,7 +2,7 @@
 ![Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
 
 # My Linux Kernel Work
-[In the Top 5 most active Linux kernel developers since 2017](https://github.com/torvalds/linux/graphs/contributors?from=2017-01-01&to=2020-09-08&type=c)
+[In the Top 5 most active kernel developers since 2017](https://github.com/torvalds/linux/graphs/contributors?from=2017-01-01&to=2020-09-08&type=c)
 
 `git log --oneline --author="Gustavo A. R. Silva" | wc -l`
 

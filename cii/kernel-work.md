@@ -7,9 +7,9 @@ Last update: 2020-09-09
 
 `git log --oneline --author="Gustavo A. R. Silva" | wc -l`
 
-| Issues fixed | Commits upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
-| :----------------: | :---------:| :-----: | :-----: | :------: | :----: | :-----: |
-| 1,500+ | [1,917](https://github.com/torvalds/linux/graphs/contributors) | [24](#contributions-to-stable-trees) | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
+| Commits upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
+| :---------:| :-----: | :-----: | :------: | :----: | :-----: |
+| [1,917](https://github.com/torvalds/linux/graphs/contributors) | [24](#contributions-to-stable-trees) | 38+ | [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
 
 `git log -p --author="Gustavo A. R. Silva" | diffstat -p1 | tail -n1`
 

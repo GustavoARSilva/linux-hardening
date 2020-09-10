@@ -1,9 +1,11 @@
-Last update: Thursday, September 19, 2019
+Last update: 2020-09-10
 
-## Among the most active Linux kernel developers
+## Appearances in the top most active Linux kernel developers (10 times)
 
-| Version | Commits upstream | Gustavo's Ranking |
+| Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
 | :----------------: | :------------------: | :--------------: |
+| [Linux 5.8](https://lwn.net/Articles/827735/) | 136  |  8 |
+| [Linux 5.7](https://lwn.net/Articles/821813/) | 235  |  1 |
 | [Linux 5.3](https://lwn.net/Articles/798505/) | 128  |  9 |
 | [Linux 5.2](https://lwn.net/Articles/791606/) | 104  |  11 |
 | [Linux 5.1](https://lwn.net/Articles/786638/) | 192  |   1 |
@@ -12,3 +14,5 @@ Last update: Thursday, September 19, 2019
 | [Linux 4.17](https://lwn.net/Articles/756031/) |  72  |  18 |
 | [Linux 4.15](https://lwn.net/Articles/742672/) | 138 |  5 |
 | [Linux 4.14](https://lwn.net/Articles/736578/) | 156  |  3 |
+
+[Twitter thread on this...](https://twitter.com/embeddedgus/status/1122178326657937408)

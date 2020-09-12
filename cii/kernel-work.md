@@ -126,6 +126,10 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 [![Linux Plumber 2020](https://img.youtube.com/vi/kJNNQgJPY3M/0.jpg)](https://www.youtube.com/watch?v=kJNNQgJPY3M&t=34m10s "-Wimplicit-fallthrough work, by Gustavo A. R. Silva")
 
+## Security Minded Development - Shuah Khan, The Linux Foundation - Open Source Summit North America 2020
+
+[![Security Minded Development - Shuah Khan, The Linux Foundation](https://img.youtube.com/vi/Q0U_FR830vA/0.jpg)](https://www.youtube.com/watch?v=Q0U_FR830vA&t=20m51s)
+
 ## Kernel Coding the Upstream Way - Tim Bird, Sony - Open Source Summit North America 2020
 
 [![Kernel Coding the Upstream Way - Tim Bird, Sony](https://img.youtube.com/vi/dApfkuObBW8/0.jpg)](https://www.youtube.com/watch?v=dApfkuObBW8&t=38m19s)

@@ -134,7 +134,7 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 [![Greg's keynote OSS North America 2019](https://img.youtube.com/vi/kahLQVs9658/0.jpg)](https://www.youtube.com/watch?v=kahLQVs9658&t=13m58s)
 
-## Greg Khroah-Hartman - TFiR interview 2018
+## greg Kroah-Hartman - TFiR interview 2018
 
 [![TFiR interview](https://img.youtube.com/vi/agC5N9I6jRE/0.jpg)](https://www.youtube.com/watch?v=agC5N9I6jRE&t=19m26s)
 

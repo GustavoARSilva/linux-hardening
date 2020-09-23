@@ -140,6 +140,10 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 [![Greg's keynote OSS North America 2019](https://img.youtube.com/vi/kahLQVs9658/0.jpg)](https://www.youtube.com/watch?v=kahLQVs9658&t=13m58s)
 
+## Making C Less Dangerous - Kees Cook, Google - Linux Security Summit 2018
+
+[![Kees' presentation](https://img.youtube.com/vi/XfNt6MsLj0E/0.jpg)](https://www.youtube.com/watch?v=XfNt6MsLj0E#t=22m05s)
+
 ## Greg Kroah-Hartman - TFiR interview 2018
 
 [![TFiR interview](https://img.youtube.com/vi/agC5N9I6jRE/0.jpg)](https://www.youtube.com/watch?v=agC5N9I6jRE&t=19m26s)

@@ -73,6 +73,8 @@ Last update: 2020-09-09
 
 [Report for 2020-2021](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2020-2021.md)
 
+[Report for 2019-2020](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2019-2020.md)
+
 [Report for 2018-2019](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
 
 [Report for 2017-2018](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2017-2018.md)

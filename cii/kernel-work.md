@@ -69,7 +69,7 @@ Last update: 2020-09-09
 
 
 
-## The Linux Foundation's Core Infrastructure Initiative Reports
+## Annual work reports for The Linux Foundation's Core Infrastructure Initiative
 
 [Report for 2020-2021](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2020-2021.md)
 

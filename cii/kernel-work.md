@@ -86,6 +86,7 @@ Last update: 2020-09-23
 
 | Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
 | :----------------: | :------------------: | :--------------: |
+| [Linux 5.9](https://lwn.net/Articles/834085/) | 110  |  10 |
 | [Linux 5.8](https://lwn.net/Articles/827735/) | 136  |  8 |
 | [Linux 5.7](https://lwn.net/Articles/821813/) | 235  |  1 |
 | [Linux 5.3](https://lwn.net/Articles/798505/) | 128  |  9 |

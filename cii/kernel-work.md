@@ -127,6 +127,10 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 ## Some mentions of this work
 
+## Mentorship Session: Best Practices to Getting Your Patches Accepted - Greg Kroah-Hartman - Mentorship Series 2020
+
+[![Mentorship Series 2020](https://img.youtube.com/vi/wjAJ50GqCP4/0.jpg)](https://www.youtube.com/watch?v=wjAJ50GqCP4&t=8m40s "Linux kernel work, by Gustavo A. R. Silva")
+
 ## The Kernel Report - Jonathan Corbet - Linux Plumbers 2020
 
 [![Linux Plumber 2020](https://img.youtube.com/vi/kJNNQgJPY3M/0.jpg)](https://www.youtube.com/watch?v=kJNNQgJPY3M&t=34m10s "-Wimplicit-fallthrough work, by Gustavo A. R. Silva")

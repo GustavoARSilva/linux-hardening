@@ -15,7 +15,7 @@ Last update: 2020-09-23
 
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |
-| 2,973 | 9,870 | 8,833 |
+| 3,185 | 9,721 | 8,840 |
 
 ## Contributions to stable trees
 `git log --shortstat --author="Gustavo A. R. Silva" vw.xx.$(git tag -l "vw.xx.*" | cut -d "." -f 3 | sort -nr | head -1) --since="1 May, 2017" | grep "Author" | wc -l`

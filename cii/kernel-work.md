@@ -69,19 +69,6 @@ Last update: 2020-09-23
 
 
 
-## Annual work reports for The Linux Foundation's Core Infrastructure Initiative (details about every contribution)
-
-[Report for 2020-2021](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2020-2021.md)
-
-[Report for 2019-2020](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2019-2020.md)
-
-[Report for 2018-2019](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
-
-[Report for 2017-2018](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2017-2018.md)
-
-
-
-
 ## Appearances in the top most active Linux kernel developers (11 times)
 
 | Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
@@ -99,6 +86,19 @@ Last update: 2020-09-23
 | [Linux 4.14](https://lwn.net/Articles/736578/) | 156  |  3 |
 
 [Twitter thread on this...](https://twitter.com/embeddedgus/status/1122178326657937408)
+
+
+## Annual work reports for The Linux Foundation's Core Infrastructure Initiative (details about every contribution)
+
+[Report for 2020-2021](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2020-2021.md)
+
+[Report for 2019-2020](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2019-2020.md)
+
+[Report for 2018-2019](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2018-2019.md)
+
+[Report for 2017-2018](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/reports/annual/2017-2018.md)
+
+
 
 ## Public Presentations
 

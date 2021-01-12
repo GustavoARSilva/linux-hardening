@@ -145,7 +145,15 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 ## Breaking and Protecting Linux Kernel Stack - Elena Reshetova, Intel - Linux Security Summit North America 2019
 
+Elena describes an attack that makes use of Variable Length Arrays (VLAs) to exploit the stack in the Linux kernel.
+
 [![Elena Reshetova,  2019](https://img.youtube.com/vi/FacpjoQbMhU/0.jpg)](https://www.youtube.com/watch?v=FacpjoQbMhU&t=18m11s)
+
+## Breaking and Protecting Linux Kernel Stack - Elena Reshetova, Intel - Linux Security Summit North America 2019
+
+Elena mentions the eradication of VLAs from the kernel in Linux v4.20
+
+[![Elena Reshetova,  2019](https://img.youtube.com/vi/FacpjoQbMhU/0.jpg)](https://www.youtube.com/watch?v=FacpjoQbMhU&t=26m23s)
 
 ## Keynote: MDS, Fallout, Zombieland & Linux - Greg Kroah-Hartman - Open Source Summit North America 2019
 

@@ -143,6 +143,10 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 [![Kernel Coding the Upstream Way - Tim Bird, Sony](https://img.youtube.com/vi/dApfkuObBW8/0.jpg)](https://www.youtube.com/watch?v=dApfkuObBW8&t=38m19s)
 
+## Breaking and Protecting Linux Kernel Stack - Elena Reshetova, Intel - Linux Security Summit North America 2019
+
+[![Elena Reshetova,  2019](https://img.youtube.com/vi/FacpjoQbMhU/0.jpg)](https://www.youtube.com/watch?v=FacpjoQbMhU&t=18m11s)
+
 ## Keynote: MDS, Fallout, Zombieland & Linux - Greg Kroah-Hartman - Open Source Summit North America 2019
 
 [![Greg's keynote OSS North America 2019](https://img.youtube.com/vi/kahLQVs9658/0.jpg)](https://www.youtube.com/watch?v=kahLQVs9658&t=13m58s)

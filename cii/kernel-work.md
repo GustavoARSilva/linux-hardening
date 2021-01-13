@@ -159,7 +159,11 @@ Here Elena mentions the [eradication of VLAs](https://github.com/GustavoARSilva/
 
 [![Greg's keynote OSS North America 2019](https://img.youtube.com/vi/kahLQVs9658/0.jpg)](https://www.youtube.com/watch?v=kahLQVs9658&t=13m58s)
 
-## Making C Less Dangerous - Kees Cook, Google - Linux Security Summit 2018
+## Overview and Recent Developments: Kernel Self-Protection Project - Kees Cook, Google - Linux Security Summit Europe 2018
+
+[![Kees' presentation](https://img.youtube.com/vi/uOsFh5AA79k/0.jpg)](https://www.youtube.com/watch?v=uOsFh5AA79k&t=26m53s)
+
+## Making C Less Dangerous - Kees Cook, Google - Linux Security Summit North America 2018
 
 [![Kees' presentation](https://img.youtube.com/vi/XfNt6MsLj0E/0.jpg)](https://www.youtube.com/watch?v=XfNt6MsLj0E#t=22m05s)
 

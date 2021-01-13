@@ -1,6 +1,4 @@
-1. Do you have a bio? If so, can you send it to me? And if not, can you tell
-me a little bit about your background and how long you've been working on
-Linux and security?
+## Do you have a bio? If so, can you send it to me? And if not, can you tell me a little bit about your background and how long you've been working on Linux and security?
 
 I dont' have a bio, but here are a couple of things about my work in the
 Linux kernel community and my background:

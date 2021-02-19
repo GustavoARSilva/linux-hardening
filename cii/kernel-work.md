@@ -69,7 +69,7 @@ Last update: 2020-09-23
 
 
 
-## Appearances in the top most active Linux kernel developers (11 times)
+## Appearances in the top most active Linux kernel developers (12 times)
 
 | Kernel development cycle statistics [LWN] | Commits upstream | Ranking |
 | :----------------: | :------------------: | :--------------: |

@@ -144,6 +144,10 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 [![Kernel Coding the Upstream Way - Tim Bird, Sony](https://img.youtube.com/vi/dApfkuObBW8/0.jpg)](https://www.youtube.com/watch?v=dApfkuObBW8&t=38m19s)
 
+## CVEs are dead, long live the CVE! - Greg Kroah-Hartman - Kernel Recipes 2019
+
+[![Greg KH,  2019](https://img.youtube.com/vi/HeeoTE9jLjM/0.jpg)](https://www.youtube.com/watch?v=HeeoTE9jLjM&t=9m40s)
+
 ## Breaking and Protecting Linux Kernel Stack - Elena Reshetova, Intel - Linux Security Summit North America 2019
 
 Here Elena describes an attack that makes use of Variable Length Arrays (VLAs) to exploit the stack in the Linux kernel.

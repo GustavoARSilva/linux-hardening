@@ -130,7 +130,7 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 ## Google funds Linux kernel security work - Steve Gibson - Security Now Podcast 2021
 
-[![Security Now Podcast 2021](https://img.youtube.com/vi/aRmw4Miph4A/1.jpg)](https://www.youtube.com/watch?v=aRmw4Miph4A&t=1267s "Google funded kernel security work, by Gustavo A. R. Silva")
+[![Security Now Podcast 2021](https://img.youtube.com/vi/aRmw4Miph4A/)](https://www.youtube.com/watch?v=aRmw4Miph4A&t=1267s "Google funded kernel security work, by Gustavo A. R. Silva")
 
 ## Mentorship Session: Best Practices to Getting Your Patches Accepted - Greg Kroah-Hartman - Mentorship Series 2020
 

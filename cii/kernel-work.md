@@ -9,20 +9,20 @@ Last update: 2021-04-26
 
 | Commits upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
 | :---------:| :-----: | :-----: | :------: | :----: | :-----: |
-| [2,101](https://github.com/torvalds/linux/graphs/contributors) | [29](#contributions-to-stable-trees) | 38+ | [torvalds](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [linux-next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
+| [2,133](https://github.com/torvalds/linux/graphs/contributors) | [29](#contributions-to-stable-trees) | 38+ | [torvalds](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [linux-next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
 
 `git log -p --author="Gustavo A. R. Silva" | diffstat -p1 | tail -n1`
 
 | files changed | lines inserted | lines deleted |
 | :------: | :------: | :------: |
-| 3,202 | 9,788 | 8,887 |
+| 3,240 | 9,998 | 9,046 |
 
 ## Contributions to stable trees
 `git log --shortstat --author="Gustavo A. R. Silva" vw.xx.$(git tag -l "vw.xx.*" | cut -d "." -f 3 | sort -nr | head -1) --since="1 May, 2017" | grep "Author" | wc -l`
 
 | Commits upstream | linux-stable | Commits upstream | linux-stable |
 | :------------: | :----------------: | :------------: | :----------------: |
-| [2,101](https://github.com/torvalds/linux/graphs/contributors) | 5.12.y(coming soon...) | - | - |
+| [2,133](https://github.com/torvalds/linux/graphs/contributors) | [5.12.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.12.y) | - | - |
 | 2,035 | [5.11.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.11.y) | 1,943 | [5.10.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.10.y) |
 | 1,875 | [5.9.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.9.y) | 1,765 | [5.8.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.8.y) |
 | 1,628 | [5.7.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.7.y) | 1,394 | [5.6.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.6.y) | 

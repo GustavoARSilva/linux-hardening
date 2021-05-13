@@ -7,7 +7,7 @@ responsible if you damage your credibility or reputation in the kernel community
 trying to land your first kernel patch using any of these instances of code and turns
 out your patch is totally wrong. So, you better know what you are doing. :)
 
-This was found with the following cocci script:
+This was found with the following cocci script (in next-20210512):
 
 @r1@
 identifier VAR, ELEMENT;

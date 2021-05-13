@@ -1,17 +1,45 @@
 DISCLAIMER: NONE of these instances represent a CORRECT patch. ALL these instances
 SHOULD be audited first, in order to determine if they can actually be transformed
-to struct_size(). If you send a patch, be sure you really know what you are doing.
-I'm not responsible if you damage your credibility or reputation in the kernel
-community by trying to land your first kernel patch using any of these instances
-of code and turns out your patch is totally wrong. So, you better know what you are
-doing. :)
+to struct_size(). If you send a patch, make sure you really know what you are doing.
 
-PLEASE, if you write a CORRECT patch for any of these instances, mention in the
+In case you are new, it's great :); I just have to tell you that I'm not responsible
+if you damage your credibility or reputation in the kernel community by trying to land
+your first kernel patch using any of these instances of code and turns out your patch
+is totally wrong. So, you better know what you are doing. :)
+
+This was found with the following cocci script:
+
+@r1@
+identifier VAR, ELEMENT;
+expression COUNT, SOMETHING;
+identifier id;
+identifier id2;
+@@
+
+(
+* sizeof(*VAR) + (COUNT * sizeof(*VAR->ELEMENT))
+|
+* sizeof(*VAR) + (COUNT * sizeof(VAR->ELEMENT[0]))
+|
+* sizeof(*VAR) + (COUNT * sizeof(struct id))
+|
+* sizeof(struct id) + (COUNT * sizeof(*VAR->ELEMENT))
+|
+* sizeof(struct id) + (COUNT * sizeof(VAR->ELEMENT[0]))
+|
+* sizeof(SOMETHING) + (COUNT * sizeof(ELEMENT))
+|
+* sizeof(SOMETHING) + (COUNT * sizeof(struct id))
+|
+* sizeof(struct id2) + (COUNT * sizeof(struct id))
+)
+
+So PLEASE, if you write a CORRECT patch for any of these instances, mention in the
 changelog text that "this code was found with the help of Coccinelle."
 
 Thanks!
 --
-Gustavo
+Gustavo A. R. Silva <gustavoars@kernel.org>
 
 diff -u -p ./include/linux/netdevice.h /tmp/nothing/include/linux/netdevice.h
 --- ./include/linux/netdevice.h

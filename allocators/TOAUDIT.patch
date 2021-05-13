@@ -1,3 +1,18 @@
+DISCLAIMER: NONE of these instances represent a CORRECT patch. ALL these instances
+SHOULD be audited first, in order to determine if they can actually be transformed
+to struct_size(). If you send a patch, be sure you really know what you are doing.
+I'm not responsible if you damage your credibility or reputation in the kernel
+community by trying to land your first kernel patch using any of these instances
+of code and turns out your patch is totally wrong. So, you better know what you are
+doing. :)
+
+PLEASE, if you write a CORRECT patch for any of these instances, mention in the
+changelog text that "this code was found with the help of Coccinelle."
+
+Thanks!
+--
+Gustavo
+
 diff -u -p ./include/linux/netdevice.h /tmp/nothing/include/linux/netdevice.h
 --- ./include/linux/netdevice.h
 +++ /tmp/nothing/include/linux/netdevice.h

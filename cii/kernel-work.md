@@ -3,7 +3,7 @@ Last update: 2021-04-26
 ![Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
 
 # My Linux Kernel Work
-[In the Top 5 most active kernel developers since 2017](https://github.com/torvalds/linux/graphs/contributors?from=2017-01-01&to=2021-05-01&type=c)
+[In the Top 10 most active kernel developers since 2017](https://github.com/torvalds/linux/graphs/contributors?from=2017-01-01&to=2021-08-15&type=c)
 
 `git log --oneline --author="Gustavo A. R. Silva" | wc -l`
 

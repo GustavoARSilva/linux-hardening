@@ -4,8 +4,8 @@ to struct_size(). If you send a patch, make sure you really know what you are do
 
 In case you are new, it's great, welcomed! :); I just have to tell you that I'm not
 responsible for you damaging your credibility or reputation in the kernel community
-by trying to land your first kernel patch using any of these instances of code, and
-turning out your patch is wrong. So, you better know what you are doing. :)
+by trying to land a kernel patch using any of these instances of code, and turning
+out your patch is wrong. So, you better know what you are doing. :)
 
 This was found with the following cocci script (in next-20220110):
 

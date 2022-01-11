@@ -1,3 +1,5 @@
+CC-me if you send a patch for any of these: Gustavo A. R. Silva <gustavoars@kernel.org> 
+
 fs/notify/inotify/inotify_fsnotify.c:69:25: warning: using sizeof on a flexible structure
 fs/verity/hash_algs.c:91:41: warning: using sizeof on a flexible structure
 ./include/crypto/hash.h:624:31: warning: using sizeof on a flexible structure

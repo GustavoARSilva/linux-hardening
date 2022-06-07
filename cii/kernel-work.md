@@ -104,6 +104,14 @@ Last update: 2021-04-26
 
 ## Public Presentations
 
+## Kernel Recipes 2022 - The Kernel Self-Protection Project and how you can help
+
+This presentation will cover some of the most recent KSPP accomplishments, as well as some currently active efforts. Also, a brief explanation of how you can help us complete some particularly challenging work will be presented. [[slides]](https://embeddedor.com/slides/2022/kr/kr2022.pdf)(pdf)
+
+[![Kernel Recipes 2022](http://img.youtube.com/vi/nhJqaZT94z0&t=645s/0.jpg)](https://www.youtube.com/watch?v=nhJqaZT94z0&t=645s "Kernel Recipes 2022 - The Kernel Self-Protection Project and how you can help")
+
+
+
 ## Kernel Recipes 2019 - Hunting and fixing bugs all over the Linux kernel
 
 At a rate of almost 9 changes per hour (24/7), the Linux kernel is definitely a scary beast. Bugs are introduced on a daily basis and, through the use of multiple code analyzers, *some* of them are detected and fixed before they hit mainline. Over the course of the last few years, Gustavo has been fixing such bugs and many different issues in every corner of the Linux kernel. Recently, he was in charge of leading the efforts to globally enable -Wimplicit-fallthrough; which appears by default in Linux v5.3. This presentation is a report on all the stuff Gustavo has found and fixed in the kernel with the support of the Core Infrastructure Initiative. [[slides]](https://embeddedor.com/slides/2019/kr/kr2019.pdf)(pdf)

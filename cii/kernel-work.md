@@ -190,7 +190,7 @@ Here Elena mentions the [eradication of VLAs](https://github.com/GustavoARSilva/
 [![TFiR interview](https://img.youtube.com/vi/agC5N9I6jRE/0.jpg)](https://www.youtube.com/watch?v=agC5N9I6jRE&t=19m26s)
 
 ## Twitter
-[@embeddedgus](https://twitter.com/embeddedgus)
+# [@embeddedgus](https://twitter.com/embeddedgus)
 
 
 

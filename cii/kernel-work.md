@@ -144,7 +144,9 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 ## Safer flexible arrays for the kernel 
 
-[Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/)
+"At the 2022 Linux Security Summit Europe (LSS EU), Gustavo A. R. Silva reported in on work he has been doing on "flexible" arrays in the kernel. While these arrays provide some ... flexibility ... they are also a source of bugs, which can often result in security vulnerabilities. He has been working on ways to make the use of flexible arrays safer in the kernel.
+
+Silva has a background in embedded systems, working with both realtime operating systems (RTOS) and embedded Linux. For the last six years, he has has been working as an upstream kernel engineer. He collaborates with the Kernel Self Protection Project (KSPP) and the Linux kernel division of the Google open-source security team." [Read the FULL article at LWN](https://lwn.net/Articles/908817/)
 
 ## Google funds Linux kernel security work - Steve Gibson - Security Now Podcast 2021
 

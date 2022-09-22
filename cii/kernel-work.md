@@ -144,9 +144,7 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 
 ## Safer flexible arrays for the kernel 
 
-![lwn-908817](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/Screenshot%20from%202022-09-22%2018-37-52.png)
-
-https://lwn.net/Articles/908817/
+[Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/)
 
 ## Google funds Linux kernel security work - Steve Gibson - Security Now Podcast 2021
 

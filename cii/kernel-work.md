@@ -140,7 +140,13 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 [![Kernel Recipes 2017](http://img.youtube.com/vi/y0__yxM0New/0.jpg)](http://www.youtube.com/watch?v=y0__yxM0New "Fixing coverity bugs all over the Linux kernel - Gustavo A. R. Silva")
 
 
-## Some mentions of this work
+## Some mentions of my work in the Linux kernel
+
+## Safer flexible arrays for the kernel 
+
+![lwn-908817](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/lwn-908817.jpg)
+
+https://lwn.net/Articles/908817/
 
 ## Google funds Linux kernel security work - Steve Gibson - Security Now Podcast 2021
 

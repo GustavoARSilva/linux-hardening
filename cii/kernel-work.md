@@ -4,9 +4,8 @@ Last update: 2021-04-26
 ![Gustavo A. R. Silva](https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/kernel-work.jpg)
 
 # [In the Top 10 most active kernel developers since 2017](https://github.com/torvalds/linux/graphs/contributors?from=2017-05-01&to=2022-12-31&type=c)
-<p align="center">
+
 [<img src="https://github.com/GustavoARSilva/linux-hardening/blob/master/cii/top10kerndevs.png" alt="drawing" width="400"/>](https://github.com/torvalds/linux/graphs/contributors?from=2017-05-01&to=2022-12-31&type=c)
- />
 
 `git log --oneline --author="Gustavo A. R. Silva" | wc -l`
 

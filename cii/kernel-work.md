@@ -169,6 +169,12 @@ Silva has a background in embedded systems, working with both realtime operating
 
 [![Kernel Coding the Upstream Way - Tim Bird, Sony](https://img.youtube.com/vi/dApfkuObBW8/0.jpg)](https://www.youtube.com/watch?v=dApfkuObBW8&t=38m19s)
 
+## An end to implicit fall-throughs in the kernel (LWN.net article)
+By Jonathan Corbet
+August 1, 2019
+
+"The C switch statement has, since the beginning of the language, required the use of explicit break statements to prevent execution from falling through from one case to the next. This behavior can be a useful feature, allowing for more compact code, but it can also lead to bugs. The effort to rid the kernel of implicit fall-through coding patterns came to a conclusion with the 5.3-rc2 release, where the last cases were fixed." [Read the FULL article at LWN.net](https://lwn.net/Articles/794944/)
+
 ## CVEs are dead, long live the CVE! - Greg Kroah-Hartman - Kernel Recipes 2019
 
 [![Greg KH,  2019](https://img.youtube.com/vi/HeeoTE9jLjM/0.jpg)](https://www.youtube.com/watch?v=HeeoTE9jLjM&t=9m40s)

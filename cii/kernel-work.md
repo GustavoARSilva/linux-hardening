@@ -141,7 +141,13 @@ Coverity scans the kernel code and reports issues that can hide coding mistakes 
 [![Kernel Recipes 2017](http://img.youtube.com/vi/y0__yxM0New/0.jpg)](http://www.youtube.com/watch?v=y0__yxM0New "Fixing coverity bugs all over the Linux kernel - Gustavo A. R. Silva")
 
 
-## Some mentions of my work in the Linux kernel
+## Some mentions of my work in the Linux kernel 
+
+## The benefits and limitations of flexible array members (RedHat Developers Article)
+
+"Motivation for stricter standard conformance
+
+A codebase that strictly conforms to the C99 standard (at least for FAM) would benefit from a compiler strictly following the standard definition of flexible array members. That goal motivates an effort currently led within the Linux kernel community, as demonstrated by [this patch](https://lore.kernel.org/lkml/20220322184802.GA2533969@embeddedor/). The [documentation](https://www.kernel.org/doc/html/v5.16/process/deprecated.html#zero-length-and-one-element-arrays) update favors C99 FAM in place of zero-length arrays." [Read the FULL article at developers.redhat.com](https://developers.redhat.com/articles/2022/09/29/benefits-limitations-flexible-array-members#)
 
 ## Safer flexible arrays for the kernel (LWN.net article)
 By Jake Edge September 22, 2022

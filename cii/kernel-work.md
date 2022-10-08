@@ -109,7 +109,7 @@ Last update: 2021-04-26
 
 Having a dynamically-sized trailing array at the end of a structure is a useful code construct in the Linux kernel. However, the lack of proper bounds-checking on such objects is concerning and worth making an effort to remediate it. This presentation is about the different strategies we, in the Kernel Self-Protection Project, have been following along the last couple of years to transform trailing zero-length and one-element arrays into modern C99 flexible-array members, and the problems we have run into in the process. We will touch on how this work is closely related and helpful to the most recent efforts to hardening key APIs like memcpy() and globally enabling options like -Warray-bounds. We will explain how we've been addressing the particularly challenging one-element array into flexible-array member transformations in UAPI. Also, we'll see how the fact that compilers like GCC have historically treated all trailing arrays, no matter what their size, as flexible-sized arrays, is problematic and causes trouble when it comes to perform proper array-bounds checking on such objects, and how the introduction of a new option like -fstrict-flex-arrays could help. [[slides]](https://embeddedor.com/slides/2022/lsseu/lsseu2022.pdf)(pdf)
 
-[Video coming soon...]
+[![LSSEU2022](http://img.youtube.com/vi/nrojq96szcA/0.jpg)](https://www.youtube.com/watch?v=nrojq96szcA)
 
 ## Kernel Recipes 2022 - The Kernel Self-Protection Project and how you can help
 

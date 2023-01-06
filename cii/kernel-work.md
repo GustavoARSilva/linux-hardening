@@ -21,8 +21,8 @@ Last update: 2021-04-26
 ## Contributions to stable trees
 `git log --shortstat --author="Gustavo A. R. Silva" vw.xx.$(git tag -l "vw.xx.*" | cut -d "." -f 3 | sort -nr | head -1) --since="1 May, 2017" | grep "Author" | wc -l`
 
-| Commits upstream | linux-stable | Commits upstream | linux-stable |
-| :------------: | :----------------: | :------------: | :----------------: |
+| Commits upstream | linux-stable | Commits upstream | linux-stable | Commits upstream | linux-stable |
+| :------------: | :----------------: | :------------: | :----------------: | :------------: | :----------------: |
 | 2,055 | [6.8.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-6.8.y) | [2,405](https://github.com/torvalds/linux/graphs/contributors) | [5.13-rcx](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=grep&q=Gustavo+A.+R.+Silva) | 2,055 | [5.12.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.12.y) |
 | 2,055 | [6.7.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-6.7.y) | 2,035 | [5.11.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.11.y) | 1,943 | [5.10.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.10.y) |
 | 2,055 | [6.6.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-6.6.y) | 1,875 | [5.9.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.9.y) | 1,765 | [5.8.y](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva&h=linux-5.8.y) |

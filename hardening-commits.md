@@ -13,7 +13,7 @@
   
   [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
 
-  ### __compiletime_lessthan
+  ### __compiletime_lessthan()
 
   [fa35198f3957](https://git.kernel.org/linus/fa35198f3957) ("fortify: Explicitly check bounds are compile-time constants")
   
@@ -30,6 +30,12 @@
       
 
   ## Attributes
+
+  ### __pass_dynamic_object_size
+  Clang: https://clang.llvm.org/docs/AttributeReference.html#pass-object-size-pass-dynamic-object-size
+
+  [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
+  
 
   ### [__alloc_size__](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute)
   [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")

@@ -19,5 +19,8 @@
 
 # Clang
 
+## FORTIFY_SOURCE
+[281d0c962752](https://git.kernel.org/linus/281d0c962752) ("fortify: Add Clang support")
+
 
 

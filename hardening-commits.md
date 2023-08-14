@@ -10,6 +10,7 @@
   ## APIs
 
   ### unsafe_memcpy()
+  <span style="color:orange">some *orange* text</span>
   
   [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
   

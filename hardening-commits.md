@@ -6,6 +6,12 @@
 
   ## Options Controlling C Dialect
   ### -fstrict-flex-arrays=3  
+
+  ## APIs
+
+  ### unsafe_memcpy()
+  
+  [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
   
   ## Built-in functions
   ### [__builtin_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)

@@ -13,6 +13,7 @@
 
   ### __builtin_dynamic_object_size
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html
+  
   Clang: https://clang.llvm.org/docs/LanguageExtensions.html#evaluating-object-size-dynamically
 
   [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")

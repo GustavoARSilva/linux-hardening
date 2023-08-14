@@ -1,9 +1,9 @@
 # GCC
-  ## Warnings
+  ### Warnings
   
-  ## Built-in functions
+  ### Built-in functions
 
-  ## Attributes
+  ### Attributes
 
 # Clang
 

@@ -11,7 +11,7 @@
   ### [__builtin_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)
   
 
-  ## [__builtin_dynamic_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)
+  ### [__builtin_dynamic_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)
 
   [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
       
@@ -26,6 +26,8 @@
   GCC issue ID: [108896](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108896)
   
   Clang issue ID: [60928](https://github.com/llvm/llvm-project/issues/60928) 
+
+  [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
 
   ### Program Instrumentation Options
 

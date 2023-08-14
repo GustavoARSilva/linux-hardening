@@ -34,6 +34,7 @@
   [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
 
   ### __sized_by
+  (coming soon)
 
   ### Program Instrumentation Options
 

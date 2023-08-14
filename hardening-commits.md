@@ -21,10 +21,11 @@
   ### [__alloc_size__](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute)
   [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")
 
-  ### [__element_count__]
+  ### [____element_count____]
   provide "element_count" attribute to give more context to __builtin_dynamic_object_size() and -fsanitize=bounds
   
   GCC issue ID: [108896](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108896)
+  
   Clang issue ID: [60928](https://github.com/llvm/llvm-project/issues/60928) 
 
   ### Program Instrumentation Options

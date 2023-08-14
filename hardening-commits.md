@@ -23,6 +23,7 @@
 
   ### [__element_count__]
   provide "element_count" attribute to give more context to __builtin_dynamic_object_size() and -fsanitize=bounds
+  
   GCC issue ID: [108896](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108896)
   Clang issue ID: [60928](https://github.com/llvm/llvm-project/issues/60928) 
 

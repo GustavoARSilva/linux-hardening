@@ -38,6 +38,10 @@
 
   ### Program Instrumentation Options
 
+  ### keywords
+
+  [294f69e662d1](https://git.kernel.org/linus/294f69e662d1) ("compiler_attributes.h: Add 'fallthrough' pseudo keyword for switch/case use"
+
 # Clang
 
 ## FORTIFY_SOURCE

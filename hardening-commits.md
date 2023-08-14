@@ -1,5 +1,11 @@
 # GCC
   ## Options to Request or Suppress Warnings
+  ### -Wimplicit-fallthrough
+  ### -Wstringop-overflow
+  ### -Wcast-function-type
+
+  ## Options Controlling C Dialect
+  ### -fstrict-flex-arrays=3  
   
   ## Built-in functions
   ### [__builtin_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)

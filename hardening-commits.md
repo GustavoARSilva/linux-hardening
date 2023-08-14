@@ -3,7 +3,12 @@
   
   ### Built-in functions
   ### [__builtin_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)
-      # __builtin_dynamic_object_size
+  
+
+  ### [__builtin_dynamic_object_size](https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html)
+
+  439a1bcac648 ("fortify: Use __builtin_dynamic_object_size() when available")
+      
 
   ### Attributes
 

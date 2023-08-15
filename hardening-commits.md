@@ -47,7 +47,7 @@
 
   [50d7bd38c3aa](https://git.kernel.org/linus/50d7bd38c3aa) ("stddef: Introduce struct_group() helper macro")
 
-  | DEFINE_FLEX_ARRAY() |
+  | DECLARE_FLEX_ARRAY() |
   | :------: |
 
   [3080ea5553cc](https://git.kernel.org/linus/3080ea5553cc) ("stddef: Introduce DECLARE_FLEX_ARRAY() helper")

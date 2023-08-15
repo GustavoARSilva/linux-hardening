@@ -71,6 +71,8 @@
   Clang: https://clang.llvm.org/docs/LanguageExtensions.html#evaluating-object-size-dynamically
 
   [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
+
+  Patch series: [fortify: Use __builtin_dynamic_object_size() when available](https://lore.kernel.org/linux-hardening/20220920192202.190793-1-keescook@chromium.org/)
       
 
   ## Attributes

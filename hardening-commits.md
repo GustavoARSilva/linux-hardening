@@ -20,6 +20,7 @@
   
   | unsafe_memcpy() |
   | :------: |
+  
   [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
 
   | check_[op]_overflow() helpers |

@@ -10,7 +10,6 @@
   ## APIs
 
  | fortify_memcpy_chk() |
- | :---------:|
  
  |  [6974f0c4555e](https://git.kernel.org/linus/6974f0c4555e) ("include/linux/string.h: add the option of fortified string.h functions") |
  |  [f68f2ff91512](https://git.kernel.org/linus/f68f2ff91512) ("fortify: Detect struct member overflows in memcpy() at compile-time") |

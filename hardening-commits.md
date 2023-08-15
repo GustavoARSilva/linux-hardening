@@ -9,7 +9,7 @@
 
   ## APIs
 
- | fortify_memcpy_chk() |
+ | Fortified memcpy() |
  | :------: |
  
    [6974f0c4555e](https://git.kernel.org/linus/6974f0c4555e) ("include/linux/string.h: add the option of fortified string.h functions") 

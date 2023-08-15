@@ -70,7 +70,7 @@
   
   Clang: https://clang.llvm.org/docs/LanguageExtensions.html#evaluating-object-size-dynamically
 
-  [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
+  commit [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
 
   Patch series: [fortify: Use __builtin_dynamic_object_size() when available](https://lore.kernel.org/linux-hardening/20220920192202.190793-1-keescook@chromium.org/)
       
@@ -82,7 +82,7 @@
   
   Clang: https://clang.llvm.org/docs/AttributeReference.html#pass-object-size-pass-dynamic-object-size
 
-  [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
+  commit [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
   
 
   | __alloc_size__ |
@@ -90,7 +90,7 @@
   
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute
   
-  [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")
+  commit [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")
 
   Patch series: [slab: Provide full coverage for __alloc_size attribute](https://lore.kernel.org/linux-hardening/20221101222520.never.109-kees@kernel.org/)
 
@@ -102,7 +102,7 @@
   
   Clang issue ID: [60928](https://github.com/llvm/llvm-project/issues/60928) 
 
-  [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
+  commit [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
 
   | __sized_by |
   | :------: |

@@ -39,6 +39,11 @@
   
   [d219d2a9a92e](https://git.kernel.org/linus/d219d2a9a92e) ("overflow: Allow mixed type arguments")
 
+  | struct_group() |
+  | :------: |
+
+  [50d7bd38c3aa](https://git.kernel.org/linus/50d7bd38c3aa) ("stddef: Introduce struct_group() helper macro")
+
   | __compiletime_lessthan() |
   | :------: |
 

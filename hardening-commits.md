@@ -5,7 +5,10 @@
   ### -Wcast-function-type
 
   ## Options Controlling C Dialect
-  ### -fstrict-flex-arrays=3  
+  | -fstrict-flex-arrays=3  |
+  | :------: |
+
+
 
   ## APIs
 
@@ -83,6 +86,8 @@
   
   [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")
 
+  Patch series: [slab: Provide full coverage for __alloc_size attribute](https://lore.kernel.org/linux-hardening/20221101222520.never.109-kees@kernel.org/)
+
   | __counted_by |
   | :------: |
   (provide "element_count" attribute to give more context to __builtin_dynamic_object_size() and -fsanitize=bounds)
@@ -97,9 +102,9 @@
   | :------: |
   (coming soon)
 
-  ### Program Instrumentation Options
+  ## Program Instrumentation Options
 
-  ### keywords
+  ## keywords
 
   [294f69e662d1](https://git.kernel.org/linus/294f69e662d1) ("compiler_attributes.h: Add 'fallthrough' pseudo keyword for switch/case use"
 
@@ -107,7 +112,10 @@
 
 | FORTIFY_SOURCE |
   | :------: |
+  
 [281d0c962752](https://git.kernel.org/linus/281d0c962752) ("fortify: Add Clang support")
+
+Patch series: [slab: Provide full coverage for __alloc_size attribute](https://lore.kernel.org/linux-hardening/20221101222520.never.109-kees@kernel.org/)
 
 
 

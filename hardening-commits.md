@@ -1,13 +1,21 @@
 # GCC
   ## Options to Request or Suppress Warnings
   ### -Wimplicit-fallthrough
-  ### -Wstringop-overflow
   ### -Wcast-function-type
+  ### -Wstrict-flex-arrays
+  ### -Wzero-length-array
+  ### -Wstringop-overflow
+  ### -Warray-bounds
+  ### -Wvla
 
   ## Options Controlling C Dialect
   | -fstrict-flex-arrays=3  |
   | :------: |
 
+  GCC issue:
+  Clang issue: https://reviews.llvm.org/D126864
+
+  commit https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=1879e48f3d8595bc9e7f583bbd12df3c6f5c42dc
 
 
   ## APIs

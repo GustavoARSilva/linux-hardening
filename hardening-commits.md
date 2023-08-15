@@ -39,15 +39,18 @@
   
   [d219d2a9a92e](https://git.kernel.org/linus/d219d2a9a92e) ("overflow: Allow mixed type arguments")
 
-  ### __compiletime_lessthan()
+  | __compiletime_lessthan() |
+  | :------: |
 
   [fa35198f3957](https://git.kernel.org/linus/fa35198f3957) ("fortify: Explicitly check bounds are compile-time constants")
   
   ## Built-in functions
-  ### __builtin_object_size
+  | __builtin_object_size |
+  | :------: |
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html
 
-  ### __builtin_dynamic_object_size
+  | __builtin_dynamic_object_size |
+  | :------: |
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html
   
   Clang: https://clang.llvm.org/docs/LanguageExtensions.html#evaluating-object-size-dynamically
@@ -57,18 +60,21 @@
 
   ## Attributes
 
-  ### __pass_dynamic_object_size
+  | __pass_dynamic_object_size |
+  | :------: |
   Clang: https://clang.llvm.org/docs/AttributeReference.html#pass-object-size-pass-dynamic-object-size
 
   [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
   
 
-  ### __alloc_size__
+  | __alloc_size__ |
+  | :------: |
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute
   
   [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")
 
-  ### __counted_by
+  | __counted_by |
+  | :------: |
   (provide "element_count" attribute to give more context to __builtin_dynamic_object_size() and -fsanitize=bounds)
   
   GCC issue ID: [108896](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108896)
@@ -77,7 +83,8 @@
 
   [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
 
-  ### __sized_by
+  | __sized_by |
+  | :------: |
   (coming soon)
 
   ### Program Instrumentation Options
@@ -88,7 +95,8 @@
 
 # Clang
 
-## FORTIFY_SOURCE
+| FORTIFY_SOURCE |
+  | :------: |
 [281d0c962752](https://git.kernel.org/linus/281d0c962752) ("fortify: Add Clang support")
 
 

@@ -18,8 +18,8 @@
    
   [54d9469bc515](https://git.kernel.org/linus/54d9469bc515) ("fortify: Add run-time WARN for cross-field memcpy()") 
   
-  ### unsafe_memcpy()
-  
+  | unsafe_memcpy() |
+  | :------: |
   [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
 
   | check_[op]_overflow() helpers |

@@ -18,14 +18,16 @@
    
   [54d9469bc515](https://git.kernel.org/linus/54d9469bc515) ("fortify: Add run-time WARN for cross-field memcpy()") 
   
-  
-  
- 
-  
-  
   ### unsafe_memcpy()
   
   [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
+
+  | check_[op]_overflow() helpers |
+  | :------: |
+
+  [f0907827a8a9](https://git.kernel.org/linus/f0907827a8a9) ("compiler.h: enable builtin overflow checkers and add fallback code", 2018-05-08)
+  [9b80e4c4ddac](https://git.kernel.org/linus/9b80e4c4ddac) ("overflow: Add __must_check attribute to check_*() helpers", 2020-08-12)
+  [d219d2a9a92e](https://git.kernel.org/linus/d219d2a9a92e) ("overflow: Allow mixed type arguments")
 
   ### __compiletime_lessthan()
 

@@ -23,10 +23,12 @@
   
   [43213daed6d6](https://git.kernel.org/linus/43213daed6d6) ("fortify: Provide a memcpy trap door for sharp corners")
 
-  | size_t saturating arithmetic helpers (array_size, struct_size, flex_array_size, size_mul, size_add, size_sub, array3_size) |
+  | size_t saturating arithmetic helpers (array_size, struct_size, struct_size_t, flex_array_size, size_mul, size_add, size_sub, array3_size) |
   | :------: |
 
   [e1be43d9b5d0](https://git.kernel.org/linus/e1be43d9b5d0) ("overflow: Implement size_t saturating arithmetic helpers")
+  
+  [d67790ddf021](https://git.kernel.org/linus/d67790ddf021) ("overflow: Add struct_size_t() helper")
 
   | check_[op]_overflow() helpers |
   | :------: |

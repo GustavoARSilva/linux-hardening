@@ -60,10 +60,12 @@
   ## Built-in functions
   | __builtin_object_size |
   | :------: |
+  
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html
 
   | __builtin_dynamic_object_size |
   | :------: |
+  
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Object-Size-Checking.html
   
   Clang: https://clang.llvm.org/docs/LanguageExtensions.html#evaluating-object-size-dynamically
@@ -75,6 +77,7 @@
 
   | __pass_dynamic_object_size |
   | :------: |
+  
   Clang: https://clang.llvm.org/docs/AttributeReference.html#pass-object-size-pass-dynamic-object-size
 
   [439a1bcac648](https://git.kernel.org/linus/439a1bcac648) ("fortify: Use __builtin_dynamic_object_size() when available")
@@ -82,6 +85,7 @@
 
   | __alloc_size__ |
   | :------: |
+  
   GCC: https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute
   
   [86cffecdeaa2](https://git.kernel.org/linus/86cffecdeaa2) ("Compiler Attributes: add __alloc_size() for better bounds checking")

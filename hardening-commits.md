@@ -131,5 +131,9 @@
 
 Patch series: [slab: Provide full coverage for __alloc_size attribute](https://lore.kernel.org/linux-hardening/20221101222520.never.109-kees@kernel.org/)
 
+# Discussions and clarifications
 
+| struct_size() - sizeof() vs offsetof() |
+
+https://lore.kernel.org/lkml/74e8cf91-d095-33e3-c548-34d80b691089@kernel.org/
 

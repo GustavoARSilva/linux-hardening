@@ -1,6 +1,44 @@
 Last update: Tuesday, Octobre 22, 2019
 
-# Core Infrastructure Initiative Public Presentations by Gustavo A. R. Silva
+# Kernel Self-Protection Project (KSPP) - Public Presentations by Gustavo A. R. Silva
+
+## Linux Security Summit North America 2023 - Progress On Bounds Checking in C and the Linux Kernel
+
+Linux, like all C code, regularly suffers from heap buffer overflow
+flaws. Especially frustrating is that the compiler usually has enough
+context to have been able to stop the overflow but has been hampered by
+needing to support legacy coding styles, ambiguous language definitions,
+and fragile APIs. This has forced the compiler to frequently ignore the
+intent of programmers in an effort to support sloppy code patterns that
+may not exist in a project at all.
+
+The history of the C language specification's "flex array member" (FAM)
+is long and twisty, and technical debt exists due to ambiguous
+implementations. With the introduction of -fstrict-flex-arrays, C can
+now unambiguously declare array sizes. In the kernel we can build on
+this, by transforming trailing zero-length and one-element arrays into
+modern C99 FAMs, adding the use of __builtin_dynamic_object_size(),
+applying it to defenses like FORTIFY_SOURCE, and expanding where the
+compiler can use this knowledge internally for improving existing
+sanitizers. Finally, adding a new struct member attribute, we can expand
+object size tracking to cover all array types, freeing Linux from this
+persistent class of buffer overflows flaws. [[slides]](https://outflux.net/slides/2023/lss-na/bounds-checking.pdf)(pdf)
+
+[![LSSNA2023](http://img.youtube.com/vi/V2kzptQG5_A/0.jpg)](https://www.youtube.com/watch?v=V2kzptQG5_A)
+
+## Linux Security Summit Europe 2022 - Flexible-Array Transformations and Array-bounds checking
+
+Having a dynamically-sized trailing array at the end of a structure is a useful code construct in the Linux kernel. However, the lack of proper bounds-checking on such objects is concerning and worth making an effort to remediate it. This presentation is about the different strategies we, in the Kernel Self-Protection Project, have been following along the last couple of years to transform trailing zero-length and one-element arrays into modern C99 flexible-array members, and the problems we have run into in the process. We will touch on how this work is closely related and helpful to the most recent efforts to hardening key APIs like memcpy() and globally enabling options like -Warray-bounds. We will explain how we've been addressing the particularly challenging one-element array into flexible-array member transformations in UAPI. Also, we'll see how the fact that compilers like GCC have historically treated all trailing arrays, no matter what their size, as flexible-sized arrays, is problematic and causes trouble when it comes to perform proper array-bounds checking on such objects, and how the introduction of a new option like -fstrict-flex-arrays could help. [[slides]](https://embeddedor.com/slides/2022/lsseu/lsseu2022.pdf)(pdf)
+
+[![LSSEU2022](http://img.youtube.com/vi/nrojq96szcA/0.jpg)](https://www.youtube.com/watch?v=nrojq96szcA)
+
+## Kernel Recipes 2022 - The Kernel Self-Protection Project and how you can help
+
+This presentation will cover some of the most recent KSPP accomplishments, as well as some currently active efforts. Also, a brief explanation of how you can help us complete some particularly challenging work will be presented. [[slides]](https://embeddedor.com/slides/2022/kr/kr2022.pdf)(pdf)
+
+[![Kernel Recipes 2022](http://img.youtube.com/vi/-IvSAkhJ26I/0.jpg)](https://www.youtube.com/watch?v=-IvSAkhJ26I "Kernel Recipes 2022 - The Kernel Self-Protection Project and how you can help")
+
+
 
 ## Kernel Recipes 2019 - Hunting and fixing bugs all over the Linux kernel
 

@@ -107,10 +107,17 @@
   (provide "element_count" attribute to give more context to __builtin_dynamic_object_size() and -fsanitize=bounds)
   
   GCC issue ID: [108896](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108896)
+
+  GCC patch v1: https://gcc.gnu.org/pipermail/gcc-patches/2023-May/619708.html
+  GCC patch v2: https://gcc.gnu.org/pipermail/gcc-patches/2023-August/626376.html
+  GCC patch v3: https://gcc.gnu.org/pipermail/gcc-patches/2023-August/628459.html
+
   
   Clang issue ID: [60928](https://github.com/llvm/llvm-project/issues/60928) 
 
-  commit [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
+  array-bounds test suit: https://github.com/kees/kernel-tools/blob/trunk/fortify/array-bounds.c
+
+  kernel commit [dd06e72e68bc](https://git.kernel.org/linus/dd06e72e68bc) ("Compiler Attributes: Add __counted_by macro")
 
   | __sized_by |
   | :------: |

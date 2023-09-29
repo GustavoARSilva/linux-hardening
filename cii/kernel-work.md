@@ -105,6 +105,10 @@ Last update: 2023-05-21
 
 ## Public Presentations
 
+## Kernel Recipes 10th edition 2023 - Gaining bounds-checking on trailing arrays in the Upstream Linux Kernel
+
+Having a dynamically-sized trailing array at the end of a structure is a popular code construct in the Linux kernel. However, trailing arrays can also be of a fixed size, which means that their size is well-defined at compile-time and remains fixed throughout their entire lifetime. Little is known about the fact that compilers like GCC have historically treated all trailing arrays, no matter what their size, as flexible-sized arrays. This is a problem if we want the compiler to help us detect out-of-bounds issues on such arrays both at compile-time and at run-time. Therefore, the compiler should first be able to clearly distinguish between those that are used as dynamically-sized arrays and those that are not (fixed-size arrays). In order to achieve this, GCC-13 is introducing the new -fstrict-flex-arrays option. And we, in the Kernel Self-Protection Project, have been transforming trailing zero-length and one-element arrays (what we call fake flexible-arrays) into modern C99 flexible-array members. We will see how the combination of both efforts, together with the addition of some important compiler attributes, will eventually help us be free of out-of-bounds vulnerabilities on trailing arrays in the upstream Linux kernel. We will also explore how this work is closely related, and contributes, to the most recent efforts to hardening key APIs like memcpy() and globally enabling options like -Warray-bounds. [[slides]](https://embeddedor.com/slides/2023/kr/kr2023.pdf)(pdf)
+
 ## Linux Security Summit North America 2023 - Progress On Bounds Checking in C and the Linux Kernel
 
 Linux, like all C code, regularly suffers from heap buffer overflow

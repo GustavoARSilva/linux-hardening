@@ -10,7 +10,7 @@ Last update: 2023-05-21
 
 | Commits upstream | Stable trees impacted | Subsystems impacted | mainline | stable | next |
 | :---------:| :-----: | :-----: | :------: | :----: | :-----: |
-| [2,497](https://github.com/torvalds/linux/graphs/contributors)| [38](#contributions-to-stable-trees) | 42+ | [torvalds](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [linux-next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
+| [2,501](https://github.com/torvalds/linux/graphs/contributors)| [38](#contributions-to-stable-trees) | 42+ | [torvalds](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=Gustavo+A.+R.+Silva)| [stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/log/?qt=author&q=Gustavo+A.+R.+Silva) | [linux-next](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=author&q=Gustavo+A.+R.+Silva) |
 
 `git log -p --author="Gustavo A. R. Silva" | diffstat -p1 | tail -n1`
 

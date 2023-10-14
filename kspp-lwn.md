@@ -18,3 +18,6 @@
 | November 2, 2016   | [The status of kernel hardening](https://lwn.net/Articles/705262/) |
 | August 31, 2016    | [State of the Kernel Self Protection Project](https://lwn.net/Articles/698827/) |
 
+
+ More Linux kernel hardening articles by LWN.net:
+https://lwn.net/Security/Index/#Linux_kernel-Hardening

@@ -5,6 +5,7 @@
 | October 5, 2023    | [GCC features to help harden the kernel](https://lwn.net/Articles/946041/) |
 | September 22, 2022 | [Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/) |
 | August 1, 2019     | [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) |
+| December 4, 2017   | [Restricting automatic kernel-module loading](https://lwn.net/Articles/740455/) |
 | October 5, 2017    | [What's the best way to prevent kernel pointer leaks?](https://lwn.net/Articles/735589/) |
 | August 16, 2017    | [A canary for timer-expiration functions](https://lwn.net/Articles/731082/) |
 | July 7, 2017       | [Hardened usercopy whitelisting](https://lwn.net/Articles/727322/) |

@@ -5,6 +5,7 @@
 | October 5, 2023    | [GCC features to help harden the kernel](https://lwn.net/Articles/946041/) |
 | September 22, 2022 | [Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/) |
 | August 1, 2019     | [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) |
+| September 12, 2018 | [Trying to get STACKLEAK into the kernel](https://lwn.net/Articles/764325/) |
 | August 29, 2018    | [C considered dangerous](https://lwn.net/Articles/763641/) |
 | March 7, 2018      | [Preventing kernel-stack leaks](https://lwn.net/Articles/748642/) |
 | December 4, 2017   | [Restricting automatic kernel-module loading](https://lwn.net/Articles/740455/) |

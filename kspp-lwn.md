@@ -4,6 +4,7 @@
 | :------: | :-----: |
 | October 5, 2023    | [GCC features to help harden the kernel](https://lwn.net/Articles/946041/) |
 | September 22, 2022 | [Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/) |
+| September 24, 2021 | [Two security improvements for GCC](https://lwn.net/Articles/870045/) |
 | September 12, 2019 | [Comparing GCC and Clang security features](https://lwn.net/Articles/798913/) |
 | August 1, 2019     | [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) |
 | September 12, 2018 | [Trying to get STACKLEAK into the kernel](https://lwn.net/Articles/764325/) |

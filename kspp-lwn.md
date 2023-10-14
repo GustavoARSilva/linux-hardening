@@ -1,4 +1,4 @@
-  # LWN.net articles Kernel Self-Protection Project (KSPP) articles
+  # LWN.net Kernel Self-Protection Project (KSPP) articles
 
 | | |
 | :------: | :-----: |

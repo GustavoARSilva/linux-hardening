@@ -15,6 +15,7 @@
 | July 7, 2017       | [Hardened usercopy whitelisting](https://lwn.net/Articles/727322/) |
 | June 1, 2017       | [The "rare write" mechanism](https://lwn.net/Articles/724319/) |
 | May 11, 2017       | [Randomizing structure layout](https://lwn.net/Articles/722293/) |
+| January 25, 2017   | [A pair of GCC plugins](https://lwn.net/Articles/712161/) |
 | November 16, 2016  | [The bumpy road to reference-count protection in the kernel](https://lwn.net/Articles/706498/) |
 | November 2, 2016   | [The status of kernel hardening](https://lwn.net/Articles/705262/) |
 | August 31, 2016    | [State of the Kernel Self Protection Project](https://lwn.net/Articles/698827/) |

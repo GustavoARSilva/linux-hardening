@@ -1,10 +1,10 @@
   # LWN.net Kernel Self-Protection Project (KSPP) articles
 
-| | |
-| :------: | :-----: |
-| October 5, 2023    | [GCC features to help harden the kernel](https://lwn.net/Articles/946041/) |
-| July 3, 2023       | [Documenting counted-by relationships in kernel data structures](https://lwn.net/Articles/936728/) |
-| September 22, 2022 | [Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/) |
+| | | | |
+| :------: | :-----: | :------: | :-----: |
+| October 5, 2023    | [GCC features to help harden the kernel](https://lwn.net/Articles/946041/) | | |
+| July 3, 2023       | [Documenting counted-by relationships in kernel data structures](https://lwn.net/Articles/936728/) | | |
+| September 22, 2022 | [Safer flexible arrays for the kernel](https://lwn.net/Articles/908817/) | [slides (pdf)](https://embeddedor.com/slides/2022/lsseu/lsseu2022.pdf)| [talk](http://img.youtube.com/vi/nrojq96szcA/1.jpg) |
 | September 24, 2021 | [Two security improvements for GCC](https://lwn.net/Articles/870045/) |
 | September 12, 2019 | [Comparing GCC and Clang security features](https://lwn.net/Articles/798913/) |
 | August 1, 2019     | [An end to implicit fall-throughs in the kernel](https://lwn.net/Articles/794944/) |

@@ -186,6 +186,10 @@ By Jake Edge September 22, 2022
 
 Silva has a background in embedded systems, working with both realtime operating systems (RTOS) and embedded Linux. For the last six years, he has has been working as an upstream kernel engineer. He collaborates with the Kernel Self Protection Project (KSPP) and the Linux kernel division of the Google open-source security team." [Read the FULL article at LWN.net](https://lwn.net/Articles/908817/)
 
+## Demystifying the Linux Kernel Security Process - Greg Kroah-Hartman - The Linux Foundation Mentorship Sessions
+
+[![Security Now Podcast 2021](https://img.youtube.com/vi/sLX1ehWjIcw/0.jpg)](https://www.youtube.com/watch?v=sLX1ehWjIcw&t=1186s)
+
 ## Google funds Linux kernel security work - Steve Gibson - Security Now Podcast 2021
 
 [![Security Now Podcast 2021](https://img.youtube.com/vi/aRmw4Miph4A/0.jpg)](https://www.youtube.com/watch?v=aRmw4Miph4A&t=1267s "Google funded kernel security work, by Gustavo A. R. Silva")
